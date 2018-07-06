@@ -6,10 +6,15 @@
   "author": "Victor Chibuike <victorblackshady@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start-UI": "webpack --mode production",
+    "start-UI:dev": "webpack-dev-server"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
     "css-loader": "^1.0.0",
+    "extract-text-webpack-plugin": "4.0.0-beta.0",
     "style-loader": "^0.21.0",
     "webpack": "^4.15.1",
     "webpack-cli": "^3.0.8",
