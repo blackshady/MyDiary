@@ -1,3 +1,54 @@
+@font-face {
+  font-family: duintas;
+  src: url("../../fonts/duintas_diary.otf")format("truetype");
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  -webkit-text-size-adjust: 100%
+}
+
 body {
-  background: linear-gradient(red, yellow);
+  margin: 0;
+  width: 100vw;
+  overflow-x: hidden;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 5px 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  background-color: transparent
+}
+
+a:active,
+a:hover {
+  outline-width: 0
+}
+
+input[type=text],
+select {
+  outline: none;
+  border: none;
+  -webkit-appearance: none;
 }

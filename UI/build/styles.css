@@ -1,3 +1,36 @@
+:root {
+  --primary: black;
+}@font-face {
+  font-family: myFont;
+  src: url("../../fonts/duintas_diary.otf")
+}
+
+html {
+  box-sizing: border-box;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 body {
-  background: linear-gradient(red, yellow);
+  letter-spacing: -1px;
+  background-position: fixed;
+  min-height: calc(100vh - 100px);
+  background-image: url("../../img/bg.jpeg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: myFont;
+  margin: 0 0 5px 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }

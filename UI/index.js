@@ -1,2 +1,2 @@
-import "./css/styles.css";
-import "./js/index";
+require("./css/styles.css");
+require("./js/index");
