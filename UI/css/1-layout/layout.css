@@ -6,15 +6,8 @@
   display: grid;
 }
 
-.main__nav a {
-  display: block;
-  text-decoration: none;
-  font-size: 1.1rem;
-}
-
 .main__nav ul {
   display: grid;
-  border: 3px solid blue;
   grid-template-columns: repeat(4, 1fr);
 }
 
@@ -22,4 +15,23 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin: 0 70px 0 30px;
+}
+
+.l-card__wrapper {
+  display: grid;
+  margin-left: 30%;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 50px;
+}
+
+.caption {
+  justify-content: start;
+  letter-spacing: 4px;
+  margin-left: 30%;
+}
+
+.showcase__card {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
 }

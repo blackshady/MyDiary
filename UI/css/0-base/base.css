@@ -11,6 +11,7 @@ body {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  line-height: 1.4;
 }
 
 h1,
@@ -19,11 +20,12 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0 0 5px 0;
+  margin: 0;
 }
 
 img {
   max-width: 100%;
+  border-style: none
 }
 
 ul {
@@ -41,11 +43,16 @@ a,
 a:hover,
 a:active {
   text-decoration: none;
+  font-size: 1.5rem
 }
 
-input[type=text],
+button,
+textarea,
+input,
 select {
   outline: none;
   border: none;
+  font: inherit;
+  margin: 0;
   -webkit-appearance: none;
 }
