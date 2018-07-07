@@ -1,0 +1,23 @@
+@font-face {
+  font-family: duintas;
+  src: url("../../fonts/duintas_diary.otf")format("truetype");
+}
+
+.logo {
+  font-family: duintas;
+  font-size: 2.5rem;
+}
+
+.background {
+  background: url("../../img/background-image.jpeg") no-repeat center center fixed;
+  background-position: center;
+  background-color: #cfa494;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+}
+
+.header {
+  border: 3px solid blue;
+  box-shadow: var(--shadow);
+}

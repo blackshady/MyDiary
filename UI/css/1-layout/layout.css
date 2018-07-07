@@ -1,0 +1,25 @@
+.container {
+  display: grid;
+}
+
+.l-main__nav {
+  display: grid;
+}
+
+.main__nav a {
+  display: block;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.main__nav ul {
+  display: grid;
+  border: 3px solid blue;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.l-header__content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 70px 0 30px;
+}

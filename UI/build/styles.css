@@ -1,22 +1,19 @@
 :root {
-  --primary: black;
-}@font-face {
-  font-family: myFont;
-  src: url("../../fonts/duintas_diary.otf")
-}
-
-html {
+  --primary: #3d272a;
+  --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}html {
   box-sizing: border-box;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  -webkit-text-size-adjust: 100%
 }
 
 body {
-  letter-spacing: -1px;
-  background-position: fixed;
-  min-height: calc(100vh - 100px);
-  background-image: url("../../img/bg.jpeg");
-  background-size: 100%;
-  background-repeat: no-repeat;
+  margin: 0;
+  width: 100vw;
+  overflow-x: hidden;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 h1,
@@ -25,12 +22,55 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: myFont;
   margin: 0 0 5px 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
 }
 
 *,
 *:before,
 *:after {
   box-sizing: border-box;
+}
+
+a,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+input[type=text],
+select {
+  outline: none;
+  border: none;
+  -webkit-appearance: none;
+}@font-face {
+  font-family: duintas;
+  src: url(/UI/buildfonts/duintas_diary.otf)format("truetype");
+}
+
+.logo {
+  font-family: duintas;
+  font-size: 2.5rem;
+}
+
+.background {
+  background: url(/UI/build/UI/img/background-image.jpeg) no-repeat center center fixed;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+}
+
+.main__nav {
+  box-shadow: var(--shadow);
+}.is-hidden {
+  display: none;
 }

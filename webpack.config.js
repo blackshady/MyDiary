@@ -25,8 +25,8 @@ module.exports = {
           use: [{
               loader: 'css-loader',
               options: {
-                modules: true,
-                url: false,
+                modules: false,
+
                 minimize: true,
                 sourceMap: true,
                 localIdentName: '[hash:base64:5]'
@@ -50,7 +50,7 @@ module.exports = {
         use: [{
             loader: 'file-loader',
             options: {
-              name: 'UI/img/[name].[ext]',
+              name: '/UI/img/[name].[ext]',
               limit: 10000
             }
           },
