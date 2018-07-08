@@ -256,9 +256,13 @@ select {
   position: absolute;
   pointer-events: none;
   bottom: 2px;
-  left: 20px;
   font-size: 20px;
   transition: 0.2s ease-in-out;
+}
+
+#test:focus {
+  margin-bottom: 21px;
+  font-size: 12px;
 }.is-hidden {
   display: none;
 }.h-center {
@@ -277,6 +281,7 @@ select {
 .h-user__icon::before {
   content: url(/UI/build/UI/img/User.png);
   margin-right: 10px;
+  ;
 }
 
 .h-email__icon::before {
