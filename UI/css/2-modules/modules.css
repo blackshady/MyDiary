@@ -76,20 +76,34 @@
 
 .form__wrapper {
   display: grid;
-  grid-auto-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
   height: 500px;
-  justify-content: center;
+  box-sizing: border-box;
+  padding: 0 30px;
   align-items: center;
+  justify-items: center;
   background: var(--light);
   box-shadow: var(--shadow);
 }
 
-.caption__wrapper {
-  border: solid 5px black;
+.form__wrapper>span {
+  font-size: 3rem;
+}
+
+.caption__wrapper p {
+  letter-spacing: -1px;
+  font-size: 20px;
+}
+
+.caption__wrapper p::first-letter {
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .input__group {
   position: relative;
+  width: 100%;
+  padding: 0;
 }
 
 .input__group input {
@@ -109,13 +123,3 @@
   font-size: 20px;
   transition: 0.2s ease-in-out;
 }
-
-/* #input-label {
-  position: absolute;
-  pointer-events: none;
-  top: 32px;
-  left: 20px;
-  font-size: 20px;
-  font-weight: bold;
-  transition: 0.2s ease-in-out;
-} */

@@ -66,3 +66,13 @@ select {
   margin: 0;
   -webkit-appearance: none;
 }
+
+.qoute::before {
+  content: open-quote;
+  font-size: 3.5rem;
+}
+
+.qoute::after {
+  content: close-quote;
+  font-size: 3.5rem;
+}
