@@ -6,3 +6,7 @@
 .h-font__size {
   font-size: 1.5rem;
 }
+
+.h-margin__left {
+  margin-left: 30%;
+}

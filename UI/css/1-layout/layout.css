@@ -29,14 +29,23 @@
   margin-top: 50px;
 }
 
-.caption {
-  justify-content: start;
-  letter-spacing: 4px;
-  margin-left: 30%;
+.l-form {
+  display: grid;
+  grid-template-columns: 35% repeat(2, 1fr);
+  grid-gap: 20px
 }
 
 .showcase__card {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(4, 1fr);
+}
+
+/* Media query */
+
+@media(max-width: 900px) {
+  /* make menu display handbuger */
+  /* .showcase__card {
+    grid-template-columns: repeat(2, 1fr);
+  } */
 }
