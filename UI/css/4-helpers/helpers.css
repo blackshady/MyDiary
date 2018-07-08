@@ -10,3 +10,24 @@
 .h-margin__left {
   margin-left: 30%;
 }
+
+.h-user__icon::before {
+  content: url("../../icons/User.png");
+  margin-right: 10px;
+  ;
+}
+
+.h-email__icon::before {
+  content: url("../../icons/GMail.png");
+  margin-right: 10px;
+}
+
+.h-phone__icon::before {
+  content: url("../../icons/Phone.png");
+  margin-right: 10px;
+}
+
+.h-password__icon::before {
+  content: url("../../icons/Lock.png");
+  margin-right: 10px;
+}

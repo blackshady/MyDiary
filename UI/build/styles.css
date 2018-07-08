@@ -50,16 +50,14 @@ a:active {
   text-decoration: none;
   font-size: 1.5rem;
   color: black;
+  transition: all 0.1s ease-in-out;
 }
 
 a:hover {
-  font-size: 1.4rem;
   text-shadow: 0 2p 0 rgb(0, 0, 0, 0.7);
-  transform: font-size 0.4s ease-in-out;
 }
 
 a:active {
-  font-size: 1.4rem;
   color: white;
 }
 
@@ -72,7 +70,22 @@ select {
   font: inherit;
   margin: 0;
   -webkit-appearance: none;
-}.container {
+}
+
+.qoute::before {
+  content: open-quote;
+  font-size: 3.5rem;
+}
+
+.qoute::after {
+  content: close-quote;
+  font-size: 3.5rem;
+}
+
+/* .input__label::before {
+  content: url("../../img/Business.png");
+  margin-right: 10px;
+} */.container {
   display: grid;
 }
 
@@ -103,16 +116,25 @@ select {
   margin-top: 50px;
 }
 
-.caption {
-  justify-content: start;
-  letter-spacing: 4px;
-  margin-left: 30%;
+.l-form {
+  display: grid;
+  grid-template-columns: 35% repeat(2, 1fr);
+  grid-gap: 20px
 }
 
 .showcase__card {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(4, 1fr);
+}
+
+/* Media query */
+
+@media(max-width: 900px) {
+  /* make menu display handbuger */
+  /* .showcase__card {
+    grid-template-columns: repeat(2, 1fr);
+  } */
 }@font-face {
   font-family: duintas;
   src: url(/UI/buildfonts/duintas_diary.otf)format("truetype");
@@ -125,7 +147,7 @@ select {
 }
 
 .background {
-  background: url(/UI/build/UI/img/background-image.jpeg) no-repeat center center fixed;
+  background: url(/UI/build/UI/img/background-image.jpeg) no-repeat center center;
   background-position: center;
   background-color: #cfa494;
   height: 100vh;
@@ -137,6 +159,11 @@ select {
   height: 65px;
   background: var(--light);
   box-shadow: var(--shadow);
+}
+
+.caption {
+  justify-content: start;
+  letter-spacing: 4px;
 }
 
 .caption>p {
@@ -182,6 +209,56 @@ select {
   background: var(--primary);
   box-shadow: var(--shadow);
   transition: all 0.3s ease-in-out;
+}
+
+.form__wrapper {
+  display: grid;
+  grid-template-rows: repeat(8, 1fr);
+  height: 500px;
+  box-sizing: border-box;
+  padding: 0 30px;
+  align-items: center;
+  justify-items: center;
+  background: var(--light);
+  box-shadow: var(--shadow);
+}
+
+.form__wrapper>span {
+  font-size: 3rem;
+}
+
+.caption__wrapper p {
+  letter-spacing: -1px;
+  font-size: 20px;
+}
+
+.caption__wrapper p::first-letter {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.input__group {
+  position: relative;
+  width: 100%;
+  padding: 0;
+}
+
+.input__group input {
+  width: 100%;
+  border: none;
+  outline: 0;
+  background: transparent;
+  box-shadow: none;
+  border-bottom: solid 3px var(--primary);
+}
+
+.input__group label {
+  position: absolute;
+  pointer-events: none;
+  bottom: 2px;
+  left: 20px;
+  font-size: 20px;
+  transition: 0.2s ease-in-out;
 }.is-hidden {
   display: none;
 }.h-center {
@@ -191,4 +268,28 @@ select {
 
 .h-font__size {
   font-size: 1.5rem;
+}
+
+.h-margin__left {
+  margin-left: 30%;
+}
+
+.h-user__icon::before {
+  content: url(/UI/build/UI/img/User.png);
+  margin-right: 10px;
+}
+
+.h-email__icon::before {
+  content: url(/UI/build/UI/img/GMail.png);
+  margin-right: 10px;
+}
+
+.h-phone__icon::before {
+  content: url(/UI/build/UI/img/Phone.png);
+  margin-right: 10px;
+}
+
+.h-password__icon::before {
+  content: url(/UI/build/UI/img/Lock.png);
+  margin-right: 10px;
 }

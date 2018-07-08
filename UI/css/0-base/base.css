@@ -76,3 +76,8 @@ select {
   content: close-quote;
   font-size: 3.5rem;
 }
+
+/* .input__label::before {
+  content: url("../../img/Business.png");
+  margin-right: 10px;
+} */
