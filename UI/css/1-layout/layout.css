@@ -41,11 +41,6 @@
   height: 500px;
 }
 
-.l-form__mod {
-  grid-template-rows: repeat(3, 1fr);
-  grid-auto-rows: dense;
-}
-
 .showcase__card {
   display: grid;
   grid-gap: 20px;
