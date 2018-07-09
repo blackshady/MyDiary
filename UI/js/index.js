@@ -27,14 +27,14 @@ function transformLabel() {
 function validateSignup(e) {
   e.preventDefault();
   validateInputs();
-  userDetails.length !== 6 ? userDetails = [] : (window.location.href = "../pages/index.html");
+  userDetails.length !== 6 ? userDetails = [] : (window.location.href = "../pages/dashboard.html");
 }
 
 // Validate login Form
 function validateLogin(e) {
   e.preventDefault();
   validateInputs();
-  userDetails.length !== 2 ? userDetails = [] : (window.location.href = "../pages/index.html");
+  userDetails.length !== 2 ? userDetails = [] : (window.location.href = "../pages/dashboard.html");
 }
 
 // checks if input field is empty
