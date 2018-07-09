@@ -52,6 +52,7 @@
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-gap: 20px;
+  padding: 5px;
   overflow-x: hidden;
   overflow-y: hidden;
   min-height: 89vh;
@@ -105,8 +106,19 @@
   padding: 5px
 }
 
-.l-displaypost__area {
+.l-viewContent__area {
+  display: grid;
+  grid-template-rows: 180px auto;
   border: darkblue solid 2px;
+}
+
+.l-mediaContent__area {
+  display: grid;
+  grid-template-columns: auto repeat(3, 1fr) auto;
+  grid-gap: 10px;
+  padding: 5px;
+  align-items: center;
+  justify-items: center;
 }
 
 /* Media query */
