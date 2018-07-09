@@ -26,7 +26,6 @@ function transformLabel() {
 // Validate Signup form
 function validateSignup(e) {
   e.preventDefault();
-  //Check that no field is empty
   validateInputs();
   userDetails.length !== 6 ? userDetails = [] : (window.location.href = "../pages/index.html");
 }
@@ -34,12 +33,11 @@ function validateSignup(e) {
 // Validate login Form
 function validateLogin(e) {
   e.preventDefault();
-  console.log("hi")
-  //Check that no field is empty
   validateInputs();
   userDetails.length !== 2 ? userDetails = [] : (window.location.href = "../pages/index.html");
 }
 
+// checks if input field is empty
 function validateInputs() {
   inputField.map((field) => {
     field.value !== "" ? ((userDetails.push(field.value)),
