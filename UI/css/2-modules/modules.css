@@ -129,3 +129,25 @@
   border: solid 2px;
   border-radius: 100px;
 }
+
+.title__area {
+  font-size: 1.5rem;
+  font-family: inherit;
+}
+
+.title__area>input {
+  border-radius: 5px;
+  text-indent: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: var(--shadow);
+}
+
+.text__area>textarea {
+  border-radius: 5px;
+  text-indent: 10px;
+  font-family: inherit;
+  font-size: 1.3rem;
+  resize: none;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: var(--shadow);
+}

@@ -65,7 +65,7 @@
 
 .l-middle__pane {
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 10px;
   background: rgba(0, 0, 0, 0.1);
   grid-template-rows: 1fr 3fr;
   box-shadow: var(--shadow);
@@ -81,12 +81,28 @@
   display: grid;
   grid-gap: 5px;
   grid-template-rows: auto 1fr auto;
-  border: green solid 2px;
+}
+
+.l-buttons__area {
+  display: grid;
+  grid-gap: 10px;
+  align-items: right;
+  padding: 5px;
+  justify-content: right;
+  grid-auto-flow: column
 }
 
 .l-text__area {
   display: grid;
+  padding: 5px;
+  grid-template-rows: auto, 1fr;
+}
+
+.l-title__area {
+  display: grid;
+  grid-template-columns: auto 1fr;
   grid-gap: 5px;
+  padding: 5px
 }
 
 .l-displaypost__area {
