@@ -48,6 +48,43 @@
   grid-template-columns: repeat(4, 1fr);
 }
 
+.l-dashboard__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-gap: 20px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  min-height: 89vh;
+}
+
+.l-left__pane {
+  display: grid;
+  background: var(--transpt__dark);
+  box-shadow: var(--shadow);
+}
+
+.l-middle__pane {
+  display: grid;
+  grid-gap: 30px;
+  background: rgba(0, 0, 0, 0.1);
+  grid-template-rows: 1fr 3fr;
+  box-shadow: var(--shadow);
+}
+
+.l-right__pane {
+  display: grid;
+  background: var(--transpt__dark);
+  box-shadow: var(--shadow);
+}
+
+.l-addpost__area {
+  border: green solid 2px;
+}
+
+.l-displaypost__area {
+  border: darkblue solid 2px;
+}
+
 /* Media query */
 
 @media(max-width: 900px) {

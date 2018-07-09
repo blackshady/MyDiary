@@ -39,3 +39,8 @@
   content: url("../../icons/Lock.png");
   margin-right: 10px;
 }
+
+.h-icon__size {
+  min-width: 32px;
+  min-height: 32px;
+}
