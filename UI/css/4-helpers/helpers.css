@@ -3,6 +3,14 @@
   justify-content: center;
 }
 
+.h-l__span {
+  grid-row: 6/-1;
+}
+
+.h-l__span-2 {
+  grid-row: 5;
+}
+
 .h-font__size {
   font-size: 1.5rem;
 }
