@@ -18,12 +18,6 @@ body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   line-height: 1.4;
-  background: url(/UI/build/UI/img/background-image.jpeg) no-repeat center center;
-  background-position: center;
-  background-color: #cfa494;
-  height: 100vh;
-  width: 100vw;
-  background-size: cover;
 }
 
 h1,

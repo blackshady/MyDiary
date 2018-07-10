@@ -1,16 +1,15 @@
-const path = require ('path');
-const ExtractTextPlugin = require ('extract-text-webpack-plugin');
+const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: './UI/index.js',
   output: {
-    path: path.resolve (__dirname, './UI/build'),
+    path: path.resolve(__dirname, './UI/build'),
     filename: 'bundle.js',
     publicPath: '/UI/build',
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.js?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
@@ -21,20 +20,19 @@ module.exports = {
 
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract ({
+        use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                modules: false,
+          use: [{
+            loader: 'resolve-url-loader',
+            loader: 'css-loader',
+            options: {
+              modules: false,
 
-                minimize: true,
-                sourceMap: true,
-                localIdentName: '[hash:base64:5]',
-              },
+              minimize: true,
+              sourceMap: true,
+              localIdentName: '[hash:base64:5]',
             },
-          ],
+          }, ],
         }),
       },
       {
@@ -48,8 +46,7 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpe?g|gif)/i,
-        use: [
-          {
+        use: [{
             loader: 'file-loader',
             options: {
               name: '/UI/img/[name].[ext]',
@@ -62,5 +59,5 @@ module.exports = {
     ],
   },
 
-  plugins: [new ExtractTextPlugin ('styles.css')],
+  plugins: [new ExtractTextPlugin('styles.css')],
 };
