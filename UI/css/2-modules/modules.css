@@ -176,3 +176,36 @@
   font-size: 1.2rem;
   margin: 5px;
 }
+
+.header__title>* {
+  display: grid;
+  margin-top: 40px;
+  align-content: center;
+  justify-items: center;
+  font-family: inherit;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.header__title div {
+  border: solid 2px white;
+  margin: 5px 30px;
+}
+
+.entry__item {
+  box-shadow: var(--shadow);
+}
+
+.entry {
+  display: grid;
+  font-family: inherit;
+  font-size: 1rem;
+  color: white;
+  background: var(--primary);
+  align-content: center;
+  justify-items: center;
+}
+
+.entry span {
+  border-bottom: solid 2px white;
+}
