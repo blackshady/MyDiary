@@ -134,6 +134,10 @@
   display: none;
 }
 
+.image__upload>input {
+  display: none;
+}
+
 .title__area {
   font-size: 1.5rem;
   font-family: inherit;
