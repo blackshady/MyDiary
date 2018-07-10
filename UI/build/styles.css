@@ -18,6 +18,12 @@ body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   line-height: 1.4;
+  background: url(/UI/build/UI/img/background-image.jpeg) no-repeat center center;
+  background-position: center;
+  background-color: #cfa494;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
 }
 
 h1,
@@ -81,12 +87,7 @@ select {
 .qoute::after {
   content: close-quote;
   font-size: 3.5rem;
-}
-
-/* .input__label::before {
-  content: url("../../img/Business.png");
-  margin-right: 10px;
-} */.container {
+}.container {
   display: grid;
 }
 
