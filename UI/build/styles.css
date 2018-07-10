@@ -147,9 +147,30 @@ select {
 }
 
 .l-left__pane {
-  display: grid;
   background: var(--transpt__dark);
   box-shadow: var(--shadow);
+}
+
+.l-profile {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  justify-content: center;
+  grid-gap: 5px;
+  margin-top: 30px;
+}
+
+.l-profile__options {
+  display: grid;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.l-profile__options>input {
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: inherit;
+  text-indent: 5px;
+  transition: all 0.1s ease-in-out;
 }
 
 .l-middle__pane {
@@ -197,7 +218,6 @@ select {
 .l-viewContent__area {
   display: grid;
   grid-template-rows: 150px auto;
-  border: darkblue solid 2px;
   padding-bottom: 30px;
 }
 
@@ -223,6 +243,23 @@ select {
   height: 40px;
   margin-bottom: 20px;
 }
+
+/* Right side Pane */
+
+.l-right__pane {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.l-entries__content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  padding: 10px;
+  height: 100px;
+}
+
+/* Left side pane */
 
 /* Media query */
 
@@ -363,10 +400,12 @@ select {
   border-radius: 100px;
 }
 
-.upload__video {
-  background: url(/UI/build/UI/img/Video.png);
-  height: 32px;
-  width: 32px;
+.video__upload>input {
+  display: none;
+}
+
+.image__upload>input {
+  display: none;
 }
 
 .title__area {
@@ -406,6 +445,59 @@ select {
   font-family: inherit;
   font-size: 1.2rem;
   margin: 5px;
+}
+
+.header__title>* {
+  display: grid;
+  margin-top: 40px;
+  align-content: center;
+  justify-items: center;
+  font-family: inherit;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.header__title div {
+  border: solid 2px white;
+  margin: 5px 30px;
+}
+
+.entry__item {
+  box-shadow: var(--shadow);
+}
+
+.entry {
+  display: grid;
+  font-family: inherit;
+  font-size: 1rem;
+  color: white;
+  background: var(--primary);
+  align-content: center;
+  justify-items: center;
+}
+
+.entry span {
+  border-bottom: solid 2px white;
+}
+
+.l-profile__avater>img {
+  border: solid 2px var(--light);
+  border-radius: 50px;
+  height: 150px;
+}
+
+.profile__name>span {
+  font-family: inherit;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.reset__pass-i {
+  display: none;
+}
+
+.profile__name-i {
+  display: none;
 }.is-hidden {
   display: none;
 }.h-center {
