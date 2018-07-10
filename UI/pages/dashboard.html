@@ -37,13 +37,13 @@
   <div class="l-dashboard__wrapper">
 
     <!-- Strat Of Left Pane -->
-    <div class="l-left__pane">
+    <section class="l-left__pane">
       hello
-    </div>
+    </section>
     <!-- End Of Left Pane -->
 
     <!-- Start Middle Column Pan -->
-    <div class="l-middle__pane">
+    <section class="l-middle__pane">
 
       <!-- Start Of Add New post Area -->
       <div class="l-addpost__area">
@@ -52,10 +52,15 @@
             <label>Title:</label>
             <input type="text" name="" id="">
           </div>
-          <textarea name="test__post">What's on your mind...</textarea>
+          <textarea class="story__text">What's on your mind...</textarea>
         </div>
         <div class="l-buttons__area">
-          <img class="upload__video" src="../icons/Video.png" alt="">
+          <div class="video__upload">
+            <label for="file-input">
+              <img src="../icons/Video.png" alt="">
+            </label>
+            <input id="file-input" type="file" name="vid" accept="video/*">
+          </div>
           <img src="../icons/Pictures-WF.png" alt="" class="upload__image">
           <button class="button">Post</button>
         </div>
@@ -66,26 +71,38 @@
       <div class="l-viewContent__area">
         <div class="l-mediaContent__area">
           <img src="../icons/Swap-left.png" alt="">
-          <img src="../img/pexels-photo-399160.jpeg" alt="">
+          <img src="../img/kobu-agency-409288.jpg" alt="">
           <img src="../img/pexels-photo-414645.jpeg" alt="">
           <img src="../img/pexels-photo-733857.jpeg" alt="">
           <img src="../icons/Swap-right.png" alt="">
         </div>
-        <div class="storyContent__area">
-          <div class="story__title"></div>
-          <div class="story__text"></div>
-          <div class="story__option"></div>
+        <div class="l-storyContent__area">
+          <div class="l-text__area">
+            <span class="story__title">
+              My Life As A Programmer
+            </span>
+
+            <textarea readonly class="story__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur soluta molestiae voluptate beatae voluptatibus
+              enim atque aspernatur autem, quasi incidunt aliquam sunt vitae dolores velit accusantium optio perferendis
+              exercitationem harum!
+            </textarea>
+          </div>
+          <div class="l-story__option">
+            <div class="date__posted">Date: 10/01/2018 Time:3:00pm</div>
+            <button class="button">Edit Post</button>
+          </div>
+          <div class="br"></div>
         </div>
       </div>
       <!-- End Of View Entry Content -->
 
-    </div>
+    </section>
     <!-- End Of Middle Column Pane -->
 
     <!-- Start of Right Pane-->
-    <div class="l-right__pane">
+    <section class="l-right__pane">
       cool
-    </div>
+    </section>
     <!-- End of Right Pane-->
   </div>
 

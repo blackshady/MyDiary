@@ -108,8 +108,9 @@
 
 .l-viewContent__area {
   display: grid;
-  grid-template-rows: 180px auto;
+  grid-template-rows: 150px auto;
   border: darkblue solid 2px;
+  padding-bottom: 30px;
 }
 
 .l-mediaContent__area {
@@ -119,6 +120,20 @@
   padding: 5px;
   align-items: center;
   justify-items: center;
+  box-shadow: var(--shadow);
+}
+
+.l-storyContent__area {
+  display: grid;
+  grid-template-rows: auto;
+  grid-gap: 5px;
+}
+
+.l-story__option {
+  display: grid;
+  grid-template-columns: auto auto;
+  height: 40px;
+  margin-bottom: 20px;
 }
 
 /* Media query */

@@ -130,6 +130,10 @@
   border-radius: 100px;
 }
 
+.video__upload>input {
+  display: none;
+}
+
 .title__area {
   font-size: 1.5rem;
   font-family: inherit;
@@ -142,7 +146,7 @@
   box-shadow: var(--shadow);
 }
 
-.text__area>textarea {
+.story__text {
   border-radius: 5px;
   text-indent: 10px;
   font-family: inherit;
@@ -150,4 +154,21 @@
   resize: none;
   background: rgba(255, 255, 255, 0.7);
   box-shadow: var(--shadow);
+}
+
+.story__title {
+  display: grid;
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: bold;
+  justify-items: center;
+  align-content: center;
+  color: white;
+  margin: 0;
+}
+
+.date__posted {
+  font-family: inherit;
+  font-size: 1.2rem;
+  margin: 5px;
 }
