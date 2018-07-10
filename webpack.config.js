@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './UI/build'),
     filename: 'bundle.js',
-    publicPath: '/UI/build',
+    // publicPath: './UI/',
   },
   module: {
     rules: [{
@@ -23,11 +23,9 @@ module.exports = {
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [{
-            loader: 'resolve-url-loader',
             loader: 'css-loader',
             options: {
               modules: false,
-
               minimize: true,
               sourceMap: true,
               localIdentName: '[hash:base64:5]',
@@ -40,7 +38,7 @@ module.exports = {
         use: {
           loader: 'file-loader',
           options: {
-            name: 'fonts/[name].[ext]',
+            name: './fonts/[name].[ext]',
           },
         },
       },
@@ -49,7 +47,7 @@ module.exports = {
         use: [{
             loader: 'file-loader',
             options: {
-              name: '/UI/img/[name].[ext]',
+              name: './UI/img/[name].[ext]',
               limit: 10000,
             },
           },

@@ -265,7 +265,7 @@ select {
   } */
 }@font-face {
   font-family: duintas;
-  src: url(/UI/buildfonts/duintas_diary.otf)format("truetype");
+  src: url(./fonts/duintas_diary.otf)format("truetype");
 }
 
 .logo {
@@ -275,7 +275,7 @@ select {
 }
 
 .background {
-  background: url(/UI/build/UI/img/background-image.jpeg) no-repeat center center;
+  background: url(./UI/img/background-image.jpeg) no-repeat center center;
   background-position: center;
   background-color: #cfa494;
   height: 100vh;
@@ -517,23 +517,23 @@ select {
 }
 
 .h-user__icon::before {
-  content: url(/UI/build/UI/img/User.png);
+  content: url(./UI/img/User.png);
   margin-right: 10px;
   ;
 }
 
 .h-email__icon::before {
-  content: url(/UI/build/UI/img/GMail.png);
+  content: url(./UI/img/GMail.png);
   margin-right: 10px;
 }
 
 .h-phone__icon::before {
-  content: url(/UI/build/UI/img/Phone.png);
+  content: url(./UI/img/Phone.png);
   margin-right: 10px;
 }
 
 .h-password__icon::before {
-  content: url(/UI/build/UI/img/Lock.png);
+  content: url(./UI/img/Lock.png);
   margin-right: 10px;
 }
 

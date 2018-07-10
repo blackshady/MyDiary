@@ -19,6 +19,7 @@
     "img-loader": "^3.0.0",
     "resolve-url-loader": "^2.3.0",
     "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
     "webpack": "^4.15.1",
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.4"
