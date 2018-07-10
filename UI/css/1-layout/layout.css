@@ -73,7 +73,16 @@
 
 .l-profile__options {
   display: grid;
-  border: solid 2px blue;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.l-profile__options>input {
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: inherit;
+  text-indent: 5px;
+  transition: all 0.1s ease-in-out;
 }
 
 .l-middle__pane {

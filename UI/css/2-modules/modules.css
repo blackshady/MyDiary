@@ -221,3 +221,11 @@
   font-size: 1.5rem;
   color: white;
 }
+
+.reset__pass-i {
+  display: none;
+}
+
+.profile__name-i {
+  display: none;
+}
