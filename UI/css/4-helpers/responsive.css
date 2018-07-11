@@ -1,0 +1,24 @@
+/* Media query for responsiveness */
+
+@media(max-width: 900px) {
+  .h-margin__left {
+    margin-left: 10%;
+  }
+  .caption {
+    margin-top: 50px;
+  }
+  .l-card__wrapper>* {
+    display: none;
+  }
+}
+
+@media(max-width: 400px) {
+  body {}
+  .caption {
+    margin-top: 70px;
+  }
+  .caption>p {
+    font-size: 1.5rem;
+    line-height: 3.5rem;
+  }
+}
