@@ -229,3 +229,18 @@
 .profile__name-i {
   display: none;
 }
+
+.logout__btn {
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 0 10px;
+  font-size: 1.2rem;
+  border: 2px solid var(--primary);
+  ;
+  color: var(--primary);
+  transition: all 0.1s ease-in-out;
+}
+
+.menu__user {
+  display: none;
+}
