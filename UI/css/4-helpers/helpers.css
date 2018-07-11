@@ -44,3 +44,10 @@
   min-width: 32px;
   min-height: 32px;
 }
+
+.h-border {
+  color: white;
+  padding: 2px 0px;
+  border-top: solid 2px white;
+  border-bottom: solid 2px white;
+}
