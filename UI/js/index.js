@@ -11,6 +11,8 @@ const changeNameBtn = document.getElementById("change__name");
 const profileNameInput = document.getElementsByClassName("profile__name-i")[0];
 const resetPassBtn = document.getElementsByClassName("reset__pass")[0];
 const restPassInput = document.getElementsByClassName("reset__pass-i")[0];
+const reminderBtn = document.getElementsByClassName("button__remind")[0];
+const reminderContent = document.getElementsByClassName("reminder__item");
 
 //EVENTS
 document.addEventListener('DOMContentLoaded', transformLabel);
@@ -22,6 +24,7 @@ document.addEventListener('DOMContentLoaded', transformLabel);
 (eidthPostBtn ? (eidthPostBtn.addEventListener("click", edithPost)) : 0);
 (changeNameBtn ? (changeNameBtn.addEventListener("click", changeUserName)) : 0);
 (resetPassBtn ? (resetPassBtn.addEventListener("click", resetPass)) : 0);
+(reminderBtn ? (reminderBtn.addEventListener("click", setReminder)) : 0);
 
 let userDetails = [];
 // Default action on DOM Load
@@ -82,11 +85,28 @@ function edithPost() {
 let numClick = 0;
 
 function changeUserName() {
-  (numClick == 1 ? ((profileNameInput.style.display = "none"), (numClick = 0)) : ((profileNameInput.style.display = "grid"), (numClick = 1)));
+  (numClick == 1 ? ((profileNameInput.style.display = "none"), (numClick = 0)) : ((profileNameInput.style.display = "inline"), (numClick = 1)));
 }
 // Reset Password
 let passNumClick = 0;
 
 function resetPass() {
-  (passNumClick == 1 ? ((restPassInput.style.display = "none"), (passNumClick = 0)) : ((restPassInput.style.display = "grid"), (passNumClick = 1)));
+  (passNumClick == 1 ? ((restPassInput.style.display = "none"), (passNumClick = 0)) : ((restPassInput.style.display = "inline"), (passNumClick = 1)));
 };
+
+// set Reminder
+let remClick = 0;
+
+function setReminder() {
+
+  if (remClick == 1) {
+    reminderContent[0].style.display = "none";
+    reminderContent[1].style.display = "none";
+    remClick = 0;
+  } else {
+    reminderContent[0].style.display = "inline";
+    reminderContent[1].style.display = "inline";
+    remClick++;
+  }
+
+}
