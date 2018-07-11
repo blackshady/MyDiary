@@ -9,6 +9,8 @@ const postField = document.getElementsByClassName("story__text");
 const titleField = document.getElementsByClassName("story__title");
 const changeNameBtn = document.getElementById("change__name");
 const profileNameInput = document.getElementsByClassName("profile__name-i")[0];
+const resetPassBtn = document.getElementsByClassName("reset__pass")[0];
+const restPassInput = document.getElementsByClassName("reset__pass-i")[0];
 
 //EVENTS
 document.addEventListener('DOMContentLoaded', transformLabel);
@@ -19,6 +21,7 @@ document.addEventListener('DOMContentLoaded', transformLabel);
 (logouBtn ? (logouBtn.addEventListener("click", logoutUser)) : 0);
 (eidthPostBtn ? (eidthPostBtn.addEventListener("click", edithPost)) : 0);
 (changeNameBtn ? (changeNameBtn.addEventListener("click", changeUserName)) : 0);
+(resetPassBtn ? (resetPassBtn.addEventListener("click", resetPass)) : 0);
 
 let userDetails = [];
 // Default action on DOM Load
@@ -81,3 +84,9 @@ let numClick = 0;
 function changeUserName() {
   (numClick == 1 ? ((profileNameInput.style.display = "none"), (numClick = 0)) : ((profileNameInput.style.display = "grid"), (numClick = 1)));
 }
+// Reset Password
+let passNumClick = 0;
+
+function resetPass() {
+  (passNumClick == 1 ? ((restPassInput.style.display = "none"), (passNumClick = 0)) : ((restPassInput.style.display = "grid"), (passNumClick = 1)));
+};
