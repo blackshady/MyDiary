@@ -4,7 +4,9 @@
   --transpt__dark: rgba(0, 0, 0, 0.4);
   --light: rgba(216, 204, 192, 0.4);
   --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
-}html {
+}
+
+html {
   box-sizing: border-box;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   -webkit-text-size-adjust: 100%
@@ -81,7 +83,9 @@ select {
 .qoute::after {
   content: close-quote;
   font-size: 3.5rem;
-}.container {
+}
+
+.container {
   display: grid;
 }
 
@@ -263,7 +267,9 @@ select {
   /* .showcase__card {
     grid-template-columns: repeat(2, 1fr);
   } */
-}@font-face {
+}
+
+@font-face {
   font-family: duintas;
   src: url(./fonts/duintas_diary.otf)format("truetype");
 }
@@ -493,9 +499,13 @@ select {
 
 .profile__name-i {
   display: none;
-}.is-hidden {
+}
+
+.is-hidden {
   display: none;
-}.h-center {
+}
+
+.h-center {
   text-align: center;
   justify-content: center;
 }
