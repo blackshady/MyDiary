@@ -52,7 +52,7 @@ function validateInputs() {
 function DisplayLogoutBtn() {
   logouBtn.style.opacity = 1;
   setTimeout(() => {
-    (logouBtn.style.opacity = 0)
+    logouBtn.style.opacity = 0;
   }, 5000);
 }
 
