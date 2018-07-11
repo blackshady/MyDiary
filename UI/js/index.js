@@ -1,6 +1,3 @@
-let userDetails = [];
-
-
 const inputLabel = Array.from((document.getElementsByClassName("input__label")));
 const inputField = Array.from((document.getElementsByClassName("input__field")));
 const siginUpBtn = document.getElementById("signup__button");
@@ -10,7 +7,8 @@ const logouBtn = document.getElementsByClassName("logout__btn")[0];
 const eidthPostBtn = document.getElementsByClassName("edit__post")[0];
 const postField = document.getElementsByClassName("story__text");
 const titleField = document.getElementsByClassName("story__title");
-//const postOutputField = document.getElementsByClassName("story__text")[0];
+const changeNameBtn = document.getElementById("change__name");
+const profileNameInput = document.getElementsByClassName("profile__name-i")[0];
 
 //EVENTS
 document.addEventListener('DOMContentLoaded', transformLabel);
@@ -20,7 +18,9 @@ document.addEventListener('DOMContentLoaded', transformLabel);
 (userMenuIcon ? (userMenuIcon.addEventListener("click", DisplayLogoutBtn)) : 0);
 (logouBtn ? (logouBtn.addEventListener("click", logoutUser)) : 0);
 (eidthPostBtn ? (eidthPostBtn.addEventListener("click", edithPost)) : 0);
+(changeNameBtn ? (changeNameBtn.addEventListener("click", changeUserName)) : 0);
 
+let userDetails = [];
 // Default action on DOM Load
 function transformLabel() {
   for (let i = 0; i < inputField.length; i++) {
@@ -73,4 +73,11 @@ function edithPost() {
   let titleOutField = titleField[1];
   titleInField.value = titleOutField.innerHTML.trim();
   postInField.innerHTML = postOutField.value;
+}
+
+// Modify user Details
+let numClick = 0;
+
+function changeUserName() {
+  (numClick == 1 ? ((profileNameInput.style.display = "none"), (numClick = 0)) : ((profileNameInput.style.display = "grid"), (numClick = 1)));
 }
