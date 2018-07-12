@@ -10,15 +10,60 @@
   .l-card__wrapper>* {
     display: none;
   }
+  .logo {
+    margin: 5px;
+    font-size: 2rem;
+  }
+  .main__nav>ul>li>a {
+    font-size: 1.5rem !important;
+  }
+  .l-form__area {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .l-form__area>br {
+    display: none;
+  }
+  .h-user__icon {
+    width: 15px;
+    height: 15px;
+  }
+  .h-password__icon {
+    width: 15px;
+    height: 15px;
+  }
+  .h-email__icon {
+    width: 15px;
+    height: 15px;
+  }
+  .h-phone__icon {
+    width: 15px;
+    height: 15px;
+  }
+  .input__field {
+    text-indent: 2.2rem;
+  }
 }
 
 @media(max-width: 400px) {
-  body {}
   .caption {
     margin-top: 70px;
   }
   .caption>p {
     font-size: 1.5rem;
     line-height: 3.5rem;
+  }
+  .logo {
+    margin: 5px;
+    font-size: 1rem;
+  }
+}
+
+@media(max-width: 620px) {
+  /* change menu to handbuger */
+  .l-form__area {
+    grid-template-columns: subgrid;
+  }
+  .caption__wrapper {
+    display: none;
   }
 }

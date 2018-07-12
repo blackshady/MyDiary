@@ -42,6 +42,8 @@
   display: grid;
   grid-template-columns: 35% repeat(2, 1fr);
   grid-gap: 20px;
+  align-items: right;
+  justify-items: right;
 }
 
 .l-form {
