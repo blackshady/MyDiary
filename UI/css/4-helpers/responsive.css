@@ -14,9 +14,6 @@
     margin: 5px;
     font-size: 2rem;
   }
-  .main__nav>ul>li>a {
-    font-size: 1.5rem !important;
-  }
   .l-form__area {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -61,10 +58,6 @@
     font-size: 1.5rem;
     line-height: 3.5rem;
   }
-  .logo {
-    margin: 5px;
-    font-size: 1rem;
-  }
 }
 
 @media(max-width: 620px) {
@@ -77,6 +70,9 @@
   }
   .l-dashboard__wrapper {
     grid-template-columns: auto;
+  }
+  .main__nav>ul>li>a {
+    font-size: 1rem !important;
   }
 }
 

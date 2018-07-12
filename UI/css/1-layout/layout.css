@@ -4,6 +4,7 @@
   overflow-y: hidden;
   grid-template-rows: auto 1fr;
   grid-gap: 20px;
+  min-width: 430px;
 }
 
 .l-main__nav {
