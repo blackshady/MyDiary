@@ -42,6 +42,15 @@
   .input__field {
     text-indent: 2.2rem;
   }
+  .l-entries__content {
+    grid-template-columns: 1fr;
+  }
+  .l-dashboard__wrapper {
+    grid-gap: 5px;
+  }
+  .l-middle__pane {
+    grid-gap: 0;
+  }
 }
 
 @media(max-width: 400px) {
@@ -64,6 +73,21 @@
     grid-template-columns: subgrid;
   }
   .caption__wrapper {
+    display: none;
+  }
+  .l-dashboard__wrapper {
+    grid-template-columns: auto;
+  }
+}
+
+@media(max-width: 730px) {
+  .l-dashboard__wrapper {
+    grid-template-columns: repeat(2, auto);
+  }
+  .l-left__pane {
+    display: none;
+  }
+  .l-right__pane {
     display: none;
   }
 }

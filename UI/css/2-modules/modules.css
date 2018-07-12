@@ -24,6 +24,27 @@
   box-shadow: var(--shadow);
 }
 
+.menu__user>ul {
+  display: grid;
+  opacity: 0;
+  position: relative;
+  grid-auto-flow: row;
+  justify-items: center;
+  align-items: center;
+  font-size: 1.2rem;
+  padding: 5px;
+  z-index: 1;
+  grid-gap: 5px;
+  background: var(--bg__color);
+  transition: all 0.2ms ease-in-out;
+}
+
+.menu__user>ul>* {
+  border-bottom: solid 2px white;
+  width: 100%;
+  padding: 1px 10px;
+}
+
 .caption {
   justify-content: start;
   letter-spacing: 4px;
@@ -228,17 +249,6 @@
 
 .profile__name-i {
   display: none;
-}
-
-.logout__btn {
-  opacity: 0;
-  background: rgba(255, 255, 255, 0.6);
-  padding: 0 10px;
-  font-size: 1.2rem;
-  border: 2px solid var(--primary);
-  ;
-  color: var(--primary);
-  transition: all 0.1s ease-in-out;
 }
 
 .reminder__item {

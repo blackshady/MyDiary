@@ -1,6 +1,7 @@
 :root {
   --primary: #3d272a;
   --dark: #0000;
+  --bg__color: #cfa494;
   --transpt__dark: rgba(0, 0, 0, 0.4);
   --light: rgba(216, 204, 192, 0.4);
   --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
