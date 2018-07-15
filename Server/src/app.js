@@ -3,7 +3,8 @@ import bodyParser from 'body-parser';
 import morgan from 'morgan';
 import path from "path";
 import logger from "./helpers/logger";
-import config from "./config/config"
+import config from "./config/config";
+
 // init app
 const app = express();
 
@@ -11,7 +12,6 @@ const app = express();
 app.use(bodyParser.json(), bodyParser.urlencoded({
 	extended: false,
 }));
-
 
 app.use(morgan('dev', {
 	skip(req, res) {
