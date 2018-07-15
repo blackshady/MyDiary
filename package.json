@@ -8,8 +8,9 @@
   "scripts": {
     "start": "nodemon --exec babel-node - Server/src/app.js",
     "start-UI": "webpack --mode production",
+    "start-UI:dev": "webpack-dev-server  --output-public-path=/UI/build",
     "lint": "eslint **/*.js --fix",
-    "start-UI:dev": "webpack-dev-server  --output-public-path=/UI/build"
+    "test": "mocha --require babel-core/register ./Server/src/test/**/*.test.js"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
