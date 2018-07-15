@@ -6,6 +6,7 @@
   "author": "Victor Chibuike <victorblackshady@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "start": "nodemon --exec babel-node - Server/src/app.js",
     "start-UI": "webpack --mode production",
     "lint": "eslint **/*.js --fix",
     "start-UI:dev": "webpack-dev-server  --output-public-path=/UI/build"
