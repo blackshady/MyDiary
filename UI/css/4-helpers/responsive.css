@@ -1,0 +1,88 @@
+/* Media query for responsiveness */
+
+@media(max-width: 900px) {
+  .h-margin__left {
+    margin-left: 10%;
+  }
+  .caption {
+    margin-top: 50px;
+  }
+  .l-card__wrapper>* {
+    display: none;
+  }
+  .logo {
+    margin: 5px;
+    font-size: 2rem;
+  }
+  .l-form__area {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .l-form__area>br {
+    display: none;
+  }
+  .h-user__icon {
+    width: 15px;
+    height: 15px;
+  }
+  .h-password__icon {
+    width: 15px;
+    height: 15px;
+  }
+  .h-email__icon {
+    width: 15px;
+    height: 15px;
+  }
+  .h-phone__icon {
+    width: 15px;
+    height: 15px;
+  }
+  .input__field {
+    text-indent: 2.2rem;
+  }
+  .l-entries__content {
+    grid-template-columns: 1fr;
+  }
+  .l-dashboard__wrapper {
+    grid-gap: 5px;
+  }
+  .l-middle__pane {
+    grid-gap: 0;
+  }
+}
+
+@media(max-width: 400px) {
+  .caption {
+    margin-top: 70px;
+  }
+  .caption>p {
+    font-size: 1.5rem;
+    line-height: 3.5rem;
+  }
+}
+
+@media(max-width: 620px) {
+  .l-form__area {
+    grid-template-columns: subgrid;
+  }
+  .caption__wrapper {
+    display: none;
+  }
+  .l-dashboard__wrapper {
+    grid-template-columns: auto;
+  }
+  .main__nav>ul>li>a {
+    font-size: 1rem !important;
+  }
+}
+
+@media(max-width: 730px) {
+  .l-dashboard__wrapper {
+    grid-template-columns: repeat(2, auto);
+  }
+  .l-left__pane {
+    display: none;
+  }
+  .l-right__pane {
+    display: none;
+  }
+}

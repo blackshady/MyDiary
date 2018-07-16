@@ -1,0 +1,256 @@
+@font-face {
+  font-family: duintas;
+  src: url("../../fonts/duintas_diary.otf")format("truetype");
+}
+
+.logo {
+  font-family: duintas;
+  margin: 5px;
+  font-size: 2.5rem;
+}
+
+.background {
+  background: url("../../img/background-image.jpeg") no-repeat center center;
+  background-position: center;
+  background-color: #cfa494;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+}
+
+.header {
+  height: 65px;
+  background: var(--light);
+  box-shadow: var(--shadow);
+}
+
+.menu__user>ul {
+  display: grid;
+  opacity: 0;
+  position: relative;
+  grid-auto-flow: row;
+  justify-items: center;
+  align-items: center;
+  font-size: 1.2rem;
+  padding: 5px;
+  z-index: 1;
+  grid-gap: 5px;
+  background: var(--bg__color);
+  transition: all 0.2ms ease-in-out;
+}
+
+.menu__user>ul>* {
+  border-bottom: solid 2px white;
+  width: 100%;
+  padding: 1px 10px;
+}
+
+.caption {
+  justify-content: start;
+  letter-spacing: 4px;
+}
+
+.caption>p {
+  font-weight: bold;
+  font-size: 3rem;
+  padding: 0;
+  margin: 0;
+}
+
+.button {
+  color: white;
+  border-radius: 5px;
+  background: var(--primary);
+  padding: 5px 30px;
+  cursor: pointer;
+}
+
+.left__arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  min-height: 40px;
+  min-width: 32px;
+}
+
+.right__arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  min-width: 32px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  min-width: 180px;
+  background: var(--primary);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease-in-out;
+}
+
+.form__wrapper {
+  box-sizing: border-box;
+  padding: 0 30px;
+  align-items: center;
+  justify-items: center;
+  background: var(--light);
+  box-shadow: var(--shadow);
+}
+
+.form__wrapper>span {
+  font-size: 3rem;
+}
+
+.caption__wrapper p {
+  letter-spacing: -1px;
+  font-size: 20px;
+}
+
+.caption__wrapper p::first-letter {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.input__group {
+  position: relative;
+  width: 100%;
+  padding: 0;
+}
+
+.input__group input {
+  width: 100%;
+  border: none;
+  outline: 0;
+  background: transparent;
+  box-shadow: none;
+  border-bottom: solid 3px var(--primary);
+}
+
+.input__group label {
+  position: absolute;
+  pointer-events: none;
+  bottom: 2px;
+  font-size: 20px;
+  transition: 0.2s ease-in-out;
+}
+
+.number__notified {
+  color: white;
+  font-size: 1.0rem;
+  padding: 3px;
+  min-width: 32px;
+  min-height: 32px;
+  border: solid 2px;
+  border-radius: 100px;
+}
+
+.video__upload>input {
+  display: none;
+}
+
+.image__upload>input {
+  display: none;
+}
+
+.title__area {
+  font-size: 1.5rem;
+  font-family: inherit;
+}
+
+.title__area>input {
+  border-radius: 5px;
+  text-indent: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: var(--shadow);
+}
+
+.story__text {
+  border-radius: 5px;
+  text-indent: 10px;
+  font-family: inherit;
+  font-size: 1.3rem;
+  resize: none;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: var(--shadow);
+}
+
+.story__title {
+  display: grid;
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: bold;
+  justify-items: center;
+  align-content: center;
+  color: white;
+  margin: 0;
+}
+
+.date__posted {
+  font-family: inherit;
+  font-size: 1.2rem;
+  margin: 5px;
+}
+
+.header__title>* {
+  display: grid;
+  margin-top: 40px;
+  align-content: center;
+  justify-items: center;
+  font-family: inherit;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.header__title div {
+  border: solid 2px white;
+  margin: 5px 30px;
+}
+
+.entry__item {
+  box-shadow: var(--shadow);
+}
+
+.entry {
+  display: grid;
+  font-family: inherit;
+  font-size: 1rem;
+  color: white;
+  background: var(--primary);
+  align-content: center;
+  justify-items: center;
+}
+
+.entry span {
+  border-bottom: solid 2px white;
+}
+
+.l-profile__avater>img {
+  border: solid 2px var(--light);
+  border-radius: 50px;
+  height: 150px;
+}
+
+.profile__name>span {
+  font-family: inherit;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.reset__pass-i {
+  display: none;
+}
+
+.profile__name-i {
+  display: none;
+}
+
+.reminder__item {
+  display: none;
+}

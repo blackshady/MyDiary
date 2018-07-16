@@ -1,0 +1,27 @@
+{
+  "name": "MyDiary",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/blackshady/MyDiary.git",
+  "author": "Victor Chibuike <victorblackshady@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start-UI": "webpack --mode production",
+    "start-UI:dev": "webpack-dev-server  --output-public-path=/UI/build"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^1.0.0",
+    "extract-text-webpack-plugin": "4.0.0-beta.0",
+    "file-loader": "^1.1.11",
+    "img-loader": "^3.0.0",
+    "resolve-url-loader": "^2.3.0",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4"
+  }
+}

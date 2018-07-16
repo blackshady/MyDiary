@@ -1,0 +1,80 @@
+html {
+  box-sizing: border-box;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  -webkit-text-size-adjust: 100%
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--bg__color);
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  line-height: 1.4;
+  min-width: 430px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  border-style: none
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+a,
+a:hover,
+a:active {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: black;
+  transition: all 0.1s ease-in-out;
+}
+
+a:hover {
+  text-shadow: 0 2p 0 rgb(0, 0, 0, 0.7);
+}
+
+a:active {
+  color: white;
+}
+
+button,
+textarea,
+input,
+select {
+  outline: none;
+  border: none;
+  font: inherit;
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+.qoute::before {
+  content: open-quote;
+  font-size: 3.5rem;
+}
+
+.qoute::after {
+  content: close-quote;
+  font-size: 3.5rem;
+}
