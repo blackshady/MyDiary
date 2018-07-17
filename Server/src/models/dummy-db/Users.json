@@ -8,7 +8,20 @@
     "password": "12345",
     "passwordHash": "",
     "profileImageUrl": "https://mydiary.com/profile/image/victor.jpg",
-    "totalCreatedEntries": "09"
+    "totalCreatedEntries": "09",
+    "reminder": [{
+      "title": "Write about your meals",
+      "date": "July 29th 2018",
+      "time": "03:30 pm"
+    }, {
+      "title": "Shear your camping experience",
+      "date": "December 18th 2018",
+      "time": "01:03 am"
+    }, {
+      "title": "delete your last diary",
+      "date": "September 20th 2018",
+      "time": "06:04 pm"
+    }]
   },
   {
     "userId": "02",
@@ -20,7 +33,12 @@
     "password": "000aaabbcc",
     "passwordHash": "",
     "profileImageUrl": "https://mydiary.com/profile/image/kelvin.jpg",
-    "totalCreatedEntries": "01"
+    "totalCreatedEntries": "01",
+    "reminder": [{
+      "title": "write about your trip to Nigeria",
+      "date": "December 20th 2018",
+      "time": "03:03 am"
+    }]
   }, {
     "userId": "03",
     "userName": "darkslow",
@@ -31,7 +49,13 @@
     "password": "123456789",
     "passwordHash": "",
     "profileImageUrl": "https://mydiary.com/profile/image/chimma.jpg",
-    "totalCreatedEntries": "04"
+    "totalCreatedEntries": "04",
+    "reminder": [{
+      "title": "",
+      "date": "",
+      "time": ""
+    }]
+
   }, {
     "userId": "04",
     "userName": "temmi1",
@@ -42,7 +66,12 @@
     "password": "greenbee",
     "passwordHash": "",
     "profileImageUrl": "https://mydiary.com/profile/image/dara.jpg",
-    "totalCreatedEntries": "04"
+    "totalCreatedEntries": "04",
+    "reminder": [{
+      "title": "",
+      "date": "",
+      "time": ""
+    }]
   },
   {
     "userId": "05",
@@ -54,7 +83,12 @@
     "password": "nathkey1234",
     "passwordHash": "",
     "profileImageUrl": "https://mydiary.com/profile/image/nathan.jpg",
-    "totalCreatedEntries": "00"
+    "totalCreatedEntries": "00",
+    "reminder": [{
+      "title": "",
+      "date": "",
+      "time": ""
+    }]
   },
   {
     "userId": "06",
@@ -66,7 +100,12 @@
     "password": "08065053098",
     "passwordHash": "",
     "profileImageUrl": "https://mydiary.com/profile/image/aksnabasi.jpg",
-    "totalCreatedEntries": "12"
+    "totalCreatedEntries": "12",
+    "reminder": [{
+      "title": "",
+      "date": "",
+      "time": ""
+    }]
   },
   {
     "userId": "07",
@@ -78,6 +117,11 @@
     "password": "ike07056053098",
     "passwordHash": "",
     "profileImageUrl": "https://mydiary.com/profile/image/ike.jpg",
-    "totalCreatedEntries": "20"
+    "totalCreatedEntries": "20",
+    "reminder": [{
+      "title": "t to create a new entry",
+      "date": "August 20th 2018",
+      "time": "02:02 pm"
+    }]
   }
 ]
