@@ -1,9 +1,9 @@
 import express from "express";
 import bodyParser from 'body-parser';
 import morgan from 'morgan';
-import path from "path";
 import logger from "./helpers/logger";
 import config from "./config/config";
+import route from "./routes/index";
 
 // init app
 const app = express();
@@ -36,10 +36,9 @@ app.use(morgan('dev', {
 	stream: process.stdout
 }));
 
-// index route routes
-app.get('/', (req, res) => {
-	res.status(200).sendFile(path.join(__dirname, "index.html"));
-});
+// connect route
+app.use('/', route);
+
 
 app.listen(port, () => logger.info(`Server started on port ${port}`));
 
