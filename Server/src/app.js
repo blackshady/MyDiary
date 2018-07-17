@@ -8,7 +8,16 @@ import config from "./config/config";
 // init app
 const app = express();
 
-//   Middleware
+// Destructure and get Port
+const {
+	development: {
+		app: {
+			port
+		}
+	}
+} = config;
+
+//   parse request
 app.use(bodyParser.json(), bodyParser.urlencoded({
 	extended: false,
 }));
@@ -27,19 +36,10 @@ app.use(morgan('dev', {
 	stream: process.stdout
 }));
 
-// catch all routes
+// index route routes
 app.get('/', (req, res) => {
 	res.status(200).sendFile(path.join(__dirname, "index.html"));
 });
-
-// Define Port
-const {
-	development: {
-		app: {
-			port
-		}
-	}
-} = config;
 
 app.listen(port, () => logger.info(`Server started on port ${port}`));
 
