@@ -1,0 +1,76 @@
+[{
+    "userId": "01",
+    "userName": "victoruzo",
+    "email": "Victor@gmail.com",
+    "surname": "Uzochukwu",
+    "firstName": "Victor",
+    "phoneNumber": "+2348033158505",
+    "password": "12345",
+    "passwordHash": "",
+    "profileImageUrl": "https://mydiary.com/profile/image/victor.jpg"
+  },
+  {
+    "userId": "02",
+    "userName": "kelvin001",
+    "email": "kelvinmark@gmail.com",
+    "surname": "Mark",
+    "firstName": "kelvin",
+    "phoneNumber": "+2349033058505",
+    "password": "000aaabbcc",
+    "passwordHash": "",
+    "profileImageUrl": "https://mydiary.com/profile/image/kelvin.jpg"
+  }, {
+    "userId": "03",
+    "userName": "darkslow",
+    "email": "dickson@gmail.com",
+    "surname": "Dickson",
+    "firstName": "Chimma",
+    "phoneNumber": "+2349033053098",
+    "password": "123456789",
+    "passwordHash": "",
+    "profileImageUrl": "https://mydiary.com/profile/image/chimma.jpg"
+  }, {
+    "userId": "04",
+    "userName": "temmi1",
+    "email": "temmishow@gmail.com",
+    "surname": "Temmi",
+    "firstName": "Dara",
+    "phoneNumber": "+2347033053098",
+    "password": "greenbee",
+    "passwordHash": "",
+    "profileImageUrl": "https://mydiary.com/profile/image/dara.jpg"
+  },
+  {
+    "userId": "05",
+    "userName": "nama30",
+    "email": "nathikey@gmail.com",
+    "surname": "Daniel",
+    "firstName": "Nathan",
+    "phoneNumber": "+2347030053098",
+    "password": "nathkey1234",
+    "passwordHash": "",
+    "profileImageUrl": "https://mydiary.com/profile/image/nathan.jpg"
+  },
+  {
+    "userId": "06",
+    "userName": "akaniko",
+    "email": "mightyakan@gmail.com",
+    "surname": "Damilola",
+    "firstName": "Akanabasi",
+    "phoneNumber": "+2348065053098",
+    "password": "08065053098",
+    "passwordHash": "",
+    "profileImageUrl": "https://mydiary.com/profile/image/aksnabasi.jpg"
+  },
+  {
+    "userId": "07",
+    "userName": "ike1234",
+    "email": "ike@gmail.com",
+    "surname": "John",
+    "firstName": "Ike",
+    "phoneNumber": "+2347056053098",
+    "password": "ike07056053098",
+    "passwordHash": "",
+    "profileImageUrl": "https://mydiary.com/profile/image/ike.jpg"
+  }
+]
