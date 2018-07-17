@@ -7,18 +7,14 @@ import entriesRoute from './entriesRoute';
 const router = Router();
 
 // index route
-router.get('/', (req, res) => {
-  res.status(200).sendFile(path.join(__dirname, '../index.html'));
-});
+router.get('/', (req, res) => res.status(200).sendFile(path.join(__dirname, '../index.html')));
 
 router.use('/api/v1', entriesRoute);
 
 // catch all route
-router.all('/*', (req, res) => {
-  res.status(404).json({
-    status: 'error',
-    message: 'Page Not Found',
-  });
-});
+router.all('/*', (req, res) => res.status(404).json({
+  status: 'error',
+  message: 'Page Not Found',
+}));
 
 export default router;

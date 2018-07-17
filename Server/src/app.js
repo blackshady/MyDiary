@@ -8,7 +8,7 @@ import router from './routes/index';
 // init app
 const app = express();
 
-// Destructure and get Port
+// using Destructuring to get Port
 const {
   development: {
     app: {
