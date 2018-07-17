@@ -1,21 +1,24 @@
 import {
-	Router
-} from "express";
-import path from "path";
+  Router,
+} from 'express';
+import path from 'path';
+import entriesRoute from './entriesRoute';
 
-
-const route = Router();
+const router = Router();
 
 // index route
-route.get('/api/v1', (req, res) => {
-	res.status(200).sendFile(path.join(__dirname, "../index.html"));
+router.get('/', (req, res) => {
+  res.status(200).sendFile(path.join(__dirname, '../index.html'));
 });
 
-// catch all routes 
-route.get('/*', (req, res) => {
-	res.status(404).json({
-		message: `Page Not Found`
-	});
-})
+router.use('/api/v1', entriesRoute);
 
-export default route;
+// catch all route
+router.all('/*', (req, res) => {
+  res.status(404).json({
+    status: 'error',
+    message: 'Page Not Found',
+  });
+});
+
+export default router;

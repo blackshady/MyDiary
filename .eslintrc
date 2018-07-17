@@ -1,6 +1,5 @@
 {
-  "extends": ["airbnb", "prettier"],
-  "plugins": ["prettier"],
+  "extends": ["airbnb-base"],
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 6,
@@ -32,7 +31,14 @@
   },
   "rules": {
     "func-names": ["error", "never"],
-    "indent": [2, "tab"],
+    "quotes": "error",
+    "curly": [
+      "error",
+      "multi-line"
+    ],
+    "one-var": 0,
+    "one-var-declaration-per-line": 0,
+    "new-cap": 0,
     "no-underscore-dangle": [1, {
       "allow": ["_id"]
     }],
