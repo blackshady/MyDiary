@@ -6,7 +6,7 @@
     "firstName": "Victor",
     "phoneNumber": "+2348033158505",
     "password": "12345",
-    "passwordHash": "",
+    "passwordHash": "$2b$10$WfVIAbaJeI9VFIo1ojET9.NH3RMWkyGBRhx3GqISRQyqGE6AB0y3a",
     "profileImageUrl": "https://mydiary.com/profile/image/victor.jpg",
     "totalCreatedEntries": "09",
     "reminder": [{
@@ -31,7 +31,7 @@
     "firstName": "kelvin",
     "phoneNumber": "+2349033058505",
     "password": "000aaabbcc",
-    "passwordHash": "",
+    "passwordHash": "$2b$10$.s34nGJncueZdJTGL6DNveGtrN/cC8jNGDqepmgjnfG/TwmMb5Oke",
     "profileImageUrl": "https://mydiary.com/profile/image/kelvin.jpg",
     "totalCreatedEntries": "01",
     "reminder": [{
@@ -47,7 +47,7 @@
     "firstName": "Chimma",
     "phoneNumber": "+2349033053098",
     "password": "123456789",
-    "passwordHash": "",
+    "passwordHash": "$2b$10$LaKukqBJgCGiY4KRAmMf6.2AHw3YXFv6PSibpZgLc8SU6aCin7p1a",
     "profileImageUrl": "https://mydiary.com/profile/image/chimma.jpg",
     "totalCreatedEntries": "04",
     "reminder": [{
@@ -64,7 +64,7 @@
     "firstName": "Dara",
     "phoneNumber": "+2347033053098",
     "password": "greenbee",
-    "passwordHash": "",
+    "passwordHash": "$2b$10$CH/EgEjcdVtnClCMFDFjrO5jdgdTQlIZzTFU17U4QOHKsxrwR/GRC",
     "profileImageUrl": "https://mydiary.com/profile/image/dara.jpg",
     "totalCreatedEntries": "04",
     "reminder": [{
@@ -81,7 +81,7 @@
     "firstName": "Nathan",
     "phoneNumber": "+2347030053098",
     "password": "nathkey1234",
-    "passwordHash": "",
+    "passwordHash": "$2b$10$SgOr9w/HDVrdE9z9Y2AZV.nL8yJy59p6vjjugNBE132WHv5b4Aipm",
     "profileImageUrl": "https://mydiary.com/profile/image/nathan.jpg",
     "totalCreatedEntries": "00",
     "reminder": [{
@@ -97,7 +97,7 @@
     "surname": "Damilola",
     "firstName": "Akanabasi",
     "phoneNumber": "+2348065053098",
-    "password": "08065053098",
+    "password": "$2b$10$YvWkn0ylIhrQ6zzb76A07eWnAwYBwYhPydo5AsrskD9v1flHG0vQS",
     "passwordHash": "",
     "profileImageUrl": "https://mydiary.com/profile/image/aksnabasi.jpg",
     "totalCreatedEntries": "12",
@@ -115,11 +115,11 @@
     "firstName": "Ike",
     "phoneNumber": "+2347056053098",
     "password": "ike07056053098",
-    "passwordHash": "",
+    "passwordHash": "$2b$10$67KIxKlBqjLzsb1PEOHG9uTYHW7KB3.YhPs2w/ign5bbJoREvc7iS",
     "profileImageUrl": "https://mydiary.com/profile/image/ike.jpg",
     "totalCreatedEntries": "20",
     "reminder": [{
-      "title": "t to create a new entry",
+      "title": "Time to create a new entry",
       "date": "August 20th 2018",
       "time": "02:02 pm"
     }]

@@ -2,8 +2,10 @@ import express from "express";
 import bodyParser from 'body-parser';
 import morgan from 'morgan';
 import path from "path";
+import bcrypt from "bcrypt";
 import logger from "./helpers/logger";
 import config from "./config/config";
+// test bcrypt
 
 // init app
 const app = express();
@@ -26,7 +28,6 @@ app.use(morgan('dev', {
 	},
 	stream: process.stdout
 }));
-
 
 // catch all routes
 app.get('/', (req, res) => {
