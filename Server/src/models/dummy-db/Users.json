@@ -7,7 +7,8 @@
     "phoneNumber": "+2348033158505",
     "password": "12345",
     "passwordHash": "",
-    "profileImageUrl": "https://mydiary.com/profile/image/victor.jpg"
+    "profileImageUrl": "https://mydiary.com/profile/image/victor.jpg",
+    "totalCreatedEntries": "09"
   },
   {
     "userId": "02",
@@ -18,7 +19,8 @@
     "phoneNumber": "+2349033058505",
     "password": "000aaabbcc",
     "passwordHash": "",
-    "profileImageUrl": "https://mydiary.com/profile/image/kelvin.jpg"
+    "profileImageUrl": "https://mydiary.com/profile/image/kelvin.jpg",
+    "totalCreatedEntries": "01"
   }, {
     "userId": "03",
     "userName": "darkslow",
@@ -28,7 +30,8 @@
     "phoneNumber": "+2349033053098",
     "password": "123456789",
     "passwordHash": "",
-    "profileImageUrl": "https://mydiary.com/profile/image/chimma.jpg"
+    "profileImageUrl": "https://mydiary.com/profile/image/chimma.jpg",
+    "totalCreatedEntries": "04"
   }, {
     "userId": "04",
     "userName": "temmi1",
@@ -38,7 +41,8 @@
     "phoneNumber": "+2347033053098",
     "password": "greenbee",
     "passwordHash": "",
-    "profileImageUrl": "https://mydiary.com/profile/image/dara.jpg"
+    "profileImageUrl": "https://mydiary.com/profile/image/dara.jpg",
+    "totalCreatedEntries": "04"
   },
   {
     "userId": "05",
@@ -49,7 +53,8 @@
     "phoneNumber": "+2347030053098",
     "password": "nathkey1234",
     "passwordHash": "",
-    "profileImageUrl": "https://mydiary.com/profile/image/nathan.jpg"
+    "profileImageUrl": "https://mydiary.com/profile/image/nathan.jpg",
+    "totalCreatedEntries": "00"
   },
   {
     "userId": "06",
@@ -60,7 +65,8 @@
     "phoneNumber": "+2348065053098",
     "password": "08065053098",
     "passwordHash": "",
-    "profileImageUrl": "https://mydiary.com/profile/image/aksnabasi.jpg"
+    "profileImageUrl": "https://mydiary.com/profile/image/aksnabasi.jpg",
+    "totalCreatedEntries": "12"
   },
   {
     "userId": "07",
@@ -71,6 +77,7 @@
     "phoneNumber": "+2347056053098",
     "password": "ike07056053098",
     "passwordHash": "",
-    "profileImageUrl": "https://mydiary.com/profile/image/ike.jpg"
+    "profileImageUrl": "https://mydiary.com/profile/image/ike.jpg",
+    "totalCreatedEntries": "20"
   }
 ]
