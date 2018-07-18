@@ -1,9 +1,8 @@
-import {
-  Router,
-} from 'express';
+import { Router } from 'express';
+import entriesController from '../controllers/dummy-controllers/entriesController';
 
 const router = Router();
 
-router.get('/entries', (req, res) => res.send('hello'));
+router.get('/entries', entriesController.getAllEntries);
 
 export default router;

@@ -13,7 +13,12 @@ class EntriesController {
    * @return {json} Returns json object
    * @static
    */
-  static async getAllEntries(req, res) {}
+  static getAllEntries(req, res) {
+    return res.status(200).json({
+      status: 'success',
+      entriesDb,
+    });
+  }
 }
 
 export default EntriesController;
