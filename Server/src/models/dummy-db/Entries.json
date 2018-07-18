@@ -3,11 +3,6 @@
     "diaryId": "02",
     "storyTitle": "My journey to Lagos",
     "story": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nobis aut quisquam aaspernatur eligendi aperiam odit quasi. Deserunt accusantium molestiae dolore ex. Vitaenatus? Eum exercitationem quod esse reiciendis.",
-    "media": {
-      "imageURL": ["https://www.shutterstock.com/search/illustrations.jpg", "https://www.shutterstock.com/search/structre.jpg", "https://www.shutterstock.com/search/lagosPhoto.jpg"],
-      "video": ["https://www.shutterstock.com/video/featured/July-Picks-Stock-Footage-95317808"],
-      "audio": ["https://mydiary.com/media/audio/uploads/journey.mp3"]
-    },
     "createdAt": "September 13th 2017, 6:02:09 pm"
   },
   {
@@ -15,33 +10,18 @@
     "diaryId": "03",
     "storyTitle": "A game Changing event",
     "story": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nobis aut quisquam aaspernatur eligendi aperiam odit quasi. Deserunt accusantium molestiae dolore ex. Vitaenatus? Eum exercitationem quod esse reiciendis.",
-    "media": {
-      "imageURL": ["https://mydiary.com/media/images/uploads/thegame.png"],
-      "video": ["https://mydiary.com/media/video/uploads/dancing.mp4"],
-      "audio": [""]
-    },
     "createdAt": "May 11th 2012, 9:59:51 am"
   }, {
     "userId": "02",
     "diaryId": "04",
     "storyTitle": "The rain that made my day crazy",
     "story": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nobis aut quisquam aaspernatur eligendi aperiam odit quasi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nobis aut quisquam aaspernatur eligendi aperiam odit quasiLorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nobis aut quisquam aaspernatur eligendi aperiam odit quasiLorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nobis aut quisquam aaspernatur eligendi aperiam odit quasiLorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nobis aut quisquam aaspernatur eligendi aperiam odit quasiLorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nobis aut quisquam aaspernatur eligendi aperiam odit quasiDeserunt accusantium molestiae dolore ex. Vitaenatus? Eum exercitationem quod esse reiciendis.",
-    "media": {
-      "imageURL": [""],
-      "video": [""],
-      "audio": [""]
-    },
     "createdAt": "July 14th 2017, 10:04:45 pm"
   }, {
     "userId": "02",
     "diaryId": "05",
     "storyTitle": "How I became rich",
     "story": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nobis aut quisquam aaspernatur eligendi aperiam odit quasi.Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nobis aut quisquam aaspernatur eligendi aperiam odit quasi.Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nobis aut quisquam aaspernatur eligendi aperiam odit quasi.Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nobis aut quisquam aaspernatur eligendi aperiam odit quasi.Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nobis aut quisquam aaspernatur eligendi aperiam odit quasi.Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nobis aut quisquam aaspernatur eligendi aperiam odit quasi.Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nobis aut quisquam aaspernatur eligendi aperiam odit quasi.Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nobis aut quisquam aaspernatur eligendi aperiam odit quasi. Deserunt accusantium molestiae dolore ex. Vitaenatus? Eum exercitationem quod esse reiciendis.",
-    "media": {
-      "imageURL": ["https://mydiary.com/media/images/uploads/photo_of_me_before.jpg"],
-      "video": [""],
-      "audio": [""]
-    },
     "createdAt": "July 17th 2018, 9:59:51 am"
   }
 ]
