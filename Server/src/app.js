@@ -22,7 +22,6 @@ app.use(bodyParser.json(), bodyParser.urlencoded({
   extended: false,
 }));
 
-
 app.use(morgan('dev', {
   skip(req, res) {
     return res.statusCode < 400;
@@ -39,7 +38,6 @@ app.use(morgan('dev', {
 
 // connect route
 app.use('/', router);
-
 
 app.listen(port, () => logger.info(`Server started on port ${port}`));
 
