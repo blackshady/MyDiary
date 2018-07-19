@@ -102,7 +102,7 @@ class EntriesController {
   static deleteEntry(req, res) {
     const { entryId } = req.params;
     entriesDb.find((entry) => {
-      if (entry.entryId === entryId) {console.log("hi");}
+      if (entry.entryId === entryId) { console.log('hi'); }
     });
   }
 }
