@@ -1,3 +1,4 @@
+import moment from 'moment';
 import entriesDb from '../../models/dummy-db/Entries.json';
 
 /**
@@ -66,14 +67,16 @@ class EntriesController {
       userId = 1;
       entryId = 1;
     } else {
-      userId = entriesDb.length + 1;
-      entryId = entriesDb.length + 1;
+      userId = String(entriesDb.length + 1);
+      entryId = String(entriesDb.length + 1);
     }
+    const createdAt = moment().format('MMMM DD YYYY, h:mm:s A z').trim();
     const newDiary = {
       userId,
       entryId,
       title,
       story,
+      createdAt,
     };
     if ((title.length && story.length) !== 0) {
       entriesDb.push(newDiary);
@@ -87,6 +90,15 @@ class EntriesController {
       status: 'error',
       message: 'fail to save entry',
     });
+  }
+
+  /**
+   * prefix a number with zero
+   * @param  {number} number  - The Number to prefix
+   * @return {number} Returns the prefixed result
+   */
+  static zeroPrefix(number) {
+
   }
 }
 
