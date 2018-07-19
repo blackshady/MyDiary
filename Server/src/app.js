@@ -1,7 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import morgan from 'morgan';
-import cors from 'cors';
 import logger from './helpers/logger';
 import config from './config/config';
 import router from './routes/index';
@@ -22,9 +21,6 @@ const {
 app.use(bodyParser.json(), bodyParser.urlencoded({
   extended: false,
 }));
-
-
-app.use(cors());
 
 app.use(morgan('dev', {
   skip(req, res) {

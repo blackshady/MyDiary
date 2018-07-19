@@ -13,10 +13,15 @@ class EntriesController {
    * @static
    */
   static getAllEntries(req, res) {
-    console.log(req.url);
-    return res.status(200).json({
-      status: 'success',
-      entriesDb,
+    if (entriesDb.length !== 0) {
+      return res.status(200).json({
+        status: 'success',
+        entriesDb,
+      });
+    }
+    return res.status(404).json({
+      status: 'error',
+      message: 'no entry found',
     });
   }
 
@@ -28,12 +33,14 @@ class EntriesController {
    * @static
    */
   static getEntry(req, res) {
-    const { userId } = req.query.userId;
-    console.log(userId);
-    const diary = entriesDb.map((entry) => {
-      if (entry.userId === userId) return entry;
-    });
-    if (typeof (diary[0]) !== 'undefined') {
+    const { userId } = req.params;
+    const diary = new Set(entriesDb.map((entry) => {
+      if (entry.userId === userId) {
+        return entry;
+      }
+    }));
+    diary.delete(undefined);
+    if (diary.size !== 0) {
       return res.status(200).json({
         status: 'success',
         diary,
