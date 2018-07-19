@@ -1,8 +1,9 @@
 import { Router } from 'express';
-import entriesController from '../controllers/dummy-controllers/entriesController';
+import EntriesController from '../controllers/dummy-controllers/entriesController';
 
 const router = Router();
 
-router.get('/entries', entriesController.getAllEntries);
+// router.get('/entries', EntriesController.getAllEntries);
+router.get('/entries/:userId', EntriesController.getEntry);
 
 export default router;
