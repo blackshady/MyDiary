@@ -21,7 +21,7 @@ class EntriesController {
     }
     return res.status(404).json({
       status: 'error',
-      message: 'no entry found',
+      message: 'No entry found',
     });
   }
 
@@ -33,9 +33,9 @@ class EntriesController {
    * @static
    */
   static getEntry(req, res) {
-    const { userId } = req.params;
+    const { entryId } = req.params;
     const diary = new Set(entriesDb.map((entry) => {
-      if (entry.userId === userId) {
+      if (entry.entryId === entryId) {
         return entry;
       }
     }));
@@ -49,6 +49,43 @@ class EntriesController {
     return res.status(404).json({
       status: 'error',
       message: 'Diary not found',
+    });
+  }
+
+  /**
+   * Create a  Diary entry
+   * @param  {object} req - Request object
+   * @param {object} res - Response object
+   * @return {json} Returns json object
+   * @static
+   */
+  static createEntry(req, res) {
+    const { title, story } = req.body;
+    let userId, entryId;
+    if (entriesDb.length === 0) {
+      userId = 1;
+      entryId = 1;
+    } else {
+      userId = entriesDb.length + 1;
+      entryId = entriesDb.length + 1;
+    }
+    const newDiary = {
+      userId,
+      entryId,
+      title,
+      story,
+    };
+    if ((title.length && story.length) !== 0) {
+      entriesDb.push(newDiary);
+      return res.status(201).json({
+        status: 'success',
+        message: 'entry created successfully ',
+        entriesDb,
+      });
+    }
+    return res.status(409).json({
+      status: 'error',
+      message: 'fail to save entry',
     });
   }
 }
