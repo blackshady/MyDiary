@@ -93,12 +93,17 @@ class EntriesController {
   }
 
   /**
-   * prefix a number with zero
-   * @param  {number} number  - The Number to prefix
-   * @return {number} Returns the prefixed result
+   * delete a Diary entry
+   * @param  {object} req - Request object
+   * @param {object} res - Response object
+   * @return {json} Returns json object
+   * @static
    */
-  static zeroPrefix(number) {
-
+  static deleteEntry(req, res) {
+    const { entryId } = req.params;
+    entriesDb.find((entry) => {
+      if (entry.entryId === entryId) {console.log("hi");}
+    });
   }
 }
 
