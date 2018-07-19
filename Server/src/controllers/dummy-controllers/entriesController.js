@@ -101,8 +101,18 @@ class EntriesController {
    */
   static deleteEntry(req, res) {
     const { entryId } = req.params;
-    entriesDb.find((entry) => {
-      if (entry.entryId === entryId) { console.log('hi'); }
+    const entryIndex = entriesDb.findIndex(entry => entry.entryId === entryId);
+    if (entryIndex !== -1) {
+      entriesDb.splice(entryIndex, 1);
+      return res.status(200).json({
+        status: 'success',
+        message: 'Entry has be deleted successfully',
+        entriesDb,
+      });
+    }
+    res.status(404).json({
+      status: 'error',
+      message: 'Entry not Found',
     });
   }
 }
