@@ -110,7 +110,35 @@ class EntriesController {
         entriesDb,
       });
     }
-    res.status(404).json({
+    return res.status(404).json({
+      status: 'error',
+      message: 'Entry not Found',
+    });
+  }
+
+  /**
+   * update the content of an entry
+   * @param  {object} req - Request object
+   * @param {object} res - Response object
+   * @return {json} Returns json object
+   * @static
+   */
+  static updateEntry(req, res) {
+    const { entryId } = req.params;
+    const { title, story } = req.body;
+    entriesDb.find((entry) => {
+      if (entry.entryId === entryId) {
+        entry.title = title;
+        entry.story = story;
+      }
+      return res.status(200).json({
+        status: 'success',
+        message: 'Entry updated successfully',
+        entriesDb,
+      });
+    });
+
+    return res.status(404).json({
       status: 'error',
       message: 'Entry not Found',
     });
