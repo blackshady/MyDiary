@@ -104,7 +104,7 @@ class EntriesController {
     const entryIndex = entriesDb.findIndex(entry => entry.entryId === entryId);
     if (entryIndex !== -1) {
       entriesDb.splice(entryIndex, 1);
-      return res.status(200).json({
+      return res.status(204).json({
         status: 'success',
         message: 'Entry has be deleted successfully',
         entriesDb,
@@ -126,18 +126,17 @@ class EntriesController {
   static updateEntry(req, res) {
     const { entryId } = req.params;
     const { title, story } = req.body;
-    entriesDb.find((entry) => {
-      if (entry.entryId === entryId) {
-        entry.title = title;
-        entry.story = story;
-      }
+    const entryIndex = entriesDb.findIndex(entry => entry.entryId === entryId);
+    if (entryIndex !== -1) {
+      entriesDb[entryIndex].title = title || entriesDb[entryIndex].story;
+      entriesDb[entryIndex].story = story || entriesDb[entryIndex].story;
+      entriesDb[entryIndex].lastModified = moment().format('MMMM DD YYYY, h:mm:s A z').trim();
       return res.status(200).json({
         status: 'success',
         message: 'Entry updated successfully',
-        entriesDb,
+        entriesDb: entriesDb[entryIndex],
       });
-    });
-
+    }
     return res.status(404).json({
       status: 'error',
       message: 'Entry not Found',
