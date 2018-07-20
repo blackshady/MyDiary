@@ -1,0 +1,127 @@
+[{
+    "userId": "01",
+    "userName": "victoruzo",
+    "email": "Victor@gmail.com",
+    "surname": "Uzochukwu",
+    "firstName": "Victor",
+    "phoneNumber": "+2348033158505",
+    "password": "12345",
+    "passwordHash": "$2b$10$WfVIAbaJeI9VFIo1ojET9.NH3RMWkyGBRhx3GqISRQyqGE6AB0y3a",
+    "profileImageUrl": "https://mydiary.com/profile/image/victor.jpg",
+    "totalCreatedEntries": "09",
+    "reminder": [{
+      "title": "Write about your meals",
+      "date": "July 29th 2018",
+      "time": "03:30 pm"
+    }, {
+      "title": "Shear your camping experience",
+      "date": "December 18th 2018",
+      "time": "01:03 am"
+    }, {
+      "title": "delete your last diary",
+      "date": "September 20th 2018",
+      "time": "06:04 pm"
+    }]
+  },
+  {
+    "userId": "02",
+    "userName": "kelvin001",
+    "email": "kelvinmark@gmail.com",
+    "surname": "Mark",
+    "firstName": "kelvin",
+    "phoneNumber": "+2349033058505",
+    "password": "000aaabbcc",
+    "passwordHash": "$2b$10$.s34nGJncueZdJTGL6DNveGtrN/cC8jNGDqepmgjnfG/TwmMb5Oke",
+    "profileImageUrl": "https://mydiary.com/profile/image/kelvin.jpg",
+    "totalCreatedEntries": "01",
+    "reminder": [{
+      "title": "write about your trip to Nigeria",
+      "date": "December 20th 2018",
+      "time": "03:03 am"
+    }]
+  }, {
+    "userId": "03",
+    "userName": "darkslow",
+    "email": "dickson@gmail.com",
+    "surname": "Dickson",
+    "firstName": "Chimma",
+    "phoneNumber": "+2349033053098",
+    "password": "123456789",
+    "passwordHash": "$2b$10$LaKukqBJgCGiY4KRAmMf6.2AHw3YXFv6PSibpZgLc8SU6aCin7p1a",
+    "profileImageUrl": "https://mydiary.com/profile/image/chimma.jpg",
+    "totalCreatedEntries": "04",
+    "reminder": [{
+      "title": "",
+      "date": "",
+      "time": ""
+    }]
+
+  }, {
+    "userId": "04",
+    "userName": "temmi1",
+    "email": "temmishow@gmail.com",
+    "surname": "Temmi",
+    "firstName": "Dara",
+    "phoneNumber": "+2347033053098",
+    "password": "greenbee",
+    "passwordHash": "$2b$10$CH/EgEjcdVtnClCMFDFjrO5jdgdTQlIZzTFU17U4QOHKsxrwR/GRC",
+    "profileImageUrl": "https://mydiary.com/profile/image/dara.jpg",
+    "totalCreatedEntries": "04",
+    "reminder": [{
+      "title": "",
+      "date": "",
+      "time": ""
+    }]
+  },
+  {
+    "userId": "05",
+    "userName": "nama30",
+    "email": "nathikey@gmail.com",
+    "surname": "Daniel",
+    "firstName": "Nathan",
+    "phoneNumber": "+2347030053098",
+    "password": "nathkey1234",
+    "passwordHash": "$2b$10$SgOr9w/HDVrdE9z9Y2AZV.nL8yJy59p6vjjugNBE132WHv5b4Aipm",
+    "profileImageUrl": "https://mydiary.com/profile/image/nathan.jpg",
+    "totalCreatedEntries": "00",
+    "reminder": [{
+      "title": "",
+      "date": "",
+      "time": ""
+    }]
+  },
+  {
+    "userId": "06",
+    "userName": "akaniko",
+    "email": "mightyakan@gmail.com",
+    "surname": "Damilola",
+    "firstName": "Akanabasi",
+    "phoneNumber": "+2348065053098",
+    "password": "$2b$10$YvWkn0ylIhrQ6zzb76A07eWnAwYBwYhPydo5AsrskD9v1flHG0vQS",
+    "passwordHash": "",
+    "profileImageUrl": "https://mydiary.com/profile/image/aksnabasi.jpg",
+    "totalCreatedEntries": "12",
+    "reminder": [{
+      "title": "",
+      "date": "",
+      "time": ""
+    }]
+  },
+  {
+    "userId": "07",
+    "userName": "ike1234",
+    "email": "ike@gmail.com",
+    "surname": "John",
+    "firstName": "Ike",
+    "phoneNumber": "+2347056053098",
+    "password": "ike07056053098",
+    "passwordHash": "$2b$10$67KIxKlBqjLzsb1PEOHG9uTYHW7KB3.YhPs2w/ign5bbJoREvc7iS",
+    "profileImageUrl": "https://mydiary.com/profile/image/ike.jpg",
+    "totalCreatedEntries": "20",
+    "reminder": [{
+      "title": "Time to create a new entry",
+      "date": "August 20th 2018",
+      "time": "02:02 pm"
+    }]
+  }
+]
