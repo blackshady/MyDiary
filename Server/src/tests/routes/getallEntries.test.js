@@ -34,6 +34,7 @@ describe(' "GET/" all entries  ', () => {
   });
   it('should have a property of story', async () => {
     const res = await chai.request(app)
+
       .get('/api/v1/entries');
     expect(res.body.entriesDb[0]).to.have.property('title');
   });
