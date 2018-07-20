@@ -48,12 +48,28 @@ describe(' "GET/" specific entry', () => {
     const res = await chai.request(app)
       .get('/api/v1/entries/2');
     expect(res.body.diary).to.have.property('createdAt')
-    that.is.not.empty;
+    .that.is.not.empty;
   });
   it('check if the diary contain the user id', async () => {
     const res = await chai.request(app)
       .get('/api/v1/entries/2');
     expect(res.body.diary).to.have.property('userId')
       .that.is.not.empty;
+  });
+  it('should return a status code of 404 ', async () => {
+    const res = await chai.request(app)
+      .get('/api/v1/entries/010');
+    expect(res).to.have.status(404);
+  });
+  it('should return an error ', async () => {
+    const res = await chai.request(app)
+      .get('/api/v1/entries/010');
+    expect(res.body.status).to.be.equal('error');
+  });
+  it('should return a message diary not found ', async () => {
+    const res = await chai.request(app)
+      .get('/api/v1/entries/010');
+    expect(res.body).to.have.property('message')
+    .that.is.equal('Diary not found');
   });
 });

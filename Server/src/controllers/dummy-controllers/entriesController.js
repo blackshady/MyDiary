@@ -35,13 +35,8 @@ class EntriesController {
    */
   static getEntry(req, res) {
     const { entryId } = req.params;
-    const diary = new Set(entriesDb.map((entry) => {
-      if (entry.entryId === entryId) {
-        return entry;
-      }
-    }));
-    diary.delete(undefined);
-    if (diary.size !== 0) {
+    const diary = entriesDb.find(entry => entry.entryId === entryId);
+    if (diary) {
       return res.status(200).json({
         status: 'success',
         diary,

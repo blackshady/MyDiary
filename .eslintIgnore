@@ -2,3 +2,4 @@
 node_modules
 UI
 server/src/test
+coverage
