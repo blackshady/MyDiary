@@ -10,7 +10,7 @@
     "start-UI": "webpack --mode production",
     "start-UI:dev": "webpack-dev-server  --output-public-path=/UI/build",
     "lint": "eslint **/*.js --fix",
-    "test": "mocha --require babel-core/register ./Server/src/test/**/*.test.js",
+    "test": "mocha --require babel-core/register ./Server/src/tests/**/*.test.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "devDependencies": {
