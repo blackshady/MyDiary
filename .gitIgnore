@@ -10,3 +10,7 @@ node_modules/
 
 # Vscode settings 
 .vscode
+
+# test files
+.nyc_output
+coverage
