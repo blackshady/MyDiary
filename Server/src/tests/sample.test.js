@@ -1,7 +1,7 @@
 import {
-  expect
+  expect,
 }
-from 'chai';
+  from 'chai';
 
 describe('sample test', () => {
   it('check if mocha test is working', () => {
