@@ -10,7 +10,7 @@
     "start-UI": "webpack --mode production",
     "start-UI:dev": "webpack-dev-server  --output-public-path=/UI/build",
     "lint": "eslint **/*.js --fix",
-    "test":"nyc --reporter=html --reporter=text mocha --require babel-core/register ./Server/src/test/**/*.test.js --timeout 50000 --exit",
+    "test": "nyc --reporter=html --reporter=text mocha --require babel-core/register ./Server/src/test/**/*.test.js --timeout 50000 --exit",
     "cover": "./node_modules/.bin/istanbul  cover _mocha test",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },

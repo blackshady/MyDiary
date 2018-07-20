@@ -88,7 +88,7 @@ class EntriesController {
   }
 
   /**
-   * delete a Diary entry
+   * Delete a Diary entry
    * @param  {object} req - Request object
    * @param {object} res - Response object
    * @return {json} Returns json object
@@ -99,7 +99,7 @@ class EntriesController {
     const entryIndex = entriesDb.findIndex(entry => entry.entryId === entryId);
     if (entryIndex !== -1) {
       entriesDb.splice(entryIndex, 1);
-      return res.status(204).json({
+      return res.status(200).json({
         status: 'success',
         message: 'Entry has be deleted successfully',
         entriesDb,
