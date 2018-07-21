@@ -1,5 +1,6 @@
 import bcrypt from 'bcrypt';
 import usersDb from '../../models/dummy-db/Users.json';
+import entriesDb from '../../models/dummy-db/Entries.json';
 
 
 /**
@@ -28,6 +29,17 @@ class AuthController {
       status: 'error',
       message: 'Invalid Users Credentials',
     });
+  }
+
+  /**
+   * The Number off diary entries since registration to the application
+   * @param  {object} req - Request object
+   * @param {object} res - Response object
+   * @return {json} Returns json object
+   * @static
+   */
+  static getNumberOfEntries(req, res) {
+    const { userId } = req.params;
   }
 }
 
