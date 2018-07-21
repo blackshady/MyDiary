@@ -1,5 +1,4 @@
-import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
+import bcrypt from 'bcrypt';
 import usersDb from '../../models/dummy-db/Users.json';
 
 
@@ -16,13 +15,13 @@ class AuthController {
    * @static
    */
   static login(req, res) {
-    const { email, password } = res.body;
+    const { email, password } = req.body;
     const userIsAuth = usersDb.find(user => user.email === email && user.password === password);
     if (userIsAuth) {
       return res.status(200).json({
         status: 'success',
-        userIsAuth,
         'redirect uri': 'https://mydiary.com/pages/index.html',
+        userIsAuth,
       });
     }
     return res.status(401).json({
