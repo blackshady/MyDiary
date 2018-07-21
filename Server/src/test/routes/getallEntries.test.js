@@ -54,4 +54,9 @@ describe(' "GET/" all entries  ', () => {
       .get('/api/v1/entries');
     expect(res.body.entriesDb[0]).to.have.property('createdAt').that.is.not.empty;
   });
+  it('should not have an error message when there is no entries', async () => {
+    const res = await chai.request(app)
+      .get('/api/v1/entries');
+    expect(res).to.have.status(404);
+  });
 });

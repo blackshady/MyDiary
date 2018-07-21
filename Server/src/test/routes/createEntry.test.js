@@ -16,7 +16,7 @@ describe(' "POST/" create an entry', () => {
     });
     expect(res).to.have.status(201);
   });
-  it('should return a status code of 409 if the fields are empty', async()=>{
+  it('should return a status code of 400 if the fields are empty', async()=>{
     const res =  await chai.request(app)
     .post('/api/v1/entries')
     .send({
@@ -24,6 +24,6 @@ describe(' "POST/" create an entry', () => {
       "story": "",
       "createdAt": moment().format('MMMM DD YYYY, h:mm:s A z').trim()
     });
-    expect(res).to.have.status(409);
+    expect(res).to.have.status(400);
   });
 });
