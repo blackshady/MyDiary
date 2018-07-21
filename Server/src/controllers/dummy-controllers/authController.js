@@ -1,6 +1,5 @@
 import bcrypt from 'bcrypt';
 import usersDb from '../../models/dummy-db/Users.json';
-import entriesDb from '../../models/dummy-db/Entries.json';
 
 
 /**
@@ -40,6 +39,14 @@ class AuthController {
    */
   static getNumberOfEntries(req, res) {
     const { userId } = req.params;
+    const userTotalEntries = usersDb.find(user => user.userId === userId);
+    if (userTotalEntries && userTotalEntries.totalCreatedEntries !== '0') {
+      return res.status(200).json({
+        status: 'success',
+        totalEntries: userTotalEntries.totalCreatedEntries,
+      });
+    }
+    return res.status(204).json({ status: 'User Does have any Content' });
   }
 }
 
