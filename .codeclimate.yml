@@ -16,3 +16,4 @@ exclude_paths:
 - "server/src/tests"
 - "server/src/models"
 - "server/src/controllers/dummy-controllers"
+- "server/src/helpers/logger.js"
