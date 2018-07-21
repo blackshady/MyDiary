@@ -83,7 +83,7 @@
     "password": "nathkey1234",
     "passwordHash": "$2b$10$SgOr9w/HDVrdE9z9Y2AZV.nL8yJy59p6vjjugNBE132WHv5b4Aipm",
     "profileImageUrl": "https://mydiary.com/profile/image/nathan.jpg",
-    "totalCreatedEntries": "00",
+    "totalCreatedEntries": "05",
     "reminder": [{
       "title": "",
       "date": "",
@@ -117,7 +117,7 @@
     "password": "ike07056053098",
     "passwordHash": "$2b$10$67KIxKlBqjLzsb1PEOHG9uTYHW7KB3.YhPs2w/ign5bbJoREvc7iS",
     "profileImageUrl": "https://mydiary.com/profile/image/ike.jpg",
-    "totalCreatedEntries": "20",
+    "totalCreatedEntries": "",
     "reminder": [{
       "title": "Time to create a new entry",
       "date": "August 20th 2018",

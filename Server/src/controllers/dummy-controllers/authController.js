@@ -40,13 +40,16 @@ class AuthController {
   static getNumberOfEntries(req, res) {
     const { userId } = req.params;
     const userTotalEntries = usersDb.find(user => user.userId === userId);
-    if (userTotalEntries && userTotalEntries.totalCreatedEntries !== '0') {
+    if (userTotalEntries && userTotalEntries.totalCreatedEntries !== '') {
       return res.status(200).json({
         status: 'success',
-        totalEntries: userTotalEntries.totalCreatedEntries,
+        totalNumberOfEntries: userTotalEntries.totalCreatedEntries,
       });
     }
-    return res.status(204).json({ status: 'User Does have any Content' });
+    return res.status(404).json({
+      status: 'error',
+      message: 'no entry created yet',
+    });
   }
 }
 
