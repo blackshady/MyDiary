@@ -29,6 +29,28 @@ class AuthController {
       message: 'Invalid Users Credentials',
     });
   }
+
+  /**
+   * The Number off diary entries since registration to the application
+   * @param  {object} req - Request object
+   * @param {object} res - Response object
+   * @return {json} Returns json object
+   * @static
+   */
+  static getNumberOfEntries(req, res) {
+    const { userId } = req.params;
+    const userTotalEntries = usersDb.find(user => user.userId === userId);
+    if (userTotalEntries && userTotalEntries.totalCreatedEntries !== '') {
+      return res.status(200).json({
+        status: 'success',
+        totalNumberOfEntries: userTotalEntries.totalCreatedEntries,
+      });
+    }
+    return res.status(404).json({
+      status: 'error',
+      message: 'no entry created yet',
+    });
+  }
 }
 
 export default AuthController;
