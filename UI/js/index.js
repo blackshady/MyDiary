@@ -22,6 +22,7 @@ const siginUpBtn = document.getElementById("signup__button");
 const loginBtn = document.getElementById("login__button");
 const changeNameBtn = document.getElementById("change__name");
 
+
 let userDetails = [];
 
 // Default action on DOM Load
@@ -151,7 +152,6 @@ const setReminder = () => {
 
 // EVENTS
 document.addEventListener('DOMContentLoaded', transformItems);
-window.addEventListener("resize", showAllPane);
 
 (siginUpBtn ? (siginUpBtn.addEventListener("click", validateSignup)) : 0);
 (loginBtn ? (loginBtn.addEventListener("click", validateLogin)) : 0);

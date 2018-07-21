@@ -17,6 +17,8 @@
         <span class="logo">My Dairy</span>
         <nav class="main__nav">
           <ul>
+              <li> <a href="./viewEntries.html" class="button__trasp">View Entry</a> </li>
+              <li> <a href="./dashboard.html" class="button__trasp">New Entry</a> </li>
             <li>
               <div class="menu__notification .h-icon__size">
                 <img src="../icons/Bell-WF.png" alt="alert">
@@ -39,157 +41,31 @@
       </div>
     </header>
     <!-- End of Header content -->
-
-    <!-- Main area -->
-    <div class="l-dashboard__wrapper">
-
-      <!-- Start Of Left Pane -->
-      <section class="l-left__pane">
-        <div class="l-profile">
-          <div class="l-profile__avater">
-            <img src="../img/avater.jpg" alt="">
-          </div>
-          <div class="profile__name">
-            <span>Victor Chibuike</span>
-          </div>
-        </div>
-        <div class="l-profile__options">
-
-          <button class=" button image__upload h-border">
-            <label for="img-upload">
-              Upload Profile Image
-            </label>
-            <input id="img-upload" type="file" name="img" accept="image/*">
-          </button>
-          <button id="change__name" class=" button h-border">Change Profile Name</button>
-          <input type="text" class="profile__name-i">
-          <button class="button reset__pass h-border">Reset Password</button>
-          <input type="password" class="reset__pass-i">
-          <button class="button__remind button h-border">Set Reminder</button>
-          <input type="date" name="" id="" class="reminder__item">
-          <input type="text" value="title" class="reminder__item">
-          <button class="h-border button">Delete Account</button>
-          <span class="h-border ">Entries since registration: 10</span>
-        </div>
-      </section>
-      <!-- End Of Left Pane -->
-
-      <!-- Start Middle Column Pan -->
-      <section class="l-middle__pane ">
-
-        <!-- Start Of Add New post Area -->
-        <div class="l-addpost__area">
-          <div class="text__area l-text__area">
-            <div class=" title__area l-title__area ">
-              <label>Title:</label>
-              <input type="text" class="story__title" value="">
-            </div>
-            <textarea class="story__text">What's on your mind...</textarea>
-          </div>
-          <div class="l-buttons__area">
-            <div class="video__upload">
-              <label for="vid-input">
-                <img src="../icons/Video.png" alt="">
-              </label>
-              <input id="vid-input" type="file" name="vid" accept="video/*">
-            </div>
-            <div class="image__upload">
-              <label for="img-input">
-                <img src="../icons/Pictures-WF.png" alt="">
-              </label>
-              <input id="img-input" type="file" name="img" accept="image/*">
-            </div>
-            <button class="button">Post</button>
-          </div>
-        </div>
-        <!-- End OF Add New Post Area -->
-
-        <!--Start Of View Entry Content  -->
-        <div class="l-viewContent__area">
-          <div class="l-mediaContent__area">
-            <img src="../icons/Swap-left.png" alt="">
-            <img src="../img/kobu-agency-409288.jpg" alt="">
-            <img src="../img/pexels-photo-414645.jpeg" alt="">
-            <img src="../img/pexels-photo-733857.jpeg" alt="">
-            <img src="../icons/Swap-right.png" alt="">
-          </div>
-          <div class="l-storyContent__area">
-            <div class="l-text__area">
-              <span class="story__title">
-                My Life As A Programmer
-              </span>
-
-              <textarea readonly class=" story__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur soluta molestiae voluptate beatae voluptatibus
-                enim atque aspernatur autem, quasi incidunt aliquam sunt vitae dolores velit accusantium optio perferendis
-                exercitationem harum!
-              </textarea>
-            </div>
-            <div class="l-story__option">
-              <div class="date__posted">Date: 10/01/2018 Time:3:00pm</div>
-              <div class="edit__option">
-                <button class="edit__post button">Edit Post</button>
-              </div>
-
-            </div>
-            <div class="br"></div>
-          </div>
-        </div>
-        <!-- End Of View Entry Content -->
-
-      </section>
-      <!-- End Of Middle Column Pane -->
-
-      <!-- Start of Right Pane-->
-      <section class="l-right__pane">
-        <div class="header__title">
-          <span>All Diary Entries
-          </span>
-
-          <div class="line"></div>
-        </div>
-        <div class="l-entries__content">
-          <div class="entry__item">
-            <div class="entry">
-              <img src="../img/pexels-photo-414645.jpeg" alt="">
-              <span>The Pending Mail</span>
-            </div>
-          </div>
-          <div class="entry__item">
-            <div class="entry">
-              <img src="../img/pexels-photo-414645.jpeg" alt="">
-              <span>The Pending Mail</span>
-            </div>
-          </div>
-          <div class="entry__item">
-            <div class="entry">
-              <img src="../img/pexels-photo-414645.jpeg" alt="">
-              <span>The Pending Mail</span>
-            </div>
-          </div>
-          <div class="entry__item">
-            <div class="entry">
-              <img src="../img/pexels-photo-414645.jpeg" alt="">
-              <span>The Pending Mail</span>
-            </div>
-          </div>
-          <div class="entry__item">
-            <div class="entry">
-              <img src="../img/pexels-photo-414645.jpeg" alt="">
-              <span>The Pending Mail</span>
-            </div>
-          </div>
-          <div class="entry__item">
-            <div class="entry">
-              <img src="../img/pexels-photo-414645.jpeg" alt="">
-              <span>The Pending Mail</span>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End of Right Pane-->
+    
+<!-- Start Main Content -->
+<section class="l-dashboard__wrapper">
+    <div class="l-dashboard__content">
+  <div class="l-title__wrapper">
+    <div class="input__title-wrapper">
+        <span>TITLE:</span><input type="text">
     </div>
-
-
+    <div class="input__story-wrapper">
+      <textarea name="" id="" ></textarea>
+    </div>
+  </div>
+  <div class="l-story__body">
+   <div class="story__disply-wrapper">
+    <div class="title__display">Lorem ipsum dolor sit amet consectetur.</div>
+    <div class="story__display"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis eligendi ad adipisci, eos iste, asperiores incidunt beatae magnam, distinctio hic aperiam recusandae deleniti officia illo. Aut recusandae eius quam vero tenetur fugit atque adipisci dolorum fugiat assumenda, rerum reprehenderit delectus. </div>
+   </div>
+   <div class="story__disply-wrapper">
+      <div class="title__display">Lorem ipsum dolor sit amet.</div>
+    <div class="story__display">Lorem ipsum dolor, sit amet consectetur adipisicing elit. At possimus reprehenderit sequi, nam animi fuga dignissimos sint voluptas iste architecto eligendi amet tempora quis quidem repudiandae incidunt magnam iusto in. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, dolore. </div>
+    </div>
+  </div>
+  </div>
+  </section>
+<!-- End Main Content -->
 
 </body>
 <script src="../build/bundle.js"></script>

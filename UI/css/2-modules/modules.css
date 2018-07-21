@@ -9,15 +9,6 @@
   font-size: 2.5rem;
 }
 
-.background {
-  background: url("../../img/background-image.jpeg") no-repeat center center;
-  background-position: center;
-  background-color: #cfa494;
-  height: 100vh;
-  width: 100vw;
-  background-size: cover;
-}
-
 .header {
   height: 65px;
   background: var(--light);
@@ -63,6 +54,11 @@
   background: var(--primary);
   padding: 5px 30px;
   cursor: pointer;
+}
+.button__trasp{
+  border: solid 2px var(--primary);
+  padding: 2px 3px;
+  border-radius: 10px;
 }
 
 .left__arrow {
@@ -151,106 +147,28 @@
   border-radius: 100px;
 }
 
-.video__upload>input {
-  display: none;
-}
-
-.image__upload>input {
-  display: none;
-}
-
-.title__area {
-  font-size: 1.5rem;
-  font-family: inherit;
-}
-
-.title__area>input {
-  border-radius: 5px;
-  text-indent: 10px;
-  background: rgba(255, 255, 255, 0.4);
-  box-shadow: var(--shadow);
-}
-
-.story__text {
-  border-radius: 5px;
-  text-indent: 10px;
-  font-family: inherit;
+.card__header{
+  display: grid;
+  padding: 10px;
+  background: #fffeff;
+  align-content: center;
+  justify-items: center;
   font-size: 1.3rem;
-  resize: none;
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: var(--shadow);
+  font-style: inherit;
+  height: 70px;
 }
-
-.story__title {
+.card__footer{
+display: grid;
+grid-auto-flow: column;
+grid-gap: 10px;
+justify-content: center;
+margin-bottom: 10px;
+}
+.card__body{
   display: grid;
-  font-family: inherit;
-  font-size: 1.5rem;
-  font-weight: bold;
-  justify-items: center;
-  align-content: center;
-  color: white;
-  margin: 0;
-}
-
-.date__posted {
-  font-family: inherit;
-  font-size: 1.2rem;
-  margin: 5px;
-}
-
-.header__title>* {
-  display: grid;
-  margin-top: 40px;
-  align-content: center;
-  justify-items: center;
-  font-family: inherit;
-  font-size: 1.5rem;
-  color: white;
-}
-
-.header__title div {
-  border: solid 2px white;
-  margin: 5px 30px;
-}
-
-.entry__item {
-  box-shadow: var(--shadow);
-}
-
-.entry {
-  display: grid;
-  font-family: inherit;
-  font-size: 1rem;
-  color: white;
-  background: var(--primary);
-  align-content: center;
-  justify-items: center;
-}
-
-.entry span {
-  border-bottom: solid 2px white;
-}
-
-.l-profile__avater>img {
-  border: solid 2px var(--light);
-  border-radius: 50px;
-  height: 150px;
-}
-
-.profile__name>span {
-  font-family: inherit;
-  font-size: 1.5rem;
-  color: white;
-}
-
-.reset__pass-i {
-  display: none;
-}
-
-.profile__name-i {
-  display: none;
-}
-
-.reminder__item {
-  display: none;
+ padding: 10px;
+ align-content: center;
+ justify-items: center;
+ font-family: inherit;
+ font-size: 1rem;
 }
