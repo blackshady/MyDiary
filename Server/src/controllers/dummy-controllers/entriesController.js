@@ -81,9 +81,9 @@ class EntriesController {
         entriesDb,
       });
     }
-    return res.status(409).json({
+    return res.status(400).json({
       status: 'error',
-      message: 'fail to save entry',
+      message: 'fail to save entry, filed cannot be empty',
     });
   }
 

@@ -54,4 +54,5 @@ describe(' "GET/" all entries  ', () => {
       .get('/api/v1/entries');
     expect(res.body.entriesDb[0]).to.have.property('createdAt').that.is.not.empty;
   });
+ 
 });
