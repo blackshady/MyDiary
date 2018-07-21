@@ -16,16 +16,17 @@ class AuthController {
    */
   static login(req, res) {
     const { email, password } = req.body;
-    const userIsAuth = usersDb.find(user => user.email === email && user.password === password);
-    if (userIsAuth) {
+    const isUser = usersDb.find(user => user.email === email);
+    if (isUser && bcrypt.compareSync(password, isUser.passwordHash)) {
       return res.status(200).json({
         status: 'success',
         'redirect uri': 'https://mydiary.com/pages/index.html',
-        userIsAuth,
+        isUser,
       });
     }
     return res.status(401).json({
-      error: 'Invalid Users Credentials',
+      status: 'error',
+      message: 'Invalid Users Credentials',
     });
   }
 }
