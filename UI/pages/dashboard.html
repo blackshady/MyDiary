@@ -17,8 +17,12 @@
         <span class="logo">My Dairy</span>
         <nav class="main__nav">
           <ul>
-              <li> <a href="./viewEntries.html" class="button__trasp">View Entry</a> </li>
-              <li> <a href="./dashboard.html" class="button__trasp">New Entry</a> </li>
+            <li>
+              <a href="./viewEntries.html" class="button__trasp">View Entry</a>
+            </li>
+            <li>
+              <a href="./dashboard.html" class="button__trasp">New Entry</a>
+            </li>
             <li>
               <div class="menu__notification .h-icon__size">
                 <img src="../icons/Bell-WF.png" alt="alert">
@@ -41,31 +45,47 @@
       </div>
     </header>
     <!-- End of Header content -->
-    
-<!-- Start Main Content -->
-<section class="l-dashboard__wrapper">
-    <div class="l-dashboard__content">
-  <div class="l-title__wrapper">
-    <div class="input__title-wrapper">
-        <span>TITLE:</span><input type="text">
-    </div>
-    <div class="input__story-wrapper">
-      <textarea name="" id="" ></textarea>
-    </div>
-  </div>
-  <div class="l-story__body">
-   <div class="story__disply-wrapper">
-    <div class="title__display">Lorem ipsum dolor sit amet consectetur.</div>
-    <div class="story__display"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis eligendi ad adipisci, eos iste, asperiores incidunt beatae magnam, distinctio hic aperiam recusandae deleniti officia illo. Aut recusandae eius quam vero tenetur fugit atque adipisci dolorum fugiat assumenda, rerum reprehenderit delectus. </div>
-   </div>
-   <div class="story__disply-wrapper">
-      <div class="title__display">Lorem ipsum dolor sit amet.</div>
-    <div class="story__display">Lorem ipsum dolor, sit amet consectetur adipisicing elit. At possimus reprehenderit sequi, nam animi fuga dignissimos sint voluptas iste architecto eligendi amet tempora quis quidem repudiandae incidunt magnam iusto in. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, dolore. </div>
-    </div>
-  </div>
-  </div>
-  </section>
-<!-- End Main Content -->
+
+    <!-- Start Main Content -->
+    <section class="l-dashboard__wrapper">
+      <div class="l-dashboard__content-body">
+        <div class="l-post__area">
+          <div class="  title__area l-title__area ">
+            <label>TITLE:</label>
+            <input type="text" class="story__title" value="">
+          </div>
+          <div class="text__area l-text__area">
+            <textarea class="story__text">What's on your mind...</textarea>
+          </div>
+          <div class="l-buttons__area">
+            <div class="video__upload">
+              <label for="vid-input">
+                <img src="../icons/Video.png" alt="">
+              </label>
+              <input id="vid-input" type="file" name="vid" accept="video/*">
+            </div>
+            <div class="image__upload">
+              <label for="img-input">
+                <img src="../icons/Pictures-WF.png" alt="">
+              </label>
+              <input id="img-input" type="file" name="img" accept="image/*">
+            </div>
+            <button class="button">Post</button>
+          </div>
+          <div class="l-display__area">
+            <span>Lorem ipsum dolor sit amet.</span>
+            <div class="story__display">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni incidunt rem nesciunt dolor doloribus ea. Laudantium
+              modi sapiente distinctio voluptatem eligendi sed maiores, minus, molestias molestiae ipsa assumenda perferendis
+              alias neque eaque, dolorem obcaecati a voluptates perspiciatis architecto. Fugiat dolor corrupti labore accusamus
+              dolore, quos animi quam repudiandae nostrum doloribus?</div>
+            <div class="l-story__option">
+              <div class="date__posted ">July 17th 2018, 9:59:51 am</div>
+              <button class="edit__post button">Edith</button>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- End Main Content -->
 
 </body>
 <script src="../build/bundle.js"></script>

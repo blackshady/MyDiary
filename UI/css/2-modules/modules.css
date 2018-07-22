@@ -55,10 +55,13 @@
   padding: 5px 30px;
   cursor: pointer;
 }
-.button__trasp{
+
+.button__trasp {
   border: solid 2px var(--primary);
   padding: 2px 3px;
   border-radius: 10px;
+  font-size: 1.1rem;
+  box-shadow: var(--card-shadow);
 }
 
 .left__arrow {
@@ -147,7 +150,7 @@
   border-radius: 100px;
 }
 
-.card__header{
+.card__header {
   display: grid;
   padding: 10px;
   background: #fffeff;
@@ -157,18 +160,83 @@
   font-style: inherit;
   height: 70px;
 }
-.card__footer{
-display: grid;
-grid-auto-flow: column;
-grid-gap: 10px;
-justify-content: center;
-margin-bottom: 10px;
-}
-.card__body{
+
+.card__footer {
   display: grid;
- padding: 10px;
- align-content: center;
- justify-items: center;
- font-family: inherit;
- font-size: 1rem;
+  grid-auto-flow: column;
+  grid-gap: 10px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.card__body {
+  display: grid;
+  padding: 10px;
+  align-content: center;
+  justify-items: center;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.video__upload>input {
+  display: none;
+}
+
+.image__upload>input {
+  display: none;
+}
+
+.title__area {
+  font-size: 1.5rem;
+  font-family: inherit;
+}
+
+.title__area>input {
+  border-radius: 5px;
+  text-indent: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: var(--shadow);
+}
+
+.story__text {
+  border-radius: 5px;
+  text-indent: 10px;
+  font-family: inherit;
+  font-size: 1.3rem;
+  resize: none;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: var(--shadow);
+}
+
+.story__title {
+  display: grid;
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: bold;
+  justify-items: center;
+  align-content: center;
+  color: white;
+  margin: 0;
+}
+
+.story__display {
+  display: grid;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 1.2rem;
+  align-items: center;
+}
+
+.date__posted {
+  font-family: inherit;
+  font-size: 1.1rem;
+  margin: 5px;
+  padding: 3px;
+}
+
+.edit__post {
+  padding: 5px 20px;
+  font-family: inherit;
+  font-size: 1.2rem;
+  box-shadow: var(--card-shadow);
 }
