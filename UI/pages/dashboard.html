@@ -16,30 +16,64 @@
       <div class="header__content  l-header__content">
         <span class="logo">My Dairy</span>
         <nav class="main__nav">
-          <ul>
+          <ul class "main__menu">
+            <li>
+              <div class="menu__notification .h-icon__size ">
+                <img src="../icons/Bell-WF.png" alt="alert">
+                <label class="number__notified">10</label>
+              </div>
+            </li>
+            <li>
+              <div class="menu__user h-icon__size ">
+                <img src="../icons/User.png" alt="alert">
+                <ul class="dropdown">
+
+                  <!-- Start User profile -->
+                  <li>
+                    <div class="user__profile">
+                      <img src="../img/avater.jpg" alt="">
+                      <div class="profile__option">
+                        <span class="user__name">Victor Uzochukwu</span>
+                        <div class="profile__options">
+                          <button class="change__photo .h-center ">
+                            <label for="profile_img">Change Profile Photo</label>
+                            <input type="file" name="profile_img" id="profile_img">
+                          </button>
+                          <div class="change__name">
+                            <label for="">Change Profile Name</label>
+                            <input type="text">
+                          </div>
+                          <div class="change__name">
+                            <label for="">Reset Password</label>
+                            <input type="password" name="" id="">
+                          </div>
+                          <div class="change__name">
+                            <label for="">Set Reminder</label>
+                            <input type="datetime" name="" id="">
+                          </div>
+                          <div class="change__name">
+                            <span>Total Number of Entries
+                              <p>20</p>
+                            </span>
+                          </div>
+                          <button id="btn__logout">Log Out</button>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- End User Profile -->
+
+                </ul>
+              </div>
+            </li>
+
             <li>
               <a href="./viewEntries.html" class="button__trasp">View Entry</a>
             </li>
             <li>
               <a href="./dashboard.html" class="button__trasp">New Entry</a>
             </li>
-            <li>
-              <div class="menu__notification .h-icon__size">
-                <img src="../icons/Bell-WF.png" alt="alert">
-                <label class="number__notified">10</label>
-              </div>
-            </li>
-            <li>
-              <div class="menu__user .h-icon__size">
-                <img src="../icons/User.png" alt="alert">
-                <ul>
-                  <li id="btn__logout">Log Out</li>
-                  <li id="btn__all-entries">all Entries</li>
-                  <li id="btn__profile">Profile</li>
-                  <li id="btn__main-area">Main Area</li>
-                </ul>
-              </div>
-            </li>
+
           </ul>
         </nav>
       </div>
@@ -86,8 +120,8 @@
         </div>
     </section>
     <!-- End Main Content -->
-
+    <script src="../build/bundle.js"></script>
 </body>
-<script src="../build/bundle.js"></script>
+
 
 </html>

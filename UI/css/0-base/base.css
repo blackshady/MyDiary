@@ -20,6 +20,11 @@ body {
   background-attachment: fixed;
 }
 
+nav {
+  position: relative;
+  perspective: 600%;
+}
+
 h1,
 h2,
 h3,

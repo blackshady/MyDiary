@@ -49,6 +49,11 @@
   min-height: 32px;
 }
 
-.h-trasp__background{
+.h-trasp__background {
   background: transparent;
+}
+
+.h-center {
+  align-content: center;
+  justify-items: center;
 }

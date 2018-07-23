@@ -1,3 +1,15 @@
 .is-hidden {
   display: none;
 }
+
+.trigger-enter .dropdown {
+  display: block;
+}
+
+.trigger-enter-active .dropdown {
+  opacity: 1;
+}
+
+.dropdown__background .open {
+  opacity: 1;
+}
