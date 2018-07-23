@@ -4,3 +4,22 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/94c0b36aa74409c8e81b/test_coverage)](https://codeclimate.com/github/blackshady/MyDiary/test_coverage)
 # MyDiary
 MyDiary is an online journal where users can pen down their thoughts and feelings.
+
+
+## Table of Contents
+
+ * [Technologies](#technologies)
+ * [Features](#features)
+ * [API Endpoints](#api-endpoints)
+ 
+    
+    
+
+### Pivotal Tracker
+[Pivital Tracker](https://www.pivotaltracker.com/n/projects/2183351)
+
+### Template
+Template is hosted [Here](https://blackshady.github.io/MyDiary/UI/pages)
+
+### API Deployment
+API Endpoint is hosted [Here]() 
