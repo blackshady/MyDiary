@@ -5,4 +5,5 @@
   --transpt__dark: rgba(0, 0, 0, 0.4);
   --light: rgba(216, 204, 192, 0.4);
   --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+  --card-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

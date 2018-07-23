@@ -7,10 +7,12 @@
   "license": "MIT",
   "scripts": {
     "start": "babel-node - Server/src/app.js",
-    "start-server:dev":"nodemon --exec babel-node - Server/src/app.js",
+    "start-server:dev": "nodemon --exec babel-node - Server/src/app.js",
     "start-UI": "webpack --mode production",
     "start-UI:dev": "webpack-dev-server  --output-public-path=/UI/build",
     "lint": "eslint **/*.js --fix",
+    "heroku-prebuild": "export NPM_CONFIG_PRODUCTION=false; export NODE_ENV=; NPM_CONFIG_PRODUCTION=false export NODE_ENV=development npm install --only=dev --dev",
+    "heroku-postbuild": "export  NPM_CONFIG_PRODUCTION=true; export NODE_ENV=production;",
     "test": "nyc --reporter=html --reporter=text mocha --require babel-core/register ./Server/src/test/**/*.test.js --timeout 50000 --exit",
     "cover": "./node_modules/.bin/istanbul  cover _mocha test",
     "coverage": "nyc report --reporter=text-lcov | coveralls"

@@ -16,74 +16,79 @@
       <div class="header__content  l-header__content">
         <span class="logo">My Dairy</span>
         <nav class="main__nav">
-          <ul>
+          <ul class "main__menu">
             <li>
-              <div class="menu__notification .h-icon__size">
+              <div class="menu__notification .h-icon__size ">
                 <img src="../icons/Bell-WF.png" alt="alert">
                 <label class="number__notified">10</label>
               </div>
             </li>
             <li>
-              <div class="menu__user .h-icon__size">
+              <div class="menu__user h-icon__size ">
                 <img src="../icons/User.png" alt="alert">
-                <ul>
-                  <li id="btn__logout">Log Out</li>
-                  <li id="btn__all-entries">all Entries</li>
-                  <li id="btn__profile">Profile</li>
-                  <li id="btn__main-area">Main Area</li>
+                <ul class="dropdown">
+
+                  <!-- Start User profile -->
+                  <li>
+                    <div class="user__profile">
+                      <img src="../img/avater.jpg" alt="">
+                      <div class="profile__option">
+                        <span class="user__name">Victor Uzochukwu</span>
+                        <div class="profile__options">
+                          <button class="change__photo .h-center ">
+                            <label for="profile_img">Change Profile Photo</label>
+                            <input type="file" name="profile_img" id="profile_img">
+                          </button>
+                          <div class="change__name">
+                            <label for="">Change Profile Name</label>
+                            <input type="text">
+                          </div>
+                          <div class="change__name">
+                            <label for="">Reset Password</label>
+                            <input type="password" name="" id="">
+                          </div>
+                          <div class="change__name">
+                            <label for="">Set Reminder</label>
+                            <input type="datetime" name="" id="">
+                          </div>
+                          <div class="change__name">
+                            <span>Total Number of Entries
+                              <p>20</p>
+                            </span>
+                          </div>
+                          <button id="btn__logout">Log Out</button>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- End User Profile -->
+
                 </ul>
               </div>
             </li>
+
+            <li>
+              <a href="./viewEntries.html" class="button__trasp">View Entry</a>
+            </li>
+            <li>
+              <a href="./dashboard.html" class="button__trasp">New Entry</a>
+            </li>
+
           </ul>
         </nav>
       </div>
     </header>
     <!-- End of Header content -->
 
-    <!-- Main area -->
-    <div class="l-dashboard__wrapper">
-
-      <!-- Start Of Left Pane -->
-      <section class="l-left__pane">
-        <div class="l-profile">
-          <div class="l-profile__avater">
-            <img src="../img/avater.jpg" alt="">
+    <!-- Start Main Content -->
+    <section class="l-dashboard__wrapper">
+      <div class="l-dashboard__content-body">
+        <div class="l-post__area">
+          <div class="  title__area l-title__area ">
+            <label>TITLE:</label>
+            <input type="text" class="story__title" value="">
           </div>
-          <div class="profile__name">
-            <span>Victor Chibuike</span>
-          </div>
-        </div>
-        <div class="l-profile__options">
-
-          <button class=" button image__upload h-border">
-            <label for="img-upload">
-              Upload Profile Image
-            </label>
-            <input id="img-upload" type="file" name="img" accept="image/*">
-          </button>
-          <button id="change__name" class=" button h-border">Change Profile Name</button>
-          <input type="text" class="profile__name-i">
-          <button class="button reset__pass h-border">Reset Password</button>
-          <input type="password" class="reset__pass-i">
-          <button class="button__remind button h-border">Set Reminder</button>
-          <input type="date" name="" id="" class="reminder__item">
-          <input type="text" value="title" class="reminder__item">
-          <button class="h-border button">Delete Account</button>
-          <span class="h-border ">Entries since registration: 10</span>
-        </div>
-      </section>
-      <!-- End Of Left Pane -->
-
-      <!-- Start Middle Column Pan -->
-      <section class="l-middle__pane ">
-
-        <!-- Start Of Add New post Area -->
-        <div class="l-addpost__area">
           <div class="text__area l-text__area">
-            <div class=" title__area l-title__area ">
-              <label>Title:</label>
-              <input type="text" class="story__title" value="">
-            </div>
             <textarea class="story__text">What's on your mind...</textarea>
           </div>
           <div class="l-buttons__area">
@@ -101,97 +106,22 @@
             </div>
             <button class="button">Post</button>
           </div>
-        </div>
-        <!-- End OF Add New Post Area -->
-
-        <!--Start Of View Entry Content  -->
-        <div class="l-viewContent__area">
-          <div class="l-mediaContent__area">
-            <img src="../icons/Swap-left.png" alt="">
-            <img src="../img/kobu-agency-409288.jpg" alt="">
-            <img src="../img/pexels-photo-414645.jpeg" alt="">
-            <img src="../img/pexels-photo-733857.jpeg" alt="">
-            <img src="../icons/Swap-right.png" alt="">
-          </div>
-          <div class="l-storyContent__area">
-            <div class="l-text__area">
-              <span class="story__title">
-                My Life As A Programmer
-              </span>
-
-              <textarea readonly class=" story__text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur soluta molestiae voluptate beatae voluptatibus
-                enim atque aspernatur autem, quasi incidunt aliquam sunt vitae dolores velit accusantium optio perferendis
-                exercitationem harum!
-              </textarea>
-            </div>
+          <div class="l-display__area">
+            <span>Lorem ipsum dolor sit amet.</span>
+            <div class="story__display">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni incidunt rem nesciunt dolor doloribus ea. Laudantium
+              modi sapiente distinctio voluptatem eligendi sed maiores, minus, molestias molestiae ipsa assumenda perferendis
+              alias neque eaque, dolorem obcaecati a voluptates perspiciatis architecto. Fugiat dolor corrupti labore accusamus
+              dolore, quos animi quam repudiandae nostrum doloribus?</div>
             <div class="l-story__option">
-              <div class="date__posted">Date: 10/01/2018 Time:3:00pm</div>
-              <div class="edit__option">
-                <button class="edit__post button">Edit Post</button>
-              </div>
-
-            </div>
-            <div class="br"></div>
-          </div>
-        </div>
-        <!-- End Of View Entry Content -->
-
-      </section>
-      <!-- End Of Middle Column Pane -->
-
-      <!-- Start of Right Pane-->
-      <section class="l-right__pane">
-        <div class="header__title">
-          <span>All Diary Entries
-          </span>
-
-          <div class="line"></div>
-        </div>
-        <div class="l-entries__content">
-          <div class="entry__item">
-            <div class="entry">
-              <img src="../img/pexels-photo-414645.jpeg" alt="">
-              <span>The Pending Mail</span>
-            </div>
-          </div>
-          <div class="entry__item">
-            <div class="entry">
-              <img src="../img/pexels-photo-414645.jpeg" alt="">
-              <span>The Pending Mail</span>
-            </div>
-          </div>
-          <div class="entry__item">
-            <div class="entry">
-              <img src="../img/pexels-photo-414645.jpeg" alt="">
-              <span>The Pending Mail</span>
-            </div>
-          </div>
-          <div class="entry__item">
-            <div class="entry">
-              <img src="../img/pexels-photo-414645.jpeg" alt="">
-              <span>The Pending Mail</span>
-            </div>
-          </div>
-          <div class="entry__item">
-            <div class="entry">
-              <img src="../img/pexels-photo-414645.jpeg" alt="">
-              <span>The Pending Mail</span>
-            </div>
-          </div>
-          <div class="entry__item">
-            <div class="entry">
-              <img src="../img/pexels-photo-414645.jpeg" alt="">
-              <span>The Pending Mail</span>
+              <div class="date__posted ">July 17th 2018, 9:59:51 am</div>
+              <button class="edit__post button">Edith</button>
             </div>
           </div>
         </div>
-      </section>
-      <!-- End of Right Pane-->
-    </div>
-
-
-
+    </section>
+    <!-- End Main Content -->
+    <script src="../build/bundle.js"></script>
 </body>
-<script src="../build/bundle.js"></script>
+
 
 </html>
