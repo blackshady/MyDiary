@@ -34,8 +34,10 @@ class EntriesController {
    * @static
    */
   static getEntry(req, res) {
-    const { entryId } = req.params;
-    const diary = entriesDb.find(entry => entry.entryId === entryId);
+    const {
+      entryId,
+    } = req.params;
+    const diary = entriesDb.find(entry => entry.entryId === parseInt(entryId, 10));
     if (diary) {
       return res.status(200).json({
         status: 'success',
@@ -56,14 +58,17 @@ class EntriesController {
    * @static
    */
   static createEntry(req, res) {
-    const { title, story } = req.body;
+    const {
+      title,
+      story,
+    } = req.body;
     let userId, entryId;
     if (entriesDb.length === 0) {
       userId = 1;
       entryId = 1;
     } else {
-      userId = String(entriesDb.length + 1);
-      entryId = String(entriesDb.length + 1);
+      userId = entriesDb.length + 1;
+      entryId = entriesDb.length + 1;
     }
     const createdAt = moment().format('MMMM DD YYYY, h:mm:s A z').trim();
     const newDiary = {
@@ -95,8 +100,10 @@ class EntriesController {
    * @static
    */
   static deleteEntry(req, res) {
-    const { entryId } = req.params;
-    const entryIndex = entriesDb.findIndex(entry => entry.entryId === entryId);
+    const {
+      entryId,
+    } = req.params;
+    const entryIndex = entriesDb.findIndex(entry => entry.entryId === parseInt(entryId, 10));
     if (entryIndex !== -1) {
       entriesDb.splice(entryIndex, 1);
       return res.status(200).json({
@@ -119,9 +126,14 @@ class EntriesController {
    * @static
    */
   static updateEntry(req, res) {
-    const { entryId } = req.params;
-    const { title, story } = req.body;
-    const entryIndex = entriesDb.findIndex(entry => entry.entryId === entryId);
+    const {
+      entryId,
+    } = req.params;
+    const {
+      title,
+      story,
+    } = req.body;
+    const entryIndex = entriesDb.findIndex(entry => entry.entryId === parseInt(entryId, 10));
     if (entryIndex !== -1) {
       entriesDb[entryIndex].title = title || entriesDb[entryIndex].story;
       entriesDb[entryIndex].story = story || entriesDb[entryIndex].story;

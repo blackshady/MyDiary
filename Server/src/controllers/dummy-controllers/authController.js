@@ -15,7 +15,10 @@ class AuthController {
    * @static
    */
   static login(req, res) {
-    const { email, password } = req.body;
+    const {
+      email,
+      password,
+    } = req.body;
     const isUser = usersDb.find(user => user.email === email);
     if (isUser && bcrypt.compareSync(password, isUser.passwordHash)) {
       return res.status(200).json({
@@ -38,8 +41,10 @@ class AuthController {
    * @static
    */
   static getNumberOfEntries(req, res) {
-    const { userId } = req.params;
-    const userTotalEntries = usersDb.find(user => user.userId === userId);
+    const {
+      userId,
+    } = req.params;
+    const userTotalEntries = usersDb.find(user => user.userId === parseInt(userId, 10));
     if (userTotalEntries && userTotalEntries.totalCreatedEntries !== '') {
       return res.status(200).json({
         status: 'success',
