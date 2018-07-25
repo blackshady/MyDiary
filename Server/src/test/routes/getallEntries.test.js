@@ -1,4 +1,6 @@
-import { expect } from 'chai';
+import {
+  expect
+} from 'chai';
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 
@@ -6,7 +8,7 @@ import app from '../../app';
 
 chai.use(chaiHttp);
 
-describe(' "GET/" all entries  ', () => {
+describe(' When a get request is made to fetch all diary entries ', () => {
   it('should return a 200 status code', async () => {
     const res = await chai.request(app)
       .get('/api/v1/entries');
@@ -54,5 +56,5 @@ describe(' "GET/" all entries  ', () => {
       .get('/api/v1/entries');
     expect(res.body.entriesDb[0]).to.have.property('createdAt').that.is.not.empty;
   });
- 
+
 });

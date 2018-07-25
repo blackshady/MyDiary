@@ -1,4 +1,6 @@
-import { expect } from 'chai';
+import {
+  expect
+} from 'chai';
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 
@@ -6,7 +8,7 @@ import app from '../../app';
 
 chai.use(chaiHttp);
 
-describe(' "GET/" specific entry', () => {
+describe('when a "GET" request is made to fetch a specific diary entry', () => {
   it('should return a 200 status code', async () => {
     const res = await chai.request(app)
       .get('/api/v1/entries/2');
@@ -48,13 +50,13 @@ describe(' "GET/" specific entry', () => {
     const res = await chai.request(app)
       .get('/api/v1/entries/2');
     expect(res.body.diary).to.have.property('createdAt')
-    .that.is.not.empty;
+      .that.is.not.empty;
   });
   it('check if the diary contain the user id', async () => {
     const res = await chai.request(app)
       .get('/api/v1/entries/2');
     expect(res.body.diary).to.have.property('userId')
-      .that.is.not.empty;
+      .that.is.not.null;
   });
   it('should return a status code of 404 ', async () => {
     const res = await chai.request(app)
@@ -70,6 +72,6 @@ describe(' "GET/" specific entry', () => {
     const res = await chai.request(app)
       .get('/api/v1/entries/010');
     expect(res.body).to.have.property('message')
-    .that.is.equal('Diary not found');
+      .that.is.equal('Diary not found');
   });
 });

@@ -1,5 +1,5 @@
 [{
-    "userId": "1",
+    "userId": 1,
     "userName": "victoruzo",
     "email": "Victor@gmail.com",
     "surname": "Uzochukwu",
@@ -24,7 +24,7 @@
     }]
   },
   {
-    "userId": "2",
+    "userId": 2,
     "userName": "kelvin001",
     "email": "kelvinmark@gmail.com",
     "surname": "Mark",
@@ -40,7 +40,7 @@
       "time": "03:03 am"
     }]
   }, {
-    "userId": "3",
+    "userId": 3,
     "userName": "darkslow",
     "email": "dickson@gmail.com",
     "surname": "Dickson",
@@ -57,7 +57,7 @@
     }]
 
   }, {
-    "userId": "4",
+    "userId": 4,
     "userName": "temmi1",
     "email": "temmishow@gmail.com",
     "surname": "Temmi",
@@ -74,7 +74,7 @@
     }]
   },
   {
-    "userId": "5",
+    "userId": 5,
     "userName": "nama30",
     "email": "nathikey@gmail.com",
     "surname": "Daniel",
@@ -91,7 +91,7 @@
     }]
   },
   {
-    "userId": "6",
+    "userId": 6,
     "userName": "akaniko",
     "email": "mightyakan@gmail.com",
     "surname": "Damilola",
@@ -108,7 +108,7 @@
     }]
   },
   {
-    "userId": "7",
+    "userId": 7,
     "userName": "ike1234",
     "email": "ike@gmail.com",
     "surname": "John",

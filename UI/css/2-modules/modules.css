@@ -25,9 +25,44 @@
   justify-content: center;
 }
 
+.entries__btn ul {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  background: white;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.entries__btn ul {
+  display: none;
+}
+
+.entries__btn {
+  display: none;
+}
+
+.entries__btn:hover ul {
+  display: grid;
+}
+
+.entries__btn ul li a {
+  font-size: 1rem;
+}
+
+.entries__btn ul li {
+  border-bottom: solid 2px black;
+}
+
 nav ul {
   display: flex;
   justify-content: center;
+}
+
+.menu__user ul {
+  display: none;
 }
 
 .user__profile {
@@ -124,7 +159,7 @@ nav ul {
   padding: 0 30px;
   align-items: center;
   justify-items: center;
-  background: var(--light);
+  background: white;
   box-shadow: var(--shadow);
 }
 
@@ -203,15 +238,36 @@ nav ul {
   font-size: 1rem;
 }
 
-.video__upload>input {
-  display: none;
-}
-
 .change__photo>input {
   display: none;
 }
 
+.change__photo {
+  box-shadow: var(--shadow);
+  padding: 7px;
+}
+
+.set__reminder>input {
+  background: var(--shadow);
+}
+
+.total__entries {
+  display: grid;
+  justify-items: center;
+  background: #dddddd;
+  box-shadow: var(--shadow);
+}
+
+.total__entries>span {
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
 .profile__options {
+  display: grid;
+  grid-gap: 10px;
   font-family: inherit;
   font-size: 1.1rem;
 }
@@ -220,23 +276,22 @@ nav ul {
   width: 100%;
 }
 
-.name__input {
-  display: none;
-}
-
-.image__upload>input {
-  display: none;
+.btn__logout {
+  padding: 7px;
+  box-shadow: var(--shadow);
 }
 
 .title__area {
   font-size: 1.5rem;
   font-family: inherit;
+  color: white;
+  font-weight: bold;
 }
 
 .title__area>input {
   border-radius: 5px;
   text-indent: 10px;
-  background: rgba(255, 255, 255, 0.4);
+  background: white;
   box-shadow: var(--shadow);
 }
 
@@ -246,7 +301,7 @@ nav ul {
   font-family: inherit;
   font-size: 1.3rem;
   resize: none;
-  background: rgba(255, 255, 255, 0.7);
+  background: white;
   box-shadow: var(--shadow);
 }
 
@@ -257,7 +312,6 @@ nav ul {
   font-weight: bold;
   justify-items: center;
   align-content: center;
-  color: white;
   margin: 0;
 }
 
@@ -281,4 +335,17 @@ nav ul {
   font-family: inherit;
   font-size: 1.2rem;
   box-shadow: var(--card-shadow);
+}
+
+.contact__form {
+  width: 100%;
+  height: 100%;
+  Border-radius: 5px;
+  text-indent: 10px;
+  font-family: inherit;
+  font-size: 1.3rem;
+  resize: none;
+  background: white;
+  box-shadow: var(--shadow);
+  border-bottom: solid 2px var(--primary);
 }

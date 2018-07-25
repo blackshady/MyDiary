@@ -16,24 +16,68 @@
       <div class="header__content  l-header__content">
         <span class="logo">My Dairy</span>
         <nav class="main__nav">
-          <ul>
+          <ul class "main__menu">
             <li>
-              <a href="./viewEntries.html" class="button__trasp">View Entry</a>
-            </li>
-            <li>
-              <a href="./dashboard.html" class="button__trasp">New Entry</a>
-            </li>
-            <li>
-              <div class="menu__notification .h-icon__size">
+              <div class="menu__notification .h-icon__size ">
                 <img src="../icons/Bell-WF.png" alt="alert">
                 <label class="number__notified">10</label>
               </div>
             </li>
             <li>
-              <div class="menu__user h-icon__size">
+              <div class="menu__user h-icon__size " id="menu__user">
                 <img src="../icons/User.png" alt="alert">
+                <ul class="dropdown" id="userProfileItem">
 
+                  <!-- Start User profile -->
+                  <li>
+                    <div class="user__profile">
+                      <img src="../img/avater.jpg" alt="">
+                      <div class="profile__option">
+                        <span class="user__name">Victor Uzochukwu</span>
+                        <div class="profile__options">
+                          <button class="change__photo .h-center ">
+                            <label for="profile_img">Change Profile Photo</label>
+                            <input type="file" name="profile_img" id="profile_img">
+                          </button>
+                          <button>
+                            <div class="set__reminder">
+                              <label for="">Set Reminder</label>
+                              <input type="date" name="" id="">
+                              <input type="time">
+                            </div>
+                          </button>
+
+                          <div class="total__entries">
+                            <p>Total Number of Entries
+                            </p>
+                            <span>20</span>
+                          </div>
+                          <button class=" button btn__logout">Log Out</button>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <!-- End User Profile -->
+
+                </ul>
               </div>
+            </li>
+
+            <li>
+              <a href="./viewEntries.html" class="view__entries-btn button__trasp ">View Entry</a>
+            </li>
+            <li>
+              <a href="./dashboard.html" class=" new__entries-btn button__trasp">New Entry</a>
+            </li>
+            <li class="entries__btn "> Entries
+              <ul>
+                <li>
+                  <a href="./viewEntries.html">View Entry</a>
+                </li>
+                <li>
+                  <a href="./dashboard.html">New Entry</a>
+                </li>
+              </ul>
             </li>
           </ul>
         </nav>
