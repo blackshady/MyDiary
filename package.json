@@ -11,6 +11,7 @@
     "start-UI": "webpack --mode production",
     "start-UI:dev": "webpack-dev-server  --output-public-path=/UI/build",
     "lint": "eslint **/*.js --fix",
+    "precommit-msg": "echo 'Pre-commit checks...' && exit 0",
     "test": "nyc --reporter=html --reporter=text mocha --require babel-core/register ./Server/src/test/**/*.test.js --timeout 50000 --exit",
     "cover": "./node_modules/.bin/istanbul  cover _mocha test",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
@@ -36,6 +37,7 @@
     "mocha-lcov-reporter": "^1.3.0",
     "nodemon": "^1.18.2",
     "nyc": "^12.0.2",
+    "pre-commit": "^1.2.2",
     "resolve-url-loader": "^2.3.0",
     "style-loader": "^0.21.0",
     "url-loader": "^1.0.1",
@@ -43,6 +45,7 @@
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.4"
   },
+  "pre-commit": ["precommit-msg", "lint", "test"],
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
