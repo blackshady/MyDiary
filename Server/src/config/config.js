@@ -4,12 +4,28 @@ dotenv.config();
 
 const config = {
   development: {
-    app: {
-      port: parseInt(process.env.PORT, 10) || process.env.DEV_APP_PORT,
-    },
+    user: process.env.DB_USER,
+    host: process.env.DB_HOST,
+    database: process.env.DB_NAME,
+    password: process.env.DB_PASSWORD,
+    port: process.env.DB_PORT,
+
   },
-  test: {},
-  production: {},
+  test: {
+    user: process.env.TEST_DB_USER,
+    password: process.env.TEST_DB_PASSWORD,
+    host: process.env.TEST_DB_HOST,
+    port: process.env.TEST_DB_PORT,
+    database: process.env.TEST_DB_NAME,
+
+  },
+  production: {
+    url: process.env.DATABASE_URL,
+    database: process.env.DB_NAME,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    host: process.env.DB_HOST,
+  },
 };
 
 export default config;

@@ -6,7 +6,7 @@
   "author": "Victor Chibuike <victorblackshady@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "babel-node - Server/src/app.js",
+    "start": "cross-env NODE_ENV=production babel-node - Server/src/app.js",
     "start-server:dev": "nodemon --exec babel-node - Server/src/app.js",
     "start-UI": "webpack --mode production",
     "start-UI:dev": "webpack-dev-server  --output-public-path=/UI/build",
@@ -45,7 +45,11 @@
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.4"
   },
-  "pre-commit": ["precommit-msg", "lint", "test"],
+  "pre-commit": [
+    "precommit-msg",
+    "lint",
+    "test"
+  ],
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
@@ -60,6 +64,7 @@
     "express": "^4.16.3",
     "moment": "^2.22.2",
     "morgan": "^1.9.0",
+    "pg": "^7.4.3",
     "winston": "^3.0.0"
   }
 }
