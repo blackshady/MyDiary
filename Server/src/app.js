@@ -2,20 +2,13 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import morgan from 'morgan';
 import logger from './helpers/logger';
-import config from './config/config';
 import router from './routes/index';
 
 // init app
 const app = express();
 
-// using Destructuring to get Port
-const {
-  development: {
-    app: {
-      port,
-    },
-  },
-} = config;
+// Port
+const port = parseInt(process.env.PORT, 10) || 9000;
 
 //   parse request
 app.use(bodyParser.json(), bodyParser.urlencoded({

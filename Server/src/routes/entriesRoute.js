@@ -1,4 +1,6 @@
-import { Router } from 'express';
+import {
+  Router,
+} from 'express';
 import EntriesController from '../controllers/dummy-controllers/entriesController';
 
 const router = Router();
