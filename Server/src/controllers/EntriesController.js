@@ -1,4 +1,5 @@
 import moment from 'moment';
+import entriesDb from '../models/dummy-db/Entries.json';
 
 /**
  * @exports
