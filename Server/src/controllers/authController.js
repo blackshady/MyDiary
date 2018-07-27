@@ -3,6 +3,7 @@ import jwt from 'jsonwebtoken';
 import config from '../config/config';
 import database from '../config/databaseConnection';
 import find from '../models/queries/find.json';
+import usersDb from '../models/dummy-db/Users.json';
 
 
 /**
@@ -37,19 +38,18 @@ class AuthController {
       } = user[0];
       // Create token for the user
       const token = jwt.sign({
-          userId,
-          email,
-          userName,
-        },
-        config.jwtSecret, {
-          expiresIn: '24h',
-        });
+        userId,
+        email,
+        userName,
+      },
+      config.jwtSecret, {
+        expiresIn: '24h',
+      });
       return res.status(200).json({
         success: 'success',
         message: `${userName} is now logged in`,
-        'redirect url: '
-        https: //mydiary.com/pages/index.html',
-          token
+        redirectUrl: 'https://mydiary.com/pages/index.html',
+        token,
       });
     }
     return res.status(401).json({
