@@ -13,11 +13,10 @@ const config = {
   },
   test: {
     user: process.env.TEST_DB_USER,
-    password: process.env.TEST_DB_PASSWORD,
     host: process.env.TEST_DB_HOST,
-    port: process.env.TEST_DB_PORT,
     database: process.env.TEST_DB_NAME,
-
+    password: process.env.TEST_DB_PASSWORD,
+    port: process.env.TEST_DB_PORT,
   },
   production: {
     url: process.env.DATABASE_URL,

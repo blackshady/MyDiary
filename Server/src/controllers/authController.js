@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 import config from '../config/config';
 import database from '../config/databaseConnection';
 import find from '../models/queries/find.json';
-import usersDb from '../models/dummy-db/Users.json';
+import insert from '../models/queries/insert.json';
 
 
 /**
@@ -22,32 +22,32 @@ class AuthController {
    * @return {json} Returns json object
    * @static
    */
+  // eslint-disable-next-line
   static async login(req, res) {
     const {
       email,
       password,
     } = req.body;
-
     const {
-      user,
+      rows,
     } = await database.query(find.userByEmail, [email]);
-    if (user[0] && bcrypt.compareSync(password, user[0].passwordHash)) {
+    if (rows[0] && bcrypt.compareSync(password, rows[0].passwordhash)) {
       const {
-        userId,
-        userName,
-      } = user[0];
+        userid,
+        username,
+      } = rows[0];
       // Create token for the user
       const token = jwt.sign({
-        userId,
+        userid,
         email,
-        userName,
+        username,
       },
       config.jwtSecret, {
         expiresIn: '24h',
       });
       return res.status(200).json({
         success: 'success',
-        message: `${userName} is now logged in`,
+        message: `${username} is now logged in`,
         redirectUrl: 'https://mydiary.com/pages/index.html',
         token,
       });
@@ -58,29 +58,65 @@ class AuthController {
     });
   }
 
-
   /**
-   * The Number off diary entries since registration to the application
+   * Register the Users Account to the application
+   * @async
    * @param  {object} req - Request object
    * @param {object} res - Response object
    * @return {json} Returns json object
    * @static
    */
-  static getNumberOfEntries(req, res) {
+  // eslint-disable-next-line
+  static async signUp(req, res) {
     const {
-      userId,
-    } = req.params;
-    const userTotalEntries = usersDb.find(user => user.userId === parseInt(userId, 10));
-    if (userTotalEntries && userTotalEntries.totalCreatedEntries !== '') {
-      return res.status(200).json({
-        status: 'success',
-        totalNumberOfEntries: userTotalEntries.totalCreatedEntries,
+      userName,
+      email,
+      surname,
+      firstName,
+      phoneNumber,
+      password,
+    } = req.body;
+
+    // Check if there is a user with an existing email
+
+    const user = await database.query(find.userByEmail, [email]);
+
+    if (typeof user.rows[0] !== 'undefined') {
+      return res.status(400).json({
+        status: 'error',
+        message: 'User with this email already exist',
       });
     }
-    return res.status(404).json({
-      status: 'error',
-      message: 'no entry created yet',
-    });
+
+    const passwordHash = bcrypt.hashSync(password, 10);
+    const credentials = [email, surname, userName, firstName, phoneNumber, passwordHash];
+
+    database
+      .query(insert.userCredentials, credentials)
+      .then(({
+        rows,
+      }) => {
+        const {
+          userid,
+          username,
+        } = rows[0];
+        const token = jwt.sign({
+          userid,
+          email,
+          username,
+        }, config.jwtSecret, {
+          expiresIn: '24h',
+        });
+        res.status(201).json({
+          status: 'success',
+          message: 'Your account have been created successful',
+          user: rows[0],
+          token,
+        });
+      })
+      .catch(err => res.status(500).json({
+        message: err.message,
+      }));
   }
 }
 
