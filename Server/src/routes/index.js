@@ -1,6 +1,4 @@
-import {
-  Router,
-} from 'express';
+import { Router } from 'express';
 import path from 'path';
 import entriesRoute from './entriesRoute';
 import authRoute from './authRoute';

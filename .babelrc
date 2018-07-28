@@ -3,13 +3,19 @@
     ["env", {
       "targets": {
         "node": "current"
-      }
+      },
+      "plugins": ["transform-object-rest-spread", "add-module-exports", "istanbul"]
     }]
   ],
-  "plugins": ["transform-object-rest-spread"],
+
   "env": {
     "test": {
-      "plugins": ["istanbul","add-module-exports"],
+      "plugins": [
+        ["transform-runtime", {
+          "polyfill": false,
+          "regenerator": true
+        }]
+      ],
       "presets": ["env"]
     }
   }
