@@ -7,12 +7,11 @@ import insert from '../models/queries/insert.json';
 
 
 /**
- * @exports
+ * @exports AuthController
  * @class AuthController
  * @description Handles the Sigin and logout of a user
  * Got tips from   https://node-postgres.com/guides/async-express
- *
- *  */
+ * */
 class AuthController {
   /**
    * Authenticate and Login the User to the application

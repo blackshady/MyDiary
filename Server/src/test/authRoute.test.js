@@ -4,7 +4,7 @@ import {
 import app from "../app";
 import chai from 'chai';
 import chaiHttp from 'chai-http';
-import asyncCatchErrors from '../helpers/asyncErrorHandler';
+
 
 chai.use(chaiHttp);
 
