@@ -1,5 +1,8 @@
 import moment from 'moment';
+import database from '../config/databaseConnection';
+import find from '../models/queries/find.json';
 import entriesDb from '../models/dummy-db/Entries.json';
+
 
 /**
  * @exports
@@ -7,23 +10,31 @@ import entriesDb from '../models/dummy-db/Entries.json';
  */
 class EntriesController {
   /**
-   * Returns all Diary entries
+   * Returns all Diary entries for an Authenticated user
+   * @async
    * @param  {object} req - Request object
    * @param {object} res - Response object
    * @return {json} Returns json object
    * @static
    */
-  static getAllEntries(req, res) {
-    if (entriesDb.length !== 0) {
+  static async getAllEntries(req, res) {
+    const {
+      userid,
+    } = req.authData;
+    //  check if user has an entry
+    const {
+      rows,
+    } = await database.query(find.userEntries, [userid]);
+    if (rows.length === 0) {
+      res.status(404).json({
+        status: 'error',
+        message: 'User does not have an entry yet',
+      });
       return res.status(200).json({
         status: 'success',
-        entriesDb,
+        entriesDb: rows,
       });
     }
-    return res.status(404).json({
-      status: 'error',
-      message: 'No entry found',
-    });
   }
 
   /**

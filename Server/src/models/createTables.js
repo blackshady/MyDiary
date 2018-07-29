@@ -2,8 +2,8 @@ import database from '../config/databaseConnection';
 
 export default {
 
-  createUserTable() {
-    const Users = `
+  createUsersTable() {
+    const usersSchema = `
     CREATE TABLE IF NOT EXISTS users (
       userId SERIAL PRIMARY KEY,
       email TEXT NOT NULL UNIQUE,
@@ -17,6 +17,23 @@ export default {
       reminder  TIME WITH TIME ZONE
     );
     `;
-    return database.query(Users);
+    return database.query(usersSchema);
   },
+
+  createEntriesTable() {
+    const entriesSchema = `
+    CREATE TABLE IF NOT EXISTS entries (
+      entryId SERIAL PRIMARY KEY,
+      userId INTEGER REFERENCES users(userId),
+      title TEXT NOT NULL,
+      story TEXT NOT NULL,
+      time VARCHAR(30) NOT NULL,
+      date VARCHAR(30) NOT NULL,
+      created_at TIMESTAMP DEFAULT NOW(),
+      updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
+    `;
+    return database.query(entriesSchema);
+  },
+
 };
