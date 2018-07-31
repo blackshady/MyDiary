@@ -17,7 +17,7 @@ export default class Validator {
    * @returns  {Boolean} Returns boolean
    */
   static isEmpty(value) {
-    return (value.length === 0 || value === '' || typeof value === 'undefined');
+    return (typeof value === 'undefined' || value === '' || value.length === 0);
   }
 
   /**
@@ -35,4 +35,5 @@ export default class Validator {
   static isNumber(number) {
     return number.matches(/[0-9]g/);
   }
+
 }

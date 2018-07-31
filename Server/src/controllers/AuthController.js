@@ -47,7 +47,7 @@ class AuthController {
       return res.status(200).json({
         success: 'success',
         message: `${username} is now logged in`,
-        redirectUrl: 'https://mydiary.com/pages/index.html',
+
         token,
       });
     }

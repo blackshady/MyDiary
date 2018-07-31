@@ -20,10 +20,17 @@ class EntriesValidator {
       title,
       story,
     } = req.body;
-    if (!title && !story) {
+    if (!title || !story) {
       return res.status(400).json({
         status: 'error',
         message: 'Bad request, all filed must be filled',
+      })
+    }
+    console.log(Validator.isEmpty(title))
+    if (Validator.isEmpty(title) || Validator.isEmpty(story)) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'please ensure you provide a Title and a Story'
       })
     }
     if (!Validator.isMaxLen(title) || !Validator.isMaxLen(story)) {
@@ -33,12 +40,6 @@ class EntriesValidator {
       })
     }
 
-    if (Validator.isEmpty(title) && Validator.isEmpty(story)) {
-      return res.status(400).json({
-        status: 'error',
-        message: 'please ensure you provide a Title and a Story'
-      })
-    }
     req.body = {
       title: title.trim(),
       story: story.trim(),
