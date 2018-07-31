@@ -2,6 +2,7 @@ import moment from 'moment';
 import database from '../config/databaseConnection';
 import find from '../models/queries/find.json';
 import entriesDb from '../models/dummy-db/Entries.json';
+import insert from '../models/queries/insert.json';
 
 
 /**
@@ -26,15 +27,15 @@ class EntriesController {
       rows,
     } = await database.query(find.userEntries, [userid]);
     if (rows.length === 0) {
-      res.status(404).json({
+      return res.status(404).json({
         status: 'error',
         message: 'User does not have an entry yet',
       });
-      return res.status(200).json({
-        status: 'success',
-        entriesDb: rows,
-      });
     }
+    return res.status(200).json({
+      status: 'success',
+      entries: rows,
+    });
   }
 
   /**
@@ -68,38 +69,35 @@ class EntriesController {
    * @return {json} Returns json object
    * @static
    */
-  static createEntry(req, res) {
+  static async createEntry(req, res) {
+    const {
+      userid,
+    } = req.authData;
     const {
       title,
       story,
     } = req.body;
-    let userId, entryId;
-    if (entriesDb.length === 0) {
-      userId = 1;
-      entryId = 1;
-    } else {
-      userId = entriesDb.length + 1;
-      entryId = entriesDb.length + 1;
+    if (!title && !story) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'Bad Request, fail to save entry, filed cannot be empty',
+      });
     }
     const createdAt = moment().format('MMMM DD YYYY, h:mm:s A z').trim();
-    const newDiary = {
-      userId,
-      entryId,
+    const userData = [
+      userid,
       title,
       story,
       createdAt,
-    };
-    if ((title.length && story.length) !== 0) {
-      entriesDb.push(newDiary);
-      return res.status(201).json({
-        status: 'success',
-        message: 'entry created successfully ',
-        entriesDb,
-      });
-    }
-    return res.status(400).json({
-      status: 'error',
-      message: 'fail to save entry, filed cannot be empty',
+    ];
+    const {
+      rows,
+    } = await database.query(insert.userEntries, userData);
+
+    return res.status(201).json({
+      status: 'success',
+      message: 'entry created successfully',
+      entries: rows,
     });
   }
 

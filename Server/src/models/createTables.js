@@ -27,10 +27,8 @@ export default {
       userId INTEGER REFERENCES users(userId),
       title TEXT NOT NULL,
       story TEXT NOT NULL,
-      time VARCHAR(30) NOT NULL,
-      date VARCHAR(30) NOT NULL,
-      created_at TIMESTAMP DEFAULT NOW(),
-      updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      created_at VARCHAR(80) NOT NULL,
+      updated_at VARCHAR(80) 
     );
     `;
     return database.query(entriesSchema);

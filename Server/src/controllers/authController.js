@@ -81,7 +81,7 @@ class AuthController {
     const user = await database.query(find.userByEmail, [email]);
 
     if (typeof user.rows[0] !== 'undefined') {
-      return res.status(400).json({
+      return res.status(409).json({
         status: 'error',
         message: 'User with this email already exist',
       });
