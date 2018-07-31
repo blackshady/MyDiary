@@ -15,6 +15,13 @@
   box-shadow: var(--shadow);
 }
 
+.main__nav ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-flow: column;
+  grid-gap: 10px;
+}
+
 .main__menu>li>a {
   display: inline-block;
 }
@@ -203,11 +210,14 @@ nav ul {
 .number__notified {
   color: white;
   font-size: 1.0rem;
-  padding: 3px;
-  min-width: 32px;
-  min-height: 32px;
+  padding: 1px;
+  top: 5px;
+  left: 20px;
+  min-width: 24px;
+  min-height: 24px;
   border: solid 2px;
   border-radius: 100px;
+  position: absolute;
 }
 
 .card__header {
