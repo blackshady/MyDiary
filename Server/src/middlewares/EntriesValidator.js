@@ -24,7 +24,7 @@ class EntriesValidator {
     if (!title || !story) {
       return res.status(400).json({
         status: 'error',
-        message: 'Bad request, all filed must not be empty',
+        message: 'Bad request, fields should not be empty',
       });
     }
 

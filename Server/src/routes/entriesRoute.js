@@ -11,11 +11,7 @@ const router = Router();
 // Entries  routes
 router.get('/entries', Authorization.verifyToken, asyncCatchErrors(EntriesController.getAllEntries));
 
-router.get('/entries/:entryId', EntriesController.getEntry);
-
 router.post('/entries', Authorization.verifyToken, EntriesValidator.validateCreateEntry, asyncCatchErrors(EntriesController.createEntry));
 
-router.put('/entries/:entryId', EntriesController.updateEntry);
-router.delete('/entries/:entryId', EntriesController.deleteEntry);
 
 export default router;

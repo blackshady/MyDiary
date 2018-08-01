@@ -1,7 +1,6 @@
-import moment from 'moment';
 import database from '../config/databaseConnection';
-import find from '../models/queries/find.json';
-import insert from '../models/queries/insert.json';
+import find from '../models/queries/find';
+import insert from '../models/queries/insert';
 
 
 /**
@@ -26,8 +25,8 @@ class EntriesController {
       rows,
     } = await database.query(find.userEntries, [userid]);
     if (rows.length === 0) {
-      return res.status(404).json({
-        status: 'error',
+      return res.status(200).json({
+        status: 'success',
         message: 'User does not have an entry yet',
       });
     }
@@ -52,13 +51,7 @@ class EntriesController {
       title,
       story,
     } = req.body;
-    if (!title && !story) {
-      return res.status(400).json({
-        status: 'error',
-        message: 'Bad Request, fail to save entry, filed cannot be empty',
-      });
-    }
-    const createdAt = moment().format('MMMM DD YYYY, h:mm:s A z').trim();
+    const createdAt = new Date();
     const userData = [
       userid,
       title,

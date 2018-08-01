@@ -2,8 +2,8 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import config from '../config/config';
 import database from '../config/databaseConnection';
-import find from '../models/queries/find.json';
-import insert from '../models/queries/insert.json';
+import find from '../models/queries/find';
+import insert from '../models/queries/insert';
 
 
 /**
@@ -96,12 +96,12 @@ class AuthController {
       }) => {
         const {
           userid,
-          username,
+          userName,
         } = rows[0];
         const token = jwt.sign({
           userid,
           email,
-          username,
+          userName,
         }, config.jwtSecret, {
           expiresIn: '24h',
         });
