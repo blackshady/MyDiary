@@ -122,7 +122,7 @@ class EntriesController {
 
     if (rows.length !== 0) {
       await database.query(remove.userEntry, [entryId, userid]);
-      return res.status(200).json({
+      return res.status(204).json({
         status: 'success',
         message: 'Diary entry deleted successfully',
       });
