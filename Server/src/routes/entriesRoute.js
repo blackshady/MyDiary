@@ -13,5 +13,6 @@ router.get('/entries', Authorization.verifyToken, asyncCatchErrors(EntriesContro
 
 router.post('/entries', Authorization.verifyToken, EntriesValidator.validateCreateEntry, asyncCatchErrors(EntriesController.createEntry));
 
+router.get('/entries/:entryId', Authorization.verifyToken, EntriesValidator.validateGetEntry, asyncCatchErrors(EntriesController.getEntry));
 
 export default router;
