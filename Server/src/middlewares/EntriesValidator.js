@@ -56,7 +56,7 @@ class EntriesValidator {
    * @return {res} Returns  response
    * @static
    */
-  static validateGetEntry(req, res, next) {
+  static validateParams(req, res, next) {
     const {
       entryId,
     } = req.params;

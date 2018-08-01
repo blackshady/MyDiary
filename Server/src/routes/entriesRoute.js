@@ -13,6 +13,8 @@ router.get('/entries', Authorization.verifyToken, asyncCatchErrors(EntriesContro
 
 router.post('/entries', Authorization.verifyToken, EntriesValidator.validateCreateEntry, asyncCatchErrors(EntriesController.createEntry));
 
-router.get('/entries/:entryId', Authorization.verifyToken, EntriesValidator.validateGetEntry, asyncCatchErrors(EntriesController.getEntry));
+router.get('/entries/:entryId', Authorization.verifyToken, EntriesValidator.validateParams, asyncCatchErrors(EntriesController.getEntry));
+
+router.delete('/entries/:entryId', Authorization.verifyToken, EntriesValidator.validateParams, asyncCatchErrors(EntriesController.deleteDiary));
 
 export default router;
