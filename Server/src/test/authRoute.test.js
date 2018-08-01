@@ -106,7 +106,6 @@ describe("/AuthController/: Handles the Sigin and logout of a user", () => {
           password: '12345',
         })
       expect(res).to.have.status(500);
-
     })
   });
 });

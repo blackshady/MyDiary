@@ -2,8 +2,8 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import config from '../config/config';
 import database from '../config/databaseConnection';
-import find from '../models/queries/find.json';
-import insert from '../models/queries/insert.json';
+import find from '../models/queries/find';
+import insert from '../models/queries/insert';
 
 
 /**
@@ -47,7 +47,6 @@ class AuthController {
       return res.status(200).json({
         success: 'success',
         message: `${username} is now logged in`,
-        redirectUrl: 'https://mydiary.com/pages/index.html',
         token,
       });
     }
@@ -68,27 +67,27 @@ class AuthController {
   // eslint-disable-next-line
   static async signUp(req, res) {
     const {
-      userName,
+      username,
       email,
       surname,
-      firstName,
-      phoneNumber,
+      firstname,
+      phonenumber,
       password,
     } = req.body;
 
     // Check if there is a user with an existing email
 
-    const user = await database.query(find.userByEmail, [email]);
+    const user = await database.query(find.userByEmail, [email.toLowerCase()]);
 
     if (typeof user.rows[0] !== 'undefined') {
-      return res.status(400).json({
+      return res.status(409).json({
         status: 'error',
         message: 'User with this email already exist',
       });
     }
 
     const passwordHash = bcrypt.hashSync(password, 10);
-    const credentials = [email, surname, userName, firstName, phoneNumber, passwordHash];
+    const credentials = [email, surname, username, firstname, phonenumber, passwordHash];
 
     database
       .query(insert.userCredentials, credentials)
@@ -97,12 +96,12 @@ class AuthController {
       }) => {
         const {
           userid,
-          username,
+          userName,
         } = rows[0];
         const token = jwt.sign({
           userid,
           email,
-          username,
+          userName,
         }, config.jwtSecret, {
           expiresIn: '24h',
         });
