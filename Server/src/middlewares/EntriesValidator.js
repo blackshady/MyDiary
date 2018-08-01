@@ -47,6 +47,27 @@ class EntriesValidator {
     };
     return next();
   }
+
+  /**
+   * Validates the params to get the entry
+   * @param  {req} req - Request object
+   * @param {res} res - Request object
+   * @param {next} next - calls next middleware
+   * @return {res} Returns  response
+   * @static
+   */
+  static validateGetEntry(req, res, next) {
+    const {
+      entryId,
+    } = req.params;
+    if (!Validator.isNumber(entryId)) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'Entry Id should be a number',
+      });
+    }
+    return next();
+  }
 }
 
 export default EntriesValidator;
