@@ -1,6 +1,7 @@
 import database from '../config/databaseConnection';
 import find from '../models/queries/find';
 import insert from '../models/queries/insert';
+import remove from '../models/queries/remove';
 
 
 /**
@@ -92,6 +93,38 @@ class EntriesController {
         status: 'success',
         message: ' entry found',
         dairy: rows[0],
+      });
+    }
+    return res.status(404).json({
+      status: 'error',
+      message: 'Diary Entry can not be found',
+    });
+  }
+
+  /**
+   * delete a  Specific diary entry
+   * @param  {object} req - Request object
+   * @param {object} res - Response object
+   * @return {json} Returns json object
+   * @static
+   */
+  static async deleteDiary(req, res) {
+    const {
+      entryId,
+    } = req.params;
+    const {
+      userid,
+    } = req.authData;
+
+    const {
+      rows,
+    } = await database.query(find.specificUserDiary, [entryId, userid]);
+
+    if (rows.length !== 0) {
+      await database.query(remove.userEntry, [entryId, userid]);
+      return res.status(200).json({
+        status: 'success',
+        message: 'Diary entry deleted successfully',
       });
     }
     return res.status(404).json({
