@@ -47,7 +47,6 @@ class AuthController {
       return res.status(200).json({
         success: 'success',
         message: `${username} is now logged in`,
-
         token,
       });
     }

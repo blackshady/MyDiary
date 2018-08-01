@@ -5,6 +5,7 @@ import EntriesController from '../controllers/EntriesController';
 import Authorization from '../middlewares/Authorization';
 import asyncCatchErrors from '../helpers/asyncErrorHandler';
 import EntriesValidator from '../middlewares/EntriesValidator';
+
 const router = Router();
 
 // Entries  routes

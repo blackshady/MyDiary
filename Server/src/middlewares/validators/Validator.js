@@ -9,7 +9,7 @@ export default class Validator {
    * @return {Boolean} Returns boolean
    */
   static isEmail(email) {
-    return email.matches(/\S+@\S+\.\S+/);
+    return (email.match(/\S+@\S+\.\S+/))
   }
 
   /**
@@ -17,7 +17,7 @@ export default class Validator {
    * @returns  {Boolean} Returns boolean
    */
   static isEmpty(value) {
-    return (typeof value === 'undefined' || value === '' || value.length === 0);
+    return (typeof value === 'undefined' || value.trim === '' || value.length === 0);
   }
 
   /**
@@ -35,5 +35,4 @@ export default class Validator {
   static isNumber(number) {
     return number.matches(/[0-9]g/);
   }
-
 }
