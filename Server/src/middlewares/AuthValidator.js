@@ -30,7 +30,7 @@ class AuthValidator {
       return res.status(400).json({
         status: 'error',
         message: 'Fields length must not be less than five',
-      })
+      });
     }
     if (!Validator.isEmail(email)) {
       return res.status(400).json({
@@ -50,22 +50,40 @@ class AuthValidator {
    * @static
    */
   static validateSignup(req, res, next) {
-    // const {
-    //   userName,
-    //   email,
-    //   surname,
-    //   firstName,
-    //   phoneNumber,
-    //   password,
-    // } = req.body;
+    const {
+      username,
+      email,
+      surname,
+      firstname,
+      phonenumber,
+      password,
+    } = req.body;
 
-    // if (!userName || !email || !surname || !firstName || !phoneNumber || !password) {
-    //   return res.status(400).json({
-    //     status: 'error',
-    //     message: 'fields must not be empty',
-    //   });
-    // }
-    return next()
+    if (!username || !email || !surname || !firstname || !phonenumber || !password) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'fields must not be empty',
+      });
+    }
+    if (!Validator.isMaxLen(email) || !Validator.isMaxLen(password) || !Validator.isMaxLen(firstname) || !Validator.isMaxLen(username) || !Validator.isMaxLen(surname) || !Validator.isMaxLen(phonenumber)) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'Fields length must not be less than five',
+      });
+    }
+    if (!Validator.isEmail(email)) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'It seems your email is not valid, or is incorrect',
+      });
+    }
+    if (!Validator.isNumber(phonenumber)) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'Please enter a valid Phone Number',
+      });
+    }
+    return next();
   }
 }
 

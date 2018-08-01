@@ -37,13 +37,13 @@ class AuthController {
       } = rows[0];
       // Create token for the user
       const token = jwt.sign({
-          userid,
-          email,
-          username,
-        },
-        config.jwtSecret, {
-          expiresIn: '24h',
-        });
+        userid,
+        email,
+        username,
+      },
+      config.jwtSecret, {
+        expiresIn: '24h',
+      });
       return res.status(200).json({
         success: 'success',
         message: `${username} is now logged in`,
@@ -67,17 +67,17 @@ class AuthController {
   // eslint-disable-next-line
   static async signUp(req, res) {
     const {
-      userName,
+      username,
       email,
       surname,
-      firstName,
-      phoneNumber,
+      firstname,
+      phonenumber,
       password,
     } = req.body;
 
     // Check if there is a user with an existing email
 
-    const user = await database.query(find.userByEmail, [email]);
+    const user = await database.query(find.userByEmail, [email.toLowerCase()]);
 
     if (typeof user.rows[0] !== 'undefined') {
       return res.status(409).json({
@@ -87,7 +87,7 @@ class AuthController {
     }
 
     const passwordHash = bcrypt.hashSync(password, 10);
-    const credentials = [email, surname, userName, firstName, phoneNumber, passwordHash];
+    const credentials = [email, surname, username, firstname, phonenumber, passwordHash];
 
     database
       .query(insert.userCredentials, credentials)

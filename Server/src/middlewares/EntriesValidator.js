@@ -47,34 +47,6 @@ class EntriesValidator {
     };
     return next();
   }
-
-  /**
-   * Validates user input values
-   * @param  {req} req - Request object
-   * @param {res} res - Request object
-   * @param {next} next - calls next middleware
-   * @return {res} Returns response message
-   * @static
-   */
-  static validateLogin(req, res, next) {
-    const {
-      email,
-      password,
-    } = req.body;
-    if (!email || !password) {
-      return res.status(400).json({
-        status: 'error',
-        message: 'fields must not be empty',
-      });
-    }
-    if (!Validator.isEmail(email)) {
-      return res.status(400).json({
-        status: 'error',
-        message: 'It seems your email is not valid',
-      });
-    }
-    return next();
-  }
 }
 
 export default EntriesValidator;
