@@ -42,8 +42,8 @@ class EntriesValidator {
     }
 
     req.body = {
-      title,
-      story,
+      title: title.trim(),
+      story: story.trim(),
     };
     return next();
   }
@@ -65,6 +65,26 @@ class EntriesValidator {
         status: 'error',
         message: 'Entry Id should be a number',
       });
+    }
+    return next();
+  }
+
+  /**
+   * Validates input to of the diary
+   * @param  {req} req - Request object
+   * @param {res} res - Request object
+   * @param {next} next - calls next middleware
+   * @return {res} Returns  response
+   * @static
+   */
+  static validateModifyEntry(req, res, next) {
+    const {
+      title,
+      story,
+    } = req.body;
+    if (title || story) {
+      req.body.title.trim();
+      req.body.story.trim();
     }
     return next();
   }

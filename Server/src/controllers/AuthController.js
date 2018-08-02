@@ -29,7 +29,7 @@ class AuthController {
     } = req.body;
     const {
       rows,
-    } = await database.query(find.userByEmail, [email]);
+    } = await database.query(find.userByEmail, [email.trim()]);
     if (rows[0] && bcrypt.compareSync(password, rows[0].passwordhash)) {
       const {
         userid,
