@@ -66,12 +66,14 @@ Test Api
 * [Postman](https://getpostman.com/)
 
 ## Working Routes
-|	Endpoint	            | Functionality         |
-|-----------------------|:---------------------:|
-|GET /entries           | Fetch all entries     |   
-|GET /entries/:entryId  | Fetch a single entry  |
-|POST /entries          | Create an entry       |
-|PUT /​entries​/:entryId​  | Modify an entry       |
+|	Endpoint	             | Functionality         |
+|------------------------|:---------------------:|
+|GET /entries            | Fetch all entries     |   
+|GET /entries/:entryId   | Fetch a single entry  |
+|POST /entries           | Create an entry       |
+|PUT /​entries​/:entryId​| Modify an entry       |
+|POST /auth/signup       | Regetser a user       |
+|POST /auth/login        | Login a user          |
 
 ## Some Important Dependencies
   * [Babel](https://babeljs.io/) - JavaScript Compiler
