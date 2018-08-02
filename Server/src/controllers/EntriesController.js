@@ -30,6 +30,7 @@ class EntriesController {
       return res.status(200).json({
         status: 'success',
         message: 'User does not have an entry yet',
+        entries: rows,
       });
     }
     return res.status(200).json({
@@ -92,7 +93,7 @@ class EntriesController {
       return res.status(200).json({
         status: 'success',
         message: ' entry found',
-        dairy: rows[0],
+        entry: rows[0],
       });
     }
     return res.status(404).json({
@@ -122,7 +123,7 @@ class EntriesController {
 
     if (rows.length !== 0) {
       await database.query(remove.userEntry, [entryId, userid]);
-      return res.status(204).json({
+      return res.status(200).json({
         status: 'success',
         message: 'Diary entry deleted successfully',
       });
