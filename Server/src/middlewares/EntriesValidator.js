@@ -42,8 +42,8 @@ class EntriesValidator {
     }
 
     req.body = {
-      title,
-      story,
+      title: title.trim(),
+      story: story.trim(),
     };
     return next();
   }
@@ -68,6 +68,7 @@ class EntriesValidator {
     }
     return next();
   }
+
   /**
    * Validates input to of the diary
    * @param  {req} req - Request object
@@ -79,7 +80,7 @@ class EntriesValidator {
   static validateModifyEntry(req, res, next) {
     const {
       title,
-      story
+      story,
     } = req.body;
     if (title || story) {
       req.body.title.trim();
@@ -87,7 +88,6 @@ class EntriesValidator {
     }
     return next();
   }
-
 }
 
 export default EntriesValidator;

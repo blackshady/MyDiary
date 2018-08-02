@@ -44,6 +44,10 @@ class AuthValidator {
         message: 'It seems your email is not valid, or is incorrect',
       });
     }
+    req.body = {
+      email: email.trim(),
+      password: password.trim(),
+    }
     return next();
   }
 
@@ -118,9 +122,16 @@ class AuthValidator {
         message: 'Please enter a valid Phone Number',
       });
     }
+    req.body = {
+      username: username.trim(),
+      email: email.trim(),
+      surname: surname.trim(),
+      firstname: firstname.trim(),
+      phonenumber: phonenumber.trim(),
+      password: password.trim(),
+    }
     return next();
   }
- 
 }
 
 export default AuthValidator;
