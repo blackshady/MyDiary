@@ -46,7 +46,7 @@ class AuthValidator {
     }
     req.body = {
       email: email.trim(),
-      password: password.trim(),
+      password,
     }
     return next();
   }
@@ -128,7 +128,7 @@ class AuthValidator {
       surname: surname.trim(),
       firstname: firstname.trim(),
       phonenumber: phonenumber.trim(),
-      password: password.trim(),
+      password,
     }
     return next();
   }
