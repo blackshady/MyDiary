@@ -20,10 +20,16 @@ class AuthValidator {
       password,
     } = req.body;
 
-    if (!email || !password) {
+    if (!email) {
       return res.status(400).json({
         status: 'error',
-        message: 'fields must not be empty',
+        message: 'Email must not be empty',
+      });
+    }
+    if (!password) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'Password must not be empty',
       });
     }
     if (!Validator.isMaxLen(email) || !Validator.isMaxLen(password)) {
@@ -58,11 +64,40 @@ class AuthValidator {
       phonenumber,
       password,
     } = req.body;
-
-    if (!username || !email || !surname || !firstname || !phonenumber || !password) {
+    if (!username) {
       return res.status(400).json({
         status: 'error',
-        message: 'fields must not be empty',
+        message: 'username must not be empty',
+      });
+    }
+    if (!email) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'email must not be empty',
+      });
+    }
+    if (!surname) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'surname must not be empty',
+      });
+    }
+    if (!firstname) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'firstname must not be empty',
+      });
+    }
+    if (!phonenumber) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'phonenumber must not be empty',
+      });
+    }
+    if (!password) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'password must not be empty',
       });
     }
     if (!Validator.isMaxLen(email) || !Validator.isMaxLen(password) || !Validator.isMaxLen(firstname) || !Validator.isMaxLen(username) || !Validator.isMaxLen(surname) || !Validator.isMaxLen(phonenumber)) {
@@ -85,6 +120,7 @@ class AuthValidator {
     }
     return next();
   }
+ 
 }
 
 export default AuthValidator;

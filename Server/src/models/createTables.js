@@ -27,7 +27,7 @@ export default {
       userId INTEGER REFERENCES users(userId),
       title TEXT NOT NULL,
       story TEXT NOT NULL,
-      created_at TIMESTAMP NOT NULL,
+      created_at TIMESTAMP (0) without time zone default now(),
       updated_at TIMESTAMP  
     );
     `;
