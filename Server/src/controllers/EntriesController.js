@@ -67,7 +67,7 @@ class EntriesController {
     return res.status(201).json({
       status: 'success',
       message: 'entry created successfully',
-      entries: rows,
+      entry: rows[0],
     });
   }
 
