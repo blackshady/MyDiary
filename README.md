@@ -74,6 +74,7 @@ Test Api
 |PUT /​entries​/:entryId​| Modify an entry       |
 |POST /auth/signup       | Regetser a user       |
 |POST /auth/login        | Login a user          |
+|DELETE /entries/:entryId| Delete a user Entry   |
 
 ## Some Important Dependencies
   * [Babel](https://babeljs.io/) - JavaScript Compiler
