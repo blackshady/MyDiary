@@ -25,42 +25,42 @@ describe('"EntriesController" Handles all User entries ', () => {
         .get('/api/v1/entries');
       expect(res.body).to.be.a('object');
     });
-    // it('should return all entries in the database', async () => {
-    //   const res = await chai.request(app)
-    //     .get('/api/v1/entries');
-    //   expect(res.body).to.have.property('entriesDb');
-    // });
-    // it('should have a property of title', async () => {
-    //   const res = await chai.request(app)
-    //     .get('/api/v1/entries');
-    //   expect(res.body.entriesDb[0]).to.have.property('title');
-    // });
-    // it('should not have an empty title', async () => {
-    //   const res = await chai.request(app)
-    //     .get('/api/v1/entries');
-    //   expect(res.body.entriesDb[0]).to.have.property('title')
-    //     .that.is.not.empty;
-    // });
-    // it('should have a property of story', async () => {
-    //   const res = await chai.request(app)
-    //     .get('/api/v1/entries');
-    //   expect(res.body.entriesDb[0]).to.have.property('title');
-    // });
-    // it('should not have an empty story content', async () => {
-    //   const res = await chai.request(app)
-    //     .get('/api/v1/entries');
-    //   expect(res.body.entriesDb[0]).to.have.property('story')
-    //     .that.is.not.empty;
-    // });
-    // it('should have a property of date', async () => {
-    //   const res = await chai.request(app)
-    //     .get('/api/v1/entries');
-    //   expect(res.body.entriesDb[0]).to.have.property('createdAt');
-    // });
-    // it('should not have an empty date', async () => {
-    //   const res = await chai.request(app)
-    //     .get('/api/v1/entries');
-    //   expect(res.body.entriesDb[0]).to.have.property('createdAt').that.is.not.empty;
-    // });
+    it('should return all entries in the database', async () => {
+      const res = await chai.request(app)
+        .get('/api/v1/entries');
+      expect(res.body).to.have.property('entriesDb');
+    });
+    it('should have a property of title', async () => {
+      const res = await chai.request(app)
+        .get('/api/v1/entries');
+      expect(res.body.entriesDb[0]).to.have.property('title');
+    });
+    it('should not have an empty title', async () => {
+      const res = await chai.request(app)
+        .get('/api/v1/entries');
+      expect(res.body.entriesDb[0]).to.have.property('title')
+        .that.is.not.empty;
+    });
+    it('should have a property of story', async () => {
+      const res = await chai.request(app)
+        .get('/api/v1/entries');
+      expect(res.body.entriesDb[0]).to.have.property('title');
+    });
+    it('should not have an empty story content', async () => {
+      const res = await chai.request(app)
+        .get('/api/v1/entries');
+      expect(res.body.entriesDb[0]).to.have.property('story')
+        .that.is.not.empty;
+    });
+    it('should have a property of date', async () => {
+      const res = await chai.request(app)
+        .get('/api/v1/entries');
+      expect(res.body.entriesDb[0]).to.have.property('createdAt');
+    });
+    it('should not have an empty date', async () => {
+      const res = await chai.request(app)
+        .get('/api/v1/entries');
+      expect(res.body.entriesDb[0]).to.have.property('createdAt').that.is.not.empty;
+    });
   })
 });
