@@ -47,7 +47,7 @@ class AuthValidator {
     req.body = {
       email: email.trim(),
       password,
-    }
+    };
     return next();
   }
 
@@ -129,7 +129,7 @@ class AuthValidator {
       firstname: firstname.trim(),
       phonenumber: phonenumber.trim(),
       password,
-    }
+    };
     return next();
   }
 }

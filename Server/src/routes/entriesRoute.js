@@ -12,12 +12,7 @@ const authPost = [
   Authorization.verifyToken,
   EntriesValidator.validateCreateEntry,
 ];
-const authGet = [Authorization.verifyToken, EntriesValidator.validateParams];
-const authPut = [Authorization.verifyToken,
-  EntriesValidator.validateParams,
-  EntriesValidator.validateModifyEntry,
-];
-const authDelete = [Authorization.verifyToken, EntriesValidator.validateParams];
+const authValidate = [Authorization.verifyToken, EntriesValidator.validateParams];
 
 // Entries  routes
 router.get(
@@ -34,19 +29,18 @@ router.post(
 
 router.get(
   '/entries/:entryId',
-  ...authGet,
+  ...authValidate,
   asyncCatchErrors(EntriesController.getEntry),
 );
 
 router.put(
   '/entries/:entryId',
-  ...authPut,
-  asyncCatchErrors(EntriesController.updateDiary),
+  ...authValidate, EntriesValidator.validateModifyEntry, asyncCatchErrors(EntriesController.updateDiary),
 );
 
 router.delete(
   '/entries/:entryId',
-  ...authDelete,
+  ...authValidate,
   asyncCatchErrors(EntriesController.deleteDiary),
 );
 

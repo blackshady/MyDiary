@@ -82,10 +82,16 @@ class EntriesValidator {
       title,
       story,
     } = req.body;
-    if (title || story) {
-      req.body.title.trim();
-      req.body.story.trim();
+    if ((title && title.length > 50)) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'Title should not be more than 50 characters',
+      });
     }
+    req.body = {
+      title: (title && title.trim()),
+      story: (story && story.trim()),
+    };
     return next();
   }
 }
