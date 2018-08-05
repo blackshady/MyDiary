@@ -3,20 +3,17 @@
   justify-content: center;
 }
 
-.h-l__span {
-  grid-row: 6/-1;
-}
-
-.h-l__span-2 {
-  grid-row: 5;
-}
-
 .h-font__size {
   font-size: 1.5rem;
+  margin-bottom: 30px;
 }
 
 .h-margin__left {
   margin-left: 30%;
+}
+
+.h-margin__h-form__modbot {
+  margin-bottom: 15px;
 }
 
 .h-form__mod {

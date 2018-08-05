@@ -34,16 +34,18 @@
 
 .l-form__area {
   display: grid;
-  grid-template-columns: 35% repeat(2, 1fr);
+  grid-template-columns: repeat(2, 400px);
   grid-gap: 20px;
-  align-items: right;
-  justify-items: right;
+  justify-content: center;
+  align-items: center;
 }
 
 .l-form {
   display: grid;
-  grid-template-rows: repeat(8, 1fr);
-  height: 500px;
+  grid-template-rows: repeat(5, 1fr);
+  height: 450px;
+  margin-left: 10px;
+  max-width: 400px;
 }
 
 .l-dashboard__wrapper {

@@ -29,7 +29,7 @@ class AuthController {
     } = req.body;
     const {
       rows,
-    } = await database.query(find.userByEmail, [email.trim()]);
+    } = await database.query(find.userByEmail, [email]);
     if (rows[0] && bcrypt.compareSync(password, rows[0].passwordhash)) {
       const {
         userid,
@@ -37,16 +37,16 @@ class AuthController {
       } = rows[0];
       // Create token for the user
       const token = jwt.sign({
-        userid,
-        email,
-        username,
-      },
-      config.jwtSecret, {
-        expiresIn: '24h',
-      });
+          userid,
+          email,
+          username,
+        },
+        config.jwtSecret, {
+          expiresIn: '24h',
+        });
       return res.status(200).json({
         success: 'success',
-        message: `${username} is now logged in`,
+        message: 'You are now logged in',
         token,
       });
     }
@@ -69,15 +69,12 @@ class AuthController {
     const {
       username,
       email,
-      surname,
-      firstname,
-      phonenumber,
       password,
     } = req.body;
 
     // Check if there is a user with an existing email
 
-    const user = await database.query(find.userByEmail, [email.toLowerCase()]);
+    const user = await database.query(find.userByEmail, [email]);
 
     if (typeof user.rows[0] !== 'undefined') {
       return res.status(409).json({
@@ -87,7 +84,7 @@ class AuthController {
     }
 
     const passwordHash = bcrypt.hashSync(password, 10);
-    const credentials = [email, surname, username, firstname, phonenumber, passwordHash];
+    const credentials = [email, username, passwordHash];
 
     database
       .query(insert.userCredentials, credentials)
@@ -108,7 +105,6 @@ class AuthController {
         res.status(201).json({
           status: 'success',
           message: 'Your account have been created successful',
-          user: rows[0],
           token,
         });
       })

@@ -15,5 +15,5 @@ node_modules/
 .nyc_output
 coverage
 
-# Enviroment  
+# Enviroment variable  
 .env
