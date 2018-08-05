@@ -627,7 +627,7 @@ nav ul {
   font-family: inherit;
   font-size: 1.3rem;
   resize: none;
-  background: white;
+  background: rgb(224, 224, 224);
   box-shadow: var(--shadow);
   border-bottom: solid 2px var(--primary);
 }.is-hidden {
