@@ -5829,6 +5829,14 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
+sinon-chai@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/sinon-chai/-/sinon-chai-3.2.0.tgz#ed995e13a8a3cfccec18f218d9b767edc47e0715"
+
+sinon-express-mock@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/sinon-express-mock/-/sinon-express-mock-2.0.5.tgz#2ca382a89153149fe2e817a90cee32a6552479d2"
+
 slash@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"
