@@ -45,7 +45,7 @@ class AuthValidator {
       });
     }
     req.body = {
-      email: email.trim(),
+      email: email.toLowerCase().trim(),
       password,
     };
     return next();
@@ -63,9 +63,6 @@ class AuthValidator {
     const {
       username,
       email,
-      surname,
-      firstname,
-      phonenumber,
       password,
     } = req.body;
     if (!username) {
@@ -80,34 +77,16 @@ class AuthValidator {
         message: 'email must not be empty',
       });
     }
-    if (!surname) {
-      return res.status(400).json({
-        status: 'error',
-        message: 'surname must not be empty',
-      });
-    }
-    if (!firstname) {
-      return res.status(400).json({
-        status: 'error',
-        message: 'firstname must not be empty',
-      });
-    }
-    if (!phonenumber) {
-      return res.status(400).json({
-        status: 'error',
-        message: 'phonenumber must not be empty',
-      });
-    }
     if (!password) {
       return res.status(400).json({
         status: 'error',
         message: 'password must not be empty',
       });
     }
-    if (!Validator.isMaxLen(email) || !Validator.isMaxLen(password) || !Validator.isMaxLen(firstname) || !Validator.isMaxLen(username) || !Validator.isMaxLen(surname) || !Validator.isMaxLen(phonenumber)) {
+    if (!Validator.isMaxLen(email) || !Validator.isMaxLen(password) || !Validator.isMaxLen(username)) {
       return res.status(400).json({
         status: 'error',
-        message: 'Fields length must not be less than five',
+        message: 'Fields length must not be less than five characters',
       });
     }
     if (!Validator.isEmail(email)) {
@@ -116,18 +95,9 @@ class AuthValidator {
         message: 'It seems your email is not valid, or is incorrect',
       });
     }
-    if (!Validator.isNumber(phonenumber)) {
-      return res.status(400).json({
-        status: 'error',
-        message: 'Please enter a valid Phone Number',
-      });
-    }
     req.body = {
       username: username.trim(),
-      email: email.trim(),
-      surname: surname.trim(),
-      firstname: firstname.trim(),
-      phonenumber: phonenumber.trim(),
+      email: email.toLowerCase().trim(),
       password,
     };
     return next();

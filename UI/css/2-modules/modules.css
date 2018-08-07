@@ -113,6 +113,7 @@ nav ul {
   font-size: 3rem;
   padding: 0;
   margin: 0;
+  color: white;
 }
 
 .button {
@@ -165,7 +166,6 @@ nav ul {
   box-sizing: border-box;
   padding: 0 30px;
   align-items: center;
-  justify-items: center;
   background: white;
   box-shadow: var(--shadow);
 }
@@ -174,9 +174,14 @@ nav ul {
   font-size: 3rem;
 }
 
+.caption__wrapper {
+  max-width: 450px;
+}
+
 .caption__wrapper p {
   letter-spacing: -1px;
   font-size: 20px;
+  color: white;
 }
 
 .caption__wrapper p::first-letter {
@@ -355,7 +360,7 @@ nav ul {
   font-family: inherit;
   font-size: 1.3rem;
   resize: none;
-  background: white;
+  background: rgb(224, 224, 224);
   box-shadow: var(--shadow);
   border-bottom: solid 2px var(--primary);
 }

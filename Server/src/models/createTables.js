@@ -7,10 +7,7 @@ export default {
     CREATE TABLE IF NOT EXISTS users (
       userId SERIAL PRIMARY KEY,
       email TEXT NOT NULL UNIQUE,
-      surname VARCHAR(80) NOT NULL,
       userName VARCHAR(255) NOT NULL,
-      firstName VARCHAR(255) NOT NULL,
-      phoneNumber VARCHAR(80),
       passwordHash  VARCHAR(255) NOT NULL,
       profileImageUrl VARCHAR(80),
       totalCreatedEntries INTEGER,

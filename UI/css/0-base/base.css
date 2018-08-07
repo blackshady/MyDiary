@@ -76,6 +76,10 @@ select {
   -webkit-appearance: none;
 }
 
+.quote {
+  color: white;
+}
+
 .quote::before {
   content: open-quote;
   font-size: 3.5rem;
