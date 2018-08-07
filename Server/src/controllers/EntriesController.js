@@ -189,7 +189,7 @@ class EntriesController {
       return res.status(200).json({
         status: 'success',
         message: 'diary have been updated successfully',
-        dairy: newValue.rows[0],
+        entry: newValue.rows[0],
       });
     }
   }
