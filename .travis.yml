@@ -10,7 +10,7 @@ env:
     - CC_TEST_REPORTER_ID=5bba2edcdc6153de5608fb4e61ba72f5388dfc3a9971aced041a14bcc4c87165
 
 before_script:
-  - psql -c 'create database travis_ci_test;' -U postgres
+  - psql -c 'create database myDiaryTest;' -U postgres
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
