@@ -61,16 +61,11 @@ class AuthValidator {
    */
   static validateSignup(req, res, next) {
     const {
-      username,
       email,
       password,
+      username,
     } = req.body;
-    if (!username) {
-      return res.status(400).json({
-        status: 'error',
-        message: 'username must not be empty',
-      });
-    }
+
     if (!email) {
       return res.status(400).json({
         status: 'error',
@@ -81,6 +76,12 @@ class AuthValidator {
       return res.status(400).json({
         status: 'error',
         message: 'password must not be empty',
+      });
+    }
+    if (!username) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'username must not be empty',
       });
     }
     if (!Validator.isMaxLen(email) || !Validator.isMaxLen(password) || !Validator.isMaxLen(username)) {

@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 import morgan from 'morgan';
 import logger from './helpers/logger';
 import router from './routes/index';
@@ -9,6 +10,9 @@ const app = express();
 
 // Port
 const port = parseInt(process.env.PORT, 10) || 9000;
+
+// Allow CORS
+app.use(cors());
 
 //   parse request
 app.use(bodyParser.json(), bodyParser.urlencoded({

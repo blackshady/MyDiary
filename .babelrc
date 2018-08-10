@@ -4,7 +4,9 @@
       "targets": {
         "node": "current"
       },
-      "plugins": ["transform-object-rest-spread", "add-module-exports", "istanbul"]
+      "plugins": ["transform-object-rest-spread", "add-module-exports", "istanbul", ["transform-runtime", {
+        "regenerator": true
+      }]]
     }]
   ],
 
