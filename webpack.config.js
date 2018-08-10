@@ -3,6 +3,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: './UI/index.js',
+
   output: {
     path: path.resolve(__dirname, './UI/build'),
     filename: 'bundle.js',
@@ -12,9 +13,8 @@ module.exports = {
     rules: [{
       test: /\.js?$/,
       exclude: /node_modules/,
-      loader: 'babel-loader',
-      query: {
-        presets: ['env'],
+      use: {
+        loader: 'babel-loader',
       },
     },
 

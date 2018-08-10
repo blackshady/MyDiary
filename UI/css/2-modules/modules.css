@@ -364,3 +364,9 @@ nav ul {
   box-shadow: var(--shadow);
   border-bottom: solid 2px var(--primary);
 }
+
+.error {
+  height: 20px;
+  color: red;
+  font-size: 1rem;
+}
