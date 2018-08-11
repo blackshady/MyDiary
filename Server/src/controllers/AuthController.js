@@ -37,16 +37,16 @@ class AuthController {
       } = rows[0];
       // Create token for the user
       const token = jwt.sign({
-        userid,
-        email,
-        username,
-      },
-      config.jwtSecret, {
-        expiresIn: '24h',
-      });
+          userid,
+          email,
+          username,
+        },
+        config.jwtSecret, {
+          expiresIn: '24h',
+        });
       return res.status(200).json({
-        success: 'success',
-        message: 'You are now logged in',
+        status: 'success',
+        message: 'Login successfully',
         token,
       });
     }

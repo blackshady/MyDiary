@@ -632,11 +632,16 @@ nav ul {
   border-bottom: solid 2px var(--primary);
 }
 
-.error {
+.err__display {
   height: 20px;
   color: red;
   font-size: 0.9rem;
   margin-bottom: 10px;
+}
+
+.submit__options {
+  display: grid;
+  grid-template-columns: 1fr;
 }.is-hidden {
   display: none;
 }
@@ -667,6 +672,10 @@ nav ul {
 
 .h-margin__h-form__modbot {
   margin-bottom: 15px;
+}
+
+.h-font__sm {
+  font-size: 0.9rem !important;
 }
 
 .h-form__mod {

@@ -1,6 +1,6 @@
-import * as signupPage from './pages/SignupPage';
+import * as authPage from './pages/AuthPage';
 
 
 export {
-  signupPage
+  authPage
 }

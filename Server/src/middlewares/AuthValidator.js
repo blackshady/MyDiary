@@ -35,7 +35,7 @@ class AuthValidator {
     if (!Validator.isMaxLen(email) || !Validator.isMaxLen(password)) {
       return res.status(400).json({
         status: 'error',
-        message: 'Fields length must not be less than five',
+        message: 'Fields characters must not be less than five',
       });
     }
     if (!Validator.isEmail(email)) {
