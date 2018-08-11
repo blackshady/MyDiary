@@ -1,0 +1,178 @@
+FORMAT: 1A
+HOST: https://my-1-and-only-diary.herokuapp.com/
+
+# myDiary
+
+This is an API Documentation for myDiray application, the application allows a user to pen down their thoughts and feelings.
+ 
+
+
+## Users [/api/v1/auth]
+
+### Users Signup [POST]
+
+Register a User
+
++ Request (application/json)
+
+        {
+            "username":"mj2930",
+            "emill": "maryjane@gmail.com",
+            "password": "password123"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /signup
+
+    + Body
+
+            {
+                 "status": "success",
+                 "message": "Your account have been created successful",
+                 "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOjUsImVtYWlsIjoibWFyeWphbmVAZ21haWwuY29tIiwiaWF0IjoxNTMzOTY4Mjk5LCJleHAiOjE1MzQwNTQ2OTl9.jycJ1PDKdrTKrIJES5Dy1iMsrvqjvqxljzFlDPt1i9c"
+            }
+
+### Users Login [POST]
+
+Login an existing  User
+
++ Request (application/json)
+
+        {
+            "emill": "maryjane@gmail.com",
+            "password": "password123"
+        }
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Location: /login
+
+    + Body
+
+            {
+                    "success": "success",
+                    "message": "You are now logged in",
+                    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOjUsImVtYWlsIjoibWFyeWphbmVAZ21haWwuY29tIiwidXNlcm5hbWUiOiJtajI5MzAiLCJpYXQiOjE1MzM5NzAxODEsImV4cCI6MTUzNDA1NjU4MX0.2PzKbCOfloeE51zx6OsWuXOXmcUXQ8Lmswrw38YrbfM"
+            }
+            
+## Entries [/api/v1/entries]
+
+### Add Entry [POST]
+
+Add new entry
+
++ Request (application/json)
+
+        {
+            "title": "My Adventures as the World s Most Wanted Hacker",
+            "story": "Kevin Mitnick was the most elusive computer break-in artist in history. He accessed computers and networks at the world's biggest companies -- and however fast the authorities were, Mitnick was faster, sprinting through phone switches, computer systems, and cellular networks. He spent years skipping through cyberspace, always three steps ahead and labeled unstoppable. But for Kevin, hacking wasn't just about technological feats-it was an old fashioned confidence game that required guile and deception to trick the unwitting out of valuable information. "
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /entries
+
+    + Body
+
+            {
+                "status": "success",
+                "message": "entry created successfully",
+                "entry": {
+                "entryid": 1,
+                    "userid": 5,
+                    "title": "My Adventures as the World s Most Wanted Hacker",
+                    "story": "Kevin Mitnick was the most elusive computer break-in artist in history. He accessed computers and networks at the world's biggest companies -- and however fast the authorities were, Mitnick was faster, sprinting through phone switches, computer systems, and cellular networks. He spent years skipping through cyberspace, always three steps ahead and labeled unstoppable. But for Kevin, hacking wasn't just about technological feats-it was an old fashioned confidence game that required guile and deception to trick the unwitting out of valuable information.",
+                    "created_at": "2018-08-11T06:16:05.000Z",
+                    "updated_at": null
+                          }
+            }
+
+
+
+
+### Get single Entry [GET]
+
+Fetch details of a single entry for a user
+
++ Response 200 (application/json)
+
+            {
+                "status": "success",
+                "message": " entry found",
+                "entry": {
+                    "entryid": 1,
+                    "userid": 5,
+                    "title": "My Adventures as the World s Most Wanted Hacker",
+                    "story": "Kevin Mitnick was the most elusive computer break-in artist in history. He accessed computers and networks at the world's biggest companies -- and however fast the authorities were, Mitnick was faster, sprinting through phone switches, computer systems, and cellular networks. He spent years skipping through cyberspace, always three steps ahead and labeled unstoppable. But for Kevin, hacking wasn't just about technological feats-it was an old fashioned confidence game that required guile and deception to trick the unwitting out of valuable information.",
+                    "created_at": "2018-08-11T06:16:05.000Z",
+                    "updated_at": null
+                          }
+            }
+
+### Get all Entry [GET]
+
+Fetch details of all the entries for a user
+
++ Response 200 (application/json)
+
+            {
+                "status": "success",
+                "entries": [
+                    {
+                        "entryid": 1,
+                        "userid": 5,
+                        "title": "My Adventures as the World s Most Wanted Hacker",
+                        "story": "Kevin Mitnick was the most elusive computer break-in artist in history. He accessed computers and networks at the world's biggest companies -- and however fast the authorities were, Mitnick was faster, sprinting through phone switches, computer systems, and cellular networks. He spent years skipping through cyberspace, always three steps ahead and labeled unstoppable. But for Kevin, hacking wasn't just about technological feats-it was an old fashioned confidence game that required guile and deception to trick the unwitting out of valuable information.",
+                        "created_at": "2018-08-11T06:16:05.000Z",
+                        "updated_at": null
+                    },
+                    {
+                        "entryid": 2,
+                        "userid": 5,
+                        "title": "The danger of a single story",
+                        "story": "I would like to tell you a few personal stories about what I like to call “The danger of the single story”. I thought about this when I left Nigeria to go to the university in the United States. I was 19. My American roommate was shocked by me. She asked where I had learned to speak English so well, and was confused when I said that Nigeria happened to have English as its official language. She asked if she could listen to what she called my ‘tribal music’.",
+                        "created_at": "2018-08-11T08:21:51.000Z",
+                        "updated_at": null
+                    }
+                ]
+            }
+            
+
+### Modify an Entry [PUT]
+
+Modify a diary entry
+
++ Request (application/json)
+
+        {
+            "title": "The danger of a single story - Chimamanda ",
+            "story": "I would like to tell you a few personal stories about what I like to call “The danger of the single story”. I thought about this when I left Nigeria to go to the university in the United States. I was 19. My American roommate was shocked by me. She asked where I had learned to speak English so well, and was confused when I said that Nigeria happened to have English as its official language. She asked if she could listen to what she called my ‘tribal music’."
+        }
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Location: /:entryId
+
+    + Body
+
+            {
+                "status": "success",
+                "message": "diary have been updated successfully",
+                "entry": {
+                    "entryid": 2,
+                    "userid": 5,
+                    "title": "The danger of a single story - Chimamanda",
+                    "story": "I would like to tell you a few personal stories about what I like to call “The danger of the single story”. I thought about this when I left Nigeria to go to the university in the United States. I was 19. My American roommate was shocked by me. She asked where I had learned to speak English so well, and was confused when I said that Nigeria happened to have English as its official language. She asked if she could listen to what she called my ‘tribal music’.",
+                    "created_at": "2018-08-11T08:21:51.000Z",
+                    "updated_at": "2018-08-11T09:50:19.923Z"
+                }
+            }
