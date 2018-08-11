@@ -49,7 +49,7 @@ describe('AuthValidator/ Handles login and signup input validation', () => {
       expect(res.status).to.be.calledWith(400);
       expect(res.json).to.be.calledWith({
         status: 'error',
-        message: 'Fields length must not be less than five',
+        message: 'Fields characters must not be less than five',
       })
     })
 

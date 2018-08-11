@@ -1,8 +1,10 @@
 const inputLabel = Array.from(document.getElementsByClassName('input__label'));
 const siginUpBtn = document.getElementById('signup__button');
+const loginBtn = document.getElementById('login__button');
 import Signup from '../components/Authentication/Signup';
+import Login from '../components/Authentication/Login';
 
-class SignupPage {
+class AuthPage {
   constructor() {
     this.transformItems();
   }
@@ -13,9 +15,10 @@ class SignupPage {
       field.style.marginBottom = `21px`;
       field.style.fontSize = `12px`;
     });
-    siginUpBtn.addEventListener('click', Signup.onSubmit);
+    if (siginUpBtn) siginUpBtn.addEventListener('click', Signup.onSubmit);
+    if (loginBtn) loginBtn.addEventListener('click', Login.onSubmit)
   };
 
 }
 
-document.addEventListener('DOMContentLoaded', (e) => new SignupPage());
+document.addEventListener('DOMContentLoaded', (e) => new AuthPage());
