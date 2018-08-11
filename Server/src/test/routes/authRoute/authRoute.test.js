@@ -67,7 +67,7 @@ describe('POST/ api/v1/auth   Handles the Sign and login of a user', () => {
       expect(res).to.have.status(400);
       expect(res.body).to.have.property('status').that.is.equal('error');
       expect(res.body).to.have.property('message')
-        .that.is.equal('Fields length must not be less than five characters');
+        .that.is.equal('Fields characters must not be less than five');
     })
     it('should return a message and throw an error when an empty string is passed to the email', async () => {
       const res = await chai.request(app)
