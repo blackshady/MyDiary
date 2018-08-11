@@ -54,8 +54,10 @@ class Signup {
       const res = await fetch(`https://my-1-and-only-diary.herokuapp.com/api/v1/auth/signup`, this.fetchData)
       const data = await res.json();
       if (data.status === 'success') {
+        localStorage.setItem('token', JSON.stringify(data.token))
         window.location.href = '../pages/dashboard.html';
       }
+      error.innerHTML = '';
       return error.innerHTML = data.message;
     }
   }
