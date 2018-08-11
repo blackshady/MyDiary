@@ -50,7 +50,7 @@ class Login {
         },
         body: JSON.stringify(this.userData)
       }
-      const res = await fetch(`http://localhost:9000/api/v1/auth/login`, this.fetchData)
+      const res = await fetch(`https://my-1-and-only-diary.herokuapp.com/api/v1/auth/login`, this.fetchData)
       const data = await res.json();
       if (data.status === 'success') {
         localStorage.setItem('token', JSON.stringify(data.token))
