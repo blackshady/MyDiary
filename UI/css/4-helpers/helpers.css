@@ -16,6 +16,10 @@
   margin-bottom: 15px;
 }
 
+.h-font__sm {
+  font-size: 0.9rem !important;
+}
+
 .h-form__mod {
   min-width: 350px;
 }
