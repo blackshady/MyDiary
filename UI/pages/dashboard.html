@@ -18,7 +18,7 @@
         <nav class="main__nav">
           <ul class "main__menu">
             <li>
-              <div class="menu__notification .h-icon__size ">
+              <div class="menu__notifiation .h-icon__size ">
                 <img src="../icons/Bell-WF.png" alt="alert">
                 <label class="number__notified">10</label>
               </div>
@@ -86,35 +86,34 @@
     <!-- End of Header content -->
 
     <!-- Start Main Content -->
-    <section class="l-dashboard__wrapper">
-      <div class="l-dashboard__content-body">
-        <div class="l-post__area">
-          <div class="  title__area l-title__area ">
-            <label>TITLE:</label>
-            <input type="text" class="story__title" value="">
-          </div>
-          <div class="text__area l-text__area">
-            <textarea class="story__text">What's on your mind...</textarea>
-          </div>
-          <div class="l-buttons__area">
-            <button class="button">Post</button>
-          </div>
-          <div class="l-display__area">
-            <span class="title__display">The Crazy Bike Ride</span>
-            <div class="story__display">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni incidunt rem nesciunt dolor doloribus ea. Laudantium
-              modi sapiente distinctio voluptatem eligendi sed maiores, minus, molestias molestiae ipsa assumenda perferendis
-              alias neque eaque, dolorem obcaecati a voluptates perspiciatis architecto. Fugiat dolor corrupti labore accusamus
-              dolore, quos animi quam repudiandae nostrum doloribus?</div>
-            <div class="l-story__option">
-              <div class="date__posted ">July 17th 2018, 9:59:51 am</div>
-              <button class="edit__post button">Edit</button>
+    <section>
+      <div class="l-dashboard__wrapper">
+        <div class="l-dashboard__content-body">
+
+          <div class="l-post__area">
+            <div class="title__area">
+              <input type="text" class="story__title" value="TITLE..">
+            </div>
+            <div class="text__area l-text__area">
+              <textarea class="story__text">What's on your mind...</textarea>
+
+            </div>
+            <div class="style__wrapper">
+              <div class="l-buttons__area">
+                <button id="add__Entry" class="button">Post</button>
+              </div>
             </div>
           </div>
+
+          <div class="l-display__area">
+          </div>
+
         </div>
+      </div>
     </section>
     <!-- End Main Content -->
     <script src="../build/bundle.js"></script>
+    <script src="../client/js/AddEntry.js"></script>
 </body>
-
 
 </html>

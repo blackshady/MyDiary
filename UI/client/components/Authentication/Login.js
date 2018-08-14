@@ -1,6 +1,7 @@
 const inputField = Array.from(document.getElementsByClassName('input__field'));
 const error = document.querySelector('.error__filed');
 import Validator from '../../utils/Validator';
+
 /**
  * @exports Login
  * @class Login
@@ -50,11 +51,12 @@ class Login {
         },
         body: JSON.stringify(this.userData)
       }
-      const res = await fetch(`https://my-1-and-only-diary.herokuapp.com/api/v1/auth/login`, this.fetchData)
+      const res = await fetch(`http://localhost:9000/api/v1/auth/login`, this.fetchData)
       const data = await res.json();
       if (data.status === 'success') {
         localStorage.setItem('token', JSON.stringify(data.token))
         location.href = '../pages/dashboard.html';
+
       }
       error.innerHTML = '';
       return error.innerHTML = data.message;

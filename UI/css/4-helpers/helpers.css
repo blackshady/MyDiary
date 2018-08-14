@@ -24,6 +24,11 @@
   min-width: 350px;
 }
 
+.h-color__white {
+  color: white;
+  font-family: inherit;
+}
+
 .h-user__icon::before {
   content: url("../../icons/User.png");
   margin-right: 10px;
