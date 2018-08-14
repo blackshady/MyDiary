@@ -99,9 +99,8 @@ async function addEntry() {
     dispalyArea.innerHTML = '';
     displayEntry(entry);
   }
-  console.log(data);
 
 }
 
-document.addEventListener('DOMContentLoaded', getEntryOnLoad);
+window.onload = getEntryOnLoad;
 addEntryBtn.addEventListener('click', addEntry);
