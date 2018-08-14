@@ -53,8 +53,8 @@ async function userLogin() {
     const res = await fetch(`http://localhost:9000/api/v1/auth/login`, fetchData);
     const data = await res.json();
     if (data.status === 'success') {
-      localStorage.setItem('token', JSON.stringify(data.token))
-      location.href = '../pages/dashboard.html';
+      localStorage.setItem('token', JSON.stringify(data.token));
+      setTimeout((location.href = '../pages/dashboard.html'), 5000);
     }
     error.innerHTML = data.message;
   }
