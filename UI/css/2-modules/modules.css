@@ -297,18 +297,17 @@ nav ul {
 }
 
 .title__area {
-  font-size: 1.5rem;
-  font-family: inherit;
+  padding: 5px;
   color: white;
-  font-weight: bold;
+  width: 100%;
 }
 
-.title__area>input {
+/* .title__area>input {
   border-radius: 5px;
   text-indent: 10px;
   background: white;
   box-shadow: var(--shadow);
-}
+} */
 
 .story__text {
   border-radius: 5px;
@@ -316,23 +315,32 @@ nav ul {
   font-family: inherit;
   font-size: 1.3rem;
   resize: none;
-  background: white;
   box-shadow: var(--shadow);
 }
 
 .story__title {
-  display: grid;
   font-family: inherit;
   font-size: 1.5rem;
+  border-radius: 5px;
   font-weight: bold;
-  justify-items: center;
-  align-content: center;
-  margin: 0;
+  text-indent: 10px;
+  width: 100%;
+  padding: 3px;
+  box-shadow: var(--shadow);
+}
+
+.title__display {
+  background: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .story__display {
   display: grid;
   padding: 10px;
+  background: white;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
   font-family: inherit;
   font-size: 1.2rem;
   align-items: center;
@@ -341,15 +349,14 @@ nav ul {
 .date__posted {
   font-family: inherit;
   font-size: 1.1rem;
+  color: white;
   margin: 5px;
   padding: 3px;
 }
 
 .edit__post {
-  padding: 5px 20px;
   font-family: inherit;
   font-size: 1.2rem;
-  box-shadow: var(--card-shadow);
 }
 
 .contact__form {
