@@ -3,7 +3,7 @@ const addEntryBtn = document.getElementById('add__Entry');
 const storyTitle = document.querySelector('.story__title')
 const storyText = document.querySelector('.story__text')
 
-const baseUrl = 'https://my-1-and-only-diary.herokuapp.com';
+const baseUrl = JSON.parse('https://my-1-and-only-diary.herokuapp.com');
 const token = JSON.parse(localStorage.getItem('token'));
 let userEntryId = '';
 async function getEntryOnLoad() {

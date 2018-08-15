@@ -3,7 +3,7 @@ const inputField = Array.from(document.getElementsByClassName('input__field'));
 const siginUpBtn = document.getElementById('signup__button');
 const error = document.querySelector('.error');
 
-const baseUrl = 'https://my-1-and-only-diary.herokuapp.com';
+const baseUrl = JSON.parse('https://my-1-and-only-diary.herokuapp.com');
 
 // Default action on DOM Load
 const transformItems = () => {
