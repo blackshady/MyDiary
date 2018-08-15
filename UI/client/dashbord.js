@@ -6,6 +6,7 @@ const storyText = document.querySelector('.story__text')
 const token = JSON.parse(localStorage.getItem('token'));
 let userEntryId = '';
 async function getEntryOnLoad() {
+  if (!token) return window.location.replace('../pages/index.html');
   const entryId = location.search.substring(1).split("=")[1];
   if (!entryId) {
     if (token) {
@@ -30,10 +31,7 @@ async function getEntryOnLoad() {
 
 const getMessage = (entries) => {
   if (entries.length === 0) {
-    const h1 = document.createElement('h1');
-    h1.innerHTML = 'You do not have an entry, Please add an entry';
-    h1.className = 'h-color__white'
-    dispalyArea.appendChild(h1);
+    return dispalyArea.innerHTML = `<h1 class="h-color__white">You do not have an entry, Please add an entry</h1>`;
   }
   const entry = entries[entries.length - 1];
   dispalyArea.innerHTML = '';
@@ -41,7 +39,7 @@ const getMessage = (entries) => {
 };
 
 const modifyPost = (e) => {
-
+  if (!token) return window.location.replace('../pages/index.html');
   if (e.target.classList.contains('button')) {
     storyTitle.value = e.target.parentElement.parentElement.children[0].innerHTML;
     storyText.value = e.target.parentElement.parentElement.children[1].innerHTML;
@@ -78,40 +76,43 @@ async function modifyPostRequest(entryId, title, story) {
 }
 
 const displayEntry = (entry) => {
-  // Dairy Title
-  const title = document.createElement('span');
-  title.className = 'title__display';
-  title.innerHTML = `${entry.title}`;
+  if (entry) {
+    // Dairy Title
+    const title = document.createElement('span');
+    title.className = 'title__display';
+    title.innerHTML = `${entry.title}`;
 
-  // Dairy story
-  const story = document.createElement('div');
-  story.className = 'story__display';
-  story.innerHTML = `${entry.story}`;
+    // Dairy story
+    const story = document.createElement('div');
+    story.className = 'story__display';
+    story.innerHTML = `${entry.story}`;
 
-  // Date created
-  const date = document.createElement('div');
-  date.className = 'date__posted';
-  date.innerHTML = `${entry.created_at}`;
+    // Date created
+    const date = document.createElement('div');
+    date.className = 'date__posted';
+    date.innerHTML = `${entry.created_at}`;
 
-  // Modify Button
-  const modifyBtn = document.createElement('button');
-  modifyBtn.className = 'edit__post button';
-  modifyBtn.innerHTML = 'Edith';
+    // Modify Button
+    const modifyBtn = document.createElement('button');
+    modifyBtn.className = 'edit__post button';
+    modifyBtn.innerHTML = 'Edith';
 
-  // Options
-  const option = document.createElement('div');
-  option.className = 'l-story__option';
-  option.appendChild(date);
-  option.appendChild(modifyBtn);
+    // Options
+    const option = document.createElement('div');
+    option.className = 'l-story__option';
+    option.appendChild(date);
+    option.appendChild(modifyBtn);
 
-  dispalyArea.appendChild(title);
-  dispalyArea.appendChild(story);
-  dispalyArea.appendChild(option);
-  dispalyArea.setAttribute('data-entryid', entry.entryid);
-  dispalyArea.addEventListener('click', modifyPost);
+    dispalyArea.appendChild(title);
+    dispalyArea.appendChild(story);
+    dispalyArea.appendChild(option);
+    dispalyArea.setAttribute('data-entryid', entry.entryid);
+    dispalyArea.addEventListener('click', modifyPost);
+  }
 }
 
 async function addEntry() {
+  if (!token) return window.location.replace('../pages/index.html');
   const title = storyTitle.value;
   const story = storyText.value;
 
@@ -144,6 +145,7 @@ async function addEntry() {
 }
 
 (async function loadSpecificEntry() {
+  if (!token) return window.location.replace('../pages/index.html');
   const entryId = location.search.substring(1).split("=")[1];
   if (entryId) {
     const fetchData = {

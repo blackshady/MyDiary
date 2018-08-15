@@ -72,6 +72,10 @@ nav ul {
   display: none;
 }
 
+.menu__user {
+  cursor: pointer;
+}
+
 .user__profile {
   opacity: 1;
   display: grid;
@@ -301,13 +305,6 @@ nav ul {
   color: white;
   width: 100%;
 }
-
-/* .title__area>input {
-  border-radius: 5px;
-  text-indent: 10px;
-  background: white;
-  box-shadow: var(--shadow);
-} */
 
 .story__text {
   border-radius: 5px;

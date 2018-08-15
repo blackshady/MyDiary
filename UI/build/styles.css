@@ -6,7 +6,9 @@
   --light: rgba(216, 204, 192, 0.4);
   --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
   --card-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}html {
+}
+
+html {
   box-sizing: border-box;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   -webkit-text-size-adjust: 100%
@@ -103,7 +105,9 @@ textarea {
 .quote::after {
   content: close-quote;
   font-size: 3.5rem;
-}.container {
+}
+
+.container {
   display: grid;
   height: 100vh;
   grid-template-rows: auto 1fr;
@@ -260,7 +264,9 @@ textarea {
   grid-auto-flow: column;
   height: 40px;
   margin-bottom: 20px;
-}@font-face {
+}
+
+@font-face {
   font-family: duintas;
   src: url(./fonts/duintas_diary.otf)format("truetype");
 }
@@ -332,6 +338,10 @@ nav ul {
 
 .menu__user ul {
   display: none;
+}
+
+.menu__user {
+  cursor: pointer;
 }
 
 .user__profile {
@@ -644,7 +654,9 @@ nav ul {
 .submit__options {
   display: grid;
   grid-template-columns: 1fr;
-}.is-hidden {
+}
+
+.is-hidden {
   display: none;
 }
 
@@ -658,7 +670,9 @@ nav ul {
 
 .dropdown__background .open {
   opacity: 1;
-} */.h-center {
+} */
+
+.h-center {
   text-align: center;
   justify-content: center;
 }
@@ -722,7 +736,9 @@ nav ul {
 .h-center {
   align-content: center;
   justify-items: center;
-}/* Media query for responsiveness */
+}
+
+/* Media query for responsiveness */
 
 @media(max-width: 900px) {
   .h-margin__left {
