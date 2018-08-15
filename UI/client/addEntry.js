@@ -4,7 +4,7 @@ const storyTitle = document.querySelector('.story__title')
 const storyText = document.querySelector('.story__text')
 
 const token = JSON.parse(localStorage.getItem('token'));
-
+let userEntryId = '';
 async function getEntryOnLoad() {
   const entryId = location.search.substring(1).split("=")[1];
   if (!entryId) {
@@ -41,11 +41,41 @@ const getMessage = (entries) => {
 };
 
 const modifyPost = (e) => {
+
   if (e.target.classList.contains('button')) {
-    console.log('hey edith me');
+    storyTitle.value = e.target.parentElement.parentElement.children[0].innerHTML;
+    storyText.value = e.target.parentElement.parentElement.children[1].innerHTML;
+    userEntryId = e.target.parentElement.parentElement.getAttribute('data-entryid');
   }
 };
 
+async function modifyPostRequest(entryId, title, story) {
+  const userData = {
+    title,
+    story
+  }
+  const fetchData = {
+    method: 'PUT',
+    headers: {
+      'Authorization': `Bearer: ${token}`,
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify(userData)
+  };
+  const res = await fetch(`http://localhost:9000/api/v1/entries/${entryId}`, fetchData);
+  const data = await res.json();
+  const entry = data.entry;
+  const modEntry = {
+    entryid: entry.entryid,
+    title: entry.title,
+    story: entry.story,
+    created_at: entry.updated_at,
+  }
+  dispalyArea.innerHTML = '';
+  displayEntry(modEntry);
+  storyTitle.value = 'Title';
+  storyText.value = 'Whats on your mind...';
+}
 
 const displayEntry = (entry) => {
   // Dairy Title
@@ -77,12 +107,18 @@ const displayEntry = (entry) => {
   dispalyArea.appendChild(title);
   dispalyArea.appendChild(story);
   dispalyArea.appendChild(option);
+  dispalyArea.setAttribute('data-entryid', entry.entryid);
   dispalyArea.addEventListener('click', modifyPost);
 }
 
 async function addEntry() {
   const title = storyTitle.value;
   const story = storyText.value;
+
+  if (userEntryId !== '') {
+    return modifyPostRequest(userEntryId, title, story);
+  }
+
   const userData = {
     title,
     story,
@@ -101,6 +137,8 @@ async function addEntry() {
     const entry = data.entry;
     dispalyArea.innerHTML = '';
     displayEntry(entry);
+    storyTitle.value = 'Title';
+    storyText.value = 'Whats on your mind...';
   }
 
 }

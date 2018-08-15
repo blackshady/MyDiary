@@ -67,18 +67,13 @@ let createCard = (entry) => {
   entryWrapper.appendChild(options);
 
   cardBody.appendChild(entryWrapper);
-
-
 }
 
 const buttonOption = (e) => {
 
   if (e.target.classList.contains('view__entry')) {
     const entryId = e.target.parentElement.parentElement.getAttribute('data-entryid');
-    // // set it to local storage 
-    // localStorage.setItem('entryId', JSON.stringify(entryId));
     window.location.href = `../pages/dashboard.html?entryId=${entryId}`;
-    // console.log(e.target.parentElement.parentElement);
   }
 
   if (e.target.classList.contains('delete__entry')) {
