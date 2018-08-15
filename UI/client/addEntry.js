@@ -6,23 +6,25 @@ const storyText = document.querySelector('.story__text')
 const token = JSON.parse(localStorage.getItem('token'));
 
 async function getEntryOnLoad() {
+  const entryId = location.search.substring(1).split("=")[1];
+  if (!entryId) {
+    if (token) {
+      const fetchData = {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer: ${token}`,
+          'Content-type': 'application/json',
+        },
+      };
+      const res = await fetch('http://localhost:9000/api/v1/entries', fetchData);
+      const data = await res.json();
+      const entries = data.entries;
+      getMessage(entries);
+    }
+    if (!token) {
+      window.location.href = `${location.protocol}/UI/pages/login.html`;
 
-  if (token) {
-    const fetchData = {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer: ${token}`,
-        'Content-type': 'application/json',
-      },
-    };
-    const res = await fetch('http://localhost:9000/api/v1/entries', fetchData);
-    const data = await res.json();
-    const entries = data.entries;
-    getMessage(entries);
-  }
-  if (!token) {
-    window.location.href = `${location.protocol}/UI/pages/login.html`;
-
+    }
   }
 };
 
@@ -34,6 +36,7 @@ const getMessage = (entries) => {
     dispalyArea.appendChild(h1);
   }
   const entry = entries[entries.length - 1];
+  dispalyArea.innerHTML = '';
   displayEntry(entry);
 };
 
@@ -101,6 +104,25 @@ async function addEntry() {
   }
 
 }
+
+(async function loadSpecificEntry() {
+  const entryId = location.search.substring(1).split("=")[1];
+  if (entryId) {
+    const fetchData = {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer: ${token}`,
+        'Content-type': 'application/json',
+      },
+    };
+    const res = await fetch(`http://localhost:9000/api/v1/entries/${entryId}`, fetchData);
+    const data = await res.json();
+    const entry = data.entry;
+    dispalyArea.innerHTML = '';
+    displayEntry(entry);
+  }
+})();
+
 
 window.onload = getEntryOnLoad;
 addEntryBtn.addEventListener('click', addEntry);
