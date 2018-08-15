@@ -13,7 +13,6 @@ async function loadAllEntries() {
   };
   const res = await fetch('http://localhost:9000/api/v1/entries', fetchData);
   const data = await res.json();
-  console.log(data);
   const entries = data.entries;
   if (entries.length !== 0) return entryDisplay(entries);
   return cardBody.innerHTML = `<h1 class ='h-color__white' >You do not have an entry yet</h1>`;
@@ -33,6 +32,7 @@ let createCard = (entry) => {
   // card Wrapper
   const entryWrapper = document.createElement('div');
   entryWrapper.className = 'l-content__card';
+  entryWrapper.setAttribute('data-entryid', entry.entryid);
 
   // title
   const entryTitle = document.createElement('div');
@@ -74,14 +74,34 @@ let createCard = (entry) => {
 const buttonOption = (e) => {
 
   if (e.target.classList.contains('view__entry')) {
-    console.log('view entry');
+    console.log(e.target.parentElement.parentElement);
   }
 
   if (e.target.classList.contains('delete__entry')) {
-    console.log('delete button');
+    const entryId = e.target.parentElement.parentElement.getAttribute('data-entryid');
+    deleteEntry(entryId, e);
   }
 }
-// display only the first 20 lines of the story
+
+async function deleteEntry(entryId, e) {
+  const fetchData = {
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Bearer: ${token}`,
+      'Content-type': 'application/json',
+    },
+  }
+  const res = await fetch(`http://localhost:9000/api/v1/entries/${entryId}`, fetchData);
+  const data = await res.json();
+
+  if (data.status === 'success') {
+    // remove div
+    const card = e.target.parentElement.parentElement;
+    cardBody.removeChild(card);
+  }
+}
+
+// check if characters is greater than 20 and splice 
 const shortStory = (story) => {
   if (story.length > 20) {
     const newStory = story.slice(0, 190);
