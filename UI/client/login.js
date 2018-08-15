@@ -3,6 +3,7 @@ const inputField = Array.from(document.getElementsByClassName('input__field'));
 const loginBtn = document.getElementById('login__button');
 const error = document.querySelector('.error__filed');
 
+const baseUrl = window.location.origin;
 // Default action on DOM Load
 const transformItems = () => {
   inputLabel.forEach(field => {
@@ -50,7 +51,7 @@ async function userLogin() {
       body: JSON.stringify(userData)
     }
 
-    const res = await fetch(`http://localhost:9000/api/v1/auth/login`, fetchData);
+    const res = await fetch(`${baseUrl}/api/v1/auth/login`, fetchData);
     const data = await res.json();
     if (data.status === 'success') {
       localStorage.setItem('token', JSON.stringify(data.token));
