@@ -1,6 +1,6 @@
 const cardBody = document.querySelector('.l-content__body');
-const baseUrl = window.location.origin;
 const token = JSON.parse(localStorage.getItem('token'));
+const baseUrl = 'https://my-1-and-only-diary.herokuapp.com';
 
 async function loadAllEntries() {
   if (!token) window.location.replace('../pages/index.html');

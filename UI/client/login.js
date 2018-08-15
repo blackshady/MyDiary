@@ -3,7 +3,7 @@ const inputField = Array.from(document.getElementsByClassName('input__field'));
 const loginBtn = document.getElementById('login__button');
 const error = document.querySelector('.error__filed');
 
-const baseUrl = window.location.origin;
+const baseUrl = 'https://my-1-and-only-diary.herokuapp.com';
 // Default action on DOM Load
 const transformItems = () => {
   inputLabel.forEach(field => {
