@@ -1,6 +1,5 @@
 const cardBody = document.querySelector('.l-content__body');
 const token = JSON.parse(localStorage.getItem('token'));
-const baseUrl = JSON.parse('https://my-1-and-only-diary.herokuapp.com');
 
 async function loadAllEntries() {
   if (!token) window.location.replace('../pages/index.html');
@@ -11,7 +10,7 @@ async function loadAllEntries() {
       'Content-type': 'application/json',
     },
   };
-  const res = await fetch(`${baseUrl}/api/v1/entries`, fetchData);
+  const res = await fetch(`https://my-1-and-only-diary.herokuapp.com/api/v1/entries`, fetchData);
   const data = await res.json();
   const entries = data.entries;
   if (entries.length !== 0) return entryDisplay(entries);
@@ -90,7 +89,7 @@ async function deleteEntry(entryId, e) {
       'Content-type': 'application/json',
     },
   }
-  const res = await fetch(`${baseUrl}/api/v1/entries/${entryId}`, fetchData);
+  const res = await fetch(`https://my-1-and-only-diary.herokuapp.com/api/v1/entries/${entryId}`, fetchData);
   const data = await res.json();
 
   if (data.status === 'success') {

@@ -3,8 +3,6 @@ const inputField = Array.from(document.getElementsByClassName('input__field'));
 const siginUpBtn = document.getElementById('signup__button');
 const error = document.querySelector('.error');
 
-const baseUrl = JSON.parse('https://my-1-and-only-diary.herokuapp.com');
-
 // Default action on DOM Load
 const transformItems = () => {
   inputLabel.forEach(field => {
@@ -53,7 +51,7 @@ async function userSignup() {
       },
       body: JSON.stringify(userData)
     }
-    const res = await fetch(`${baseUrl}/api/v1/auth/signup`, fetchData);
+    const res = await fetch(`https://my-1-and-only-diary.herokuapp.com/api/v1/auth/signup`, fetchData);
     const data = await res.json();
     if (data.status === 'success') {
       localStorage.setItem('token', JSON.stringify(data.token))

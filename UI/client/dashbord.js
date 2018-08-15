@@ -3,7 +3,6 @@ const addEntryBtn = document.getElementById('add__Entry');
 const storyTitle = document.querySelector('.story__title')
 const storyText = document.querySelector('.story__text')
 
-const baseUrl = JSON.parse('https://my-1-and-only-diary.herokuapp.com');
 const token = JSON.parse(localStorage.getItem('token'));
 let userEntryId = '';
 async function getEntryOnLoad() {
@@ -18,7 +17,7 @@ async function getEntryOnLoad() {
           'Content-type': 'application/json',
         },
       };
-      const res = await fetch(`${baseUrl}/api/v1/entries`, fetchData);
+      const res = await fetch(`https://my-1-and-only-diary.herokuapp.com/api/v1/entries`, fetchData);
       const data = await res.json();
       const entries = data.entries;
       getMessage(entries);
@@ -61,7 +60,7 @@ async function modifyPostRequest(entryId, title, story) {
     },
     body: JSON.stringify(userData)
   };
-  const res = await fetch(`${baseUrl}/api/v1/entries/${entryId}`, fetchData);
+  const res = await fetch(`https://my-1-and-only-diary.herokuapp.com/api/v1/entries/${entryId}`, fetchData);
   const data = await res.json();
   const entry = data.entry;
   const modEntry = {
@@ -133,7 +132,7 @@ async function addEntry() {
     },
     body: JSON.stringify(userData)
   };
-  const res = await fetch(`${baseUrl}/api/v1/entries`, fetchData);
+  const res = await fetch(`https://my-1-and-only-diary.herokuapp.com/api/v1/entries`, fetchData);
   const data = await res.json();
   if (data.status === 'success') {
     const entry = data.entry;
@@ -156,7 +155,7 @@ async function addEntry() {
         'Content-type': 'application/json',
       },
     };
-    const res = await fetch(`${baseUrl}/api/v1/entries/${entryId}`, fetchData);
+    const res = await fetch(`https://my-1-and-only-diary.herokuapp.com/api/v1/entries/${entryId}`, fetchData);
     const data = await res.json();
     const entry = data.entry;
     dispalyArea.innerHTML = '';

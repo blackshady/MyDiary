@@ -2,8 +2,6 @@ const logoutBtn = document.getElementsByClassName('btn__logout')[0];
 const userProfileIcon = document.querySelector('.menu__user');
 const userProfileItem = document.getElementById('userProfileItem');
 
-const baseUrl = JSON.parse('https://my-1-and-only-diary.herokuapp.com');
-
 const logoutUser = () => {
   localStorage.removeItem('token');
   window.location.replace('../pages/index.html');
