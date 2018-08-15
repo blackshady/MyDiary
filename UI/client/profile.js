@@ -2,6 +2,7 @@ const logoutBtn = document.getElementsByClassName('btn__logout')[0];
 const userProfileIcon = document.querySelector('.menu__user');
 const userProfileItem = document.getElementById('userProfileItem');
 
+const baseUrl = window.location.origin;
 
 const logoutUser = () => {
   localStorage.removeItem('token');
