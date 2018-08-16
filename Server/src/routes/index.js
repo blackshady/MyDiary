@@ -4,6 +4,7 @@ import {
 import path from 'path';
 import entriesRoute from './entriesRoute';
 import authRoute from './authRoute';
+import userRoute from './userRoute';
 
 
 const router = Router();
@@ -13,6 +14,7 @@ router.get('/', (req, res) => res.status(200).sendFile(path.join(__dirname, '../
 
 router.use('/api/v1/auth', authRoute);
 router.use('/api/v1', entriesRoute);
+router.use('/api/v1', userRoute);
 
 
 // catch all route

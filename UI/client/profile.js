@@ -1,6 +1,8 @@
 const logoutBtn = document.getElementsByClassName('btn__logout')[0];
 const userProfileIcon = document.querySelector('.menu__user');
 const userProfileItem = document.getElementById('userProfileItem');
+const userImage = document.getElementById('profile_img');
+const imageDispaly = document.getElementById('user__image');
 
 const logoutUser = () => {
   localStorage.removeItem('token');
@@ -27,4 +29,7 @@ document.addEventListener('click', event => {
 let hideItem = item => (item ? (item.style.display = 'none') : 0);
 let displayGrid = item => (item ? (item.style.display = 'grid') : 0);
 
-logoutBtn.addEventListener('click', logoutUser)
+logoutBtn.addEventListener('click', logoutUser);
+userImage.addEventListener('change', (e) => {
+  console.log(e.target.files)
+})
