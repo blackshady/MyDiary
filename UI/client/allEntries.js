@@ -102,7 +102,7 @@ async function deleteEntry(entryId, e) {
 // check if characters is greater than 20 and splice 
 const shortStory = (story) => {
   if (story.length > 20) {
-    const newStory = story.slice(0, 190);
+    const newStory = `${story.slice(0, 190)}......`;
     return newStory;
   }
 }
