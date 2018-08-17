@@ -30,7 +30,7 @@ async function getEntryOnLoad() {
 };
 
 const getMessage = (entries) => {
-  if (entries.length === 0) {
+  if (typeof entries === 'undefined' || entries.length === 0) {
     return dispalyArea.innerHTML = `<h1 class="h-color__white">You do not have an entry, Please add an entry</h1>`;
   }
   const entry = entries[entries.length - 1];

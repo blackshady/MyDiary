@@ -13,7 +13,7 @@ async function loadAllEntries() {
   const res = await fetch(`https://my-1-and-only-diary.herokuapp.com/api/v1/entries`, fetchData);
   const data = await res.json();
   const entries = data.entries;
-  if (entries.length !== 0) return entryDisplay(entries);
+  if (entries && entries.length !== 0) return entryDisplay(entries);
   return cardBody.innerHTML = `<h1 class ='h-color__white' >You do not have an entry yet</h1>`;
 }
 
