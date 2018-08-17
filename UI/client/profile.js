@@ -1,14 +1,13 @@
 const logoutBtn = document.getElementsByClassName('btn__logout')[0];
 const userProfileIcon = document.querySelector('.menu__user');
 const userProfileItem = document.getElementById('userProfileItem');
-
-const baseUrl = window.location.origin;
+const userImage = document.getElementById('profile_img');
+const imageDispaly = document.getElementById('user__image');
 
 const logoutUser = () => {
   localStorage.removeItem('token');
   window.location.replace('../pages/index.html');
 };
-
 
 //display User Profile 
 userProfileIcon.addEventListener('click', event => {
@@ -30,4 +29,11 @@ document.addEventListener('click', event => {
 let hideItem = item => (item ? (item.style.display = 'none') : 0);
 let displayGrid = item => (item ? (item.style.display = 'grid') : 0);
 
-logoutBtn.addEventListener('click', logoutUser)
+logoutBtn.addEventListener('click', logoutUser);
+userImage.addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  console.log(file)
+  const formData = new FormData();
+  console.log(formData.append('file', file));
+
+})

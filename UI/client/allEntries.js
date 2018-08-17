@@ -1,5 +1,4 @@
 const cardBody = document.querySelector('.l-content__body');
-const baseUrl = window.location.origin;
 const token = JSON.parse(localStorage.getItem('token'));
 
 async function loadAllEntries() {
@@ -11,7 +10,7 @@ async function loadAllEntries() {
       'Content-type': 'application/json',
     },
   };
-  const res = await fetch(`${baseUrl}/api/v1/entries`, fetchData);
+  const res = await fetch(`https://my-1-and-only-diary.herokuapp.com/api/v1/entries`, fetchData);
   const data = await res.json();
   const entries = data.entries;
   if (entries.length !== 0) return entryDisplay(entries);
@@ -90,7 +89,7 @@ async function deleteEntry(entryId, e) {
       'Content-type': 'application/json',
     },
   }
-  const res = await fetch(`${baseUrl}/api/v1/entries/${entryId}`, fetchData);
+  const res = await fetch(`https://my-1-and-only-diary.herokuapp.com/api/v1/entries/${entryId}`, fetchData);
   const data = await res.json();
 
   if (data.status === 'success') {
@@ -103,7 +102,7 @@ async function deleteEntry(entryId, e) {
 // check if characters is greater than 20 and splice 
 const shortStory = (story) => {
   if (story.length > 20) {
-    const newStory = story.slice(0, 190);
+    const newStory = `${story.slice(0, 180)}...`;
     return newStory;
   }
 }
