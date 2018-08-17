@@ -31,5 +31,9 @@ let displayGrid = item => (item ? (item.style.display = 'grid') : 0);
 
 logoutBtn.addEventListener('click', logoutUser);
 userImage.addEventListener('change', (e) => {
-  console.log(e.target.files)
+  const file = e.target.files[0];
+  console.log(file)
+  const formData = new FormData();
+  console.log(formData.append('file', file));
+
 })

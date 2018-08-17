@@ -1,4 +1,5 @@
 export default {
+  userById: 'SELECT * FROM users WHERE userId = $1 LIMIT 1',
   userByEmail: 'SELECT * FROM users WHERE email = $1 LIMIT 1;',
   specificUserDiary: 'SELECT * FROM entries WHERE entryId=$1  AND userId=$2 LIMIT 1',
   userEntries: 'SELECT * FROM entries WHERE userId = $1',

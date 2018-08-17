@@ -4,7 +4,7 @@ import {
 import path from 'path';
 import entriesRoute from './entriesRoute';
 import authRoute from './authRoute';
-import userRoute from './userRoute';
+import userRoute from './usersRoute';
 
 
 const router = Router();
