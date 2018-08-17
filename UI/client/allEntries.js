@@ -1,6 +1,8 @@
 const cardBody = document.querySelector('.l-content__body');
 const token = JSON.parse(localStorage.getItem('token'));
 
+const asyncCatchErrors = fn => fn().catch((error) => console.log(error));
+
 async function loadAllEntries() {
   if (!token) window.location.replace('../pages/index.html');
   const fetchData = {
@@ -115,6 +117,6 @@ const shortTitle = (title) => {
   return title;
 };
 
-window.onload = loadAllEntries;
+window.onload = asyncCatchErrors(loadAllEntries);
 
 cardBody.addEventListener('click', buttonOption);
