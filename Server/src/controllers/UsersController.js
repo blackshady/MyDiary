@@ -1,12 +1,8 @@
-import cloudinary from 'cloudinary';
 import database from '../config/databaseConnection';
 import find from '../models/queries/find';
+import update from '../models/queries/update';
 
-cloudinary.config({
-  cloud_name: process.env.CLOUD_NAME,
-  api_key: process.env.API_KEY,
-  api_secret: process.env.API_SECRET,
-});
+
 /**
  * @exports
  * @class UsersController
@@ -24,11 +20,11 @@ class UsersController {
     const {
       userid,
     } = req.authData;
-    console.log(userid);
+
     const {
       rows,
     } = await database.query(find.userById, [userid]);
-    console.log(rows[0]);
+    console.log(rows);
     return res.status(200).json({
       status: 'success',
       user: rows[0],
@@ -44,12 +40,20 @@ class UsersController {
    * @static
    */
   static async uploadImage(req, res) {
+    const {
+      imageUrl,
+      userid,
+    } = req.imageData;
+    console.log(userid, imageUrl);
+    const {
+      rows,
+    } = await database.query(update.userImage, [imageUrl, userid]);
+    console.log(rows);
 
-    cloudinary.uploader.upload(req.files.image.path, (result) => {});
-
-    return res.status(201).json({
+    return res.status(200).json({
       status: 'success',
       message: 'image uploaded successful',
+      image: rows,
     });
   }
 }

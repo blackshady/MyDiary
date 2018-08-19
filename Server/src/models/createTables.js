@@ -9,7 +9,7 @@ export default {
       email TEXT NOT NULL UNIQUE,
       userName VARCHAR(255) NOT NULL,
       passwordHash  VARCHAR(255) NOT NULL,
-      profileImageUrl VARCHAR(80),
+      profileImageUrl VARCHAR(255),
       totalCreatedEntries INTEGER,
       reminder  TIME WITH TIME ZONE
     );
