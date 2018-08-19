@@ -1,7 +1,9 @@
 const dispalyArea = document.querySelector('.l-display__area');
 const addEntryBtn = document.getElementById('add__Entry');
-const storyTitle = document.querySelector('.story__title')
-const storyText = document.querySelector('.story__text')
+const storyTitle = document.querySelector('.story__title');
+const storyText = document.querySelector('.story__text');
+
+const asyncCatchErrors = fn => fn().catch((error) => console.log(error));
 
 const token = JSON.parse(localStorage.getItem('token'));
 let userEntryId = '';
@@ -30,7 +32,7 @@ async function getEntryOnLoad() {
 };
 
 const getMessage = (entries) => {
-  if (entries.length === 0) {
+  if (typeof entries === 'undefined' || entries.length === 0) {
     return dispalyArea.innerHTML = `<h1 class="h-color__white">You do not have an entry, Please add an entry</h1>`;
   }
   const entry = entries[entries.length - 1];
@@ -164,5 +166,5 @@ async function addEntry() {
 })();
 
 
-window.onload = getEntryOnLoad;
+window.onload = asyncCatchErrors(getEntryOnLoad);
 addEntryBtn.addEventListener('click', addEntry);

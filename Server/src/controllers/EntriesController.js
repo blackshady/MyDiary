@@ -63,7 +63,8 @@ class EntriesController {
     const {
       rows,
     } = await database.query(insert.userEntries, userData);
-
+    console.log(userid);
+    await database.query(update.totalEntry, [userid]);
     return res.status(201).json({
       status: 'success',
       message: 'entry created successfully',

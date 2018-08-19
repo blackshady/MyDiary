@@ -1,5 +1,8 @@
 import database from '../config/databaseConnection';
 import find from '../models/queries/find';
+import update from '../models/queries/update';
+
+
 /**
  * @exports
  * @class UsersController
@@ -16,15 +19,15 @@ class UsersController {
   static async getDetails(req, res) {
     const {
       userid,
-    } = req.params;
-    console.log(userid);
+    } = req.authData;
+
     const {
       rows,
     } = await database.query(find.userById, [userid]);
     console.log(rows);
     return res.status(200).json({
       status: 'success',
-      rows,
+      user: rows[0],
     });
   }
 
@@ -37,9 +40,20 @@ class UsersController {
    * @static
    */
   static async uploadImage(req, res) {
-    return res.status(201).json({
+    const {
+      imageUrl,
+      userid,
+    } = req.imageData;
+    console.log(userid, imageUrl);
+    const {
+      rows,
+    } = await database.query(update.userImage, [imageUrl, userid]);
+    console.log(rows);
+
+    return res.status(200).json({
       status: 'success',
       message: 'image uploaded successful',
+      image: rows,
     });
   }
 }

@@ -4,6 +4,7 @@ import config from '../config/config';
 import database from '../config/databaseConnection';
 import find from '../models/queries/find';
 import insert from '../models/queries/insert';
+import update from '../models/queries/update';
 
 
 /**
@@ -37,13 +38,13 @@ class AuthController {
       } = rows[0];
       // Create token for the user
       const token = jwt.sign({
-          userid,
-          email,
-          username,
-        },
-        config.jwtSecret, {
-          expiresIn: '24h',
-        });
+        userid,
+        email,
+        username,
+      },
+      config.jwtSecret, {
+        expiresIn: '24h',
+      });
       return res.status(200).json({
         status: 'success',
         message: 'Login successfully',
@@ -102,7 +103,8 @@ class AuthController {
         }, config.jwtSecret, {
           expiresIn: '24h',
         });
-        res.status(201).json({
+        database.query(update.defualtTotalEntry, [userid]);
+        return res.status(201).json({
           status: 'success',
           message: 'Your account have been created successful',
           token,

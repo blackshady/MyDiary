@@ -13,27 +13,57 @@ const logoutUser = () => {
 userProfileIcon.addEventListener('click', event => {
   event.stopPropagation();
   displayGrid(userProfileItem);
+  getUserDetails();
 });
 
-
-// hide user profile
-document.addEventListener('click', event => {
-  if (
-    event.target.id !== 'userProfileItem' ||
-    event.target.id == 'menu__user'
-  ) {
-    hideItem(userProfileItem);
-  }
-});
+http: //localhost:9000/api/v1/users/info
+  // hide user profile
+  document.addEventListener('click', event => {
+    if (
+      event.target.id !== 'userProfileItem' ||
+      event.target.id == 'menu__user'
+    ) {
+      hideItem(userProfileItem);
+    }
+  });
 
 let hideItem = item => (item ? (item.style.display = 'none') : 0);
 let displayGrid = item => (item ? (item.style.display = 'grid') : 0);
 
 logoutBtn.addEventListener('click', logoutUser);
-userImage.addEventListener('change', (e) => {
+userImage && userImage.addEventListener('change', (e) => {
   const file = e.target.files[0];
-  console.log(file)
-  const formData = new FormData();
-  console.log(formData.append('file', file));
-
+  uploadImage(file);
 })
+
+async function uploadImage(file) {
+
+  const image = new FormData();
+  image.append('image', file);
+
+  const fetchData = {
+    method: 'PUT',
+    headers: {
+      'Authorization': `Bearer: ${token}`,
+    },
+    body: image
+  };
+  const res = await fetch(`http://localhost:9000/api/v1/users/upload`, fetchData);
+  const data = await res.json();
+  console.log(data);
+  data.status === 'success' && getUserDetails();
+}
+
+async function getUserDetails() {
+
+  const fetchData = {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer: ${token}`,
+      'Content-type': 'application/json',
+    },
+  };
+  const res = await fetch(`http://localhost:9000/api/v1/users/info`, fetchData);
+  const data = await res.json();
+  console.log(data);
+}
