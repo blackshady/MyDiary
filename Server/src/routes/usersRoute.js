@@ -10,9 +10,8 @@ import asyncCatchErrors from '../helpers/asyncErrorHandler';
 const multipartMiddleware = multipart();
 const router = Router();
 
-
 router.put(
-  '/users/upload', Authorization.verifyToken, multipartMiddleware, CloudUpload.uploadToCloud, asyncCatchErrors(UsersController.uploadImage),
+  '/users/upload', Authorization.verifyToken, multipartMiddleware, asyncCatchErrors(CloudUpload.uploadToCloud), asyncCatchErrors(UsersController.uploadImage),
 );
 
 router.get(

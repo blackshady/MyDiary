@@ -20,7 +20,7 @@ class UsersController {
     const {
       userid,
     } = req.authData;
-
+    console.log(userid);
     const {
       rows,
     } = await database.query(find.userById, [userid]);
