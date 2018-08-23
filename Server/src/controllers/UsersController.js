@@ -20,11 +20,9 @@ class UsersController {
     const {
       userid,
     } = req.authData;
-
     const {
       rows,
     } = await database.query(find.userById, [userid]);
-    console.log(rows);
     return res.status(200).json({
       status: 'success',
       user: rows[0],
@@ -44,11 +42,10 @@ class UsersController {
       imageUrl,
       userid,
     } = req.imageData;
-    console.log(userid, imageUrl);
+
     const {
       rows,
     } = await database.query(update.userImage, [imageUrl, userid]);
-    console.log(rows);
 
     return res.status(200).json({
       status: 'success',
