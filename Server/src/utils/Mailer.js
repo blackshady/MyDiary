@@ -46,7 +46,7 @@ class Mailer {
       to: email,
       subject: 'Reset Password',
       text: `To reset password follow this link  
-      http://${url}/reset_password?token=${token}`,
+      http://auth/${url}/reset_password?token=${token}`,
     });
   }
 
