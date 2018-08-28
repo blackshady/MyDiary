@@ -25,6 +25,14 @@ const config = {
     password: process.env.DB_PASSWORD,
     host: process.env.DB_HOST,
   },
+  stmpConfig: {
+    host: process.env.EMAIL_HOST,
+    port: process.env.EMAIL_PORT,
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+  },
   jwtSecret: process.env.JWT_SECRET,
 };
 

@@ -29,6 +29,6 @@ cache:
 
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-  
+  coverage
 after_success:
-  - npm run coverage
+  - npm run 
