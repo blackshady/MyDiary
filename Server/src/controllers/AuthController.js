@@ -5,6 +5,7 @@ import database from '../config/databaseConnection';
 import find from '../models/queries/find';
 import insert from '../models/queries/insert';
 import update from '../models/queries/update';
+import Mailer from '../utils/Mailer';
 
 
 /**
@@ -38,13 +39,13 @@ class AuthController {
       } = rows[0];
       // Create token for the user
       const token = jwt.sign({
-        userid,
-        email,
-        username,
-      },
-      config.jwtSecret, {
-        expiresIn: '24h',
-      });
+          userid,
+          email,
+          username,
+        },
+        config.jwtSecret, {
+          expiresIn: '24h',
+        });
       return res.status(200).json({
         status: 'success',
         message: 'Login successfully',
@@ -113,6 +114,44 @@ class AuthController {
       .catch(err => res.status(500).json({
         message: err.message,
       }));
+  }
+
+
+  /**
+   * Sends password reset link to user
+   * @async
+   * @param  {object} req - Request object
+   * @param {object} res - Response object
+   * @return {json} Returns json object
+   * @static
+   */
+  static async resetPasswordRequest(req, res) {
+    const {
+      email,
+    } = req.body;
+
+    const {
+      rows,
+    } = await database.query(find.userByEmail, [email]);
+    if (rows.length === 0) {
+      return res.status(404).json({
+        status: 'error',
+        message: 'user with this email does not exist',
+        user: rows,
+      });
+    }
+    const token = jwt.sign({
+        email,
+      },
+      process.env.JWT_SECRET, {
+        expiresIn: '1h',
+      },
+    );
+    await Mailer.sendResetPasswordEmail(email, token);
+    return res.status(200).json({
+      status: 'success',
+      message: 'please check your mail',
+    })
   }
 }
 
