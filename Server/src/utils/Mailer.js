@@ -34,11 +34,12 @@ class Mailer {
 
   /**
    * Mail reset password link to user
-   * @method forgotPasswordMail
-   * @memberof Mailer
+   * @async
+   * @method sendResetPasswordEmail
    * @param {string} token
    * @param {string} email
    * @returns {nothing} returns nothing
+   * @static
    */
   static async sendResetPasswordEmail(email, token) {
 
@@ -46,10 +47,22 @@ class Mailer {
       to: email,
       subject: 'Reset Password',
       text: `To reset password follow this link  
-      http://auth/${url}/reset_password?token=${token}`,
+      http://${url}/auth/reset_password?token=${token}`,
     });
   }
-
+  /**
+   * Mail password reset confarmation 
+   * @method resetPasswordConfirmation
+   * @param {string} email
+   * @returns {objuct} returns nothing
+   */
+  static async resetPasswordConfirmation(email) {
+    return await Mailer.sendMail({
+      to: email,
+      subject: 'Password Reset successful',
+      text: `Your Password has been reset successfully`,
+    });
+  }
 }
 
 export default Mailer;
