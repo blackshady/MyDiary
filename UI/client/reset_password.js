@@ -28,7 +28,6 @@ async function resetPassword(e) {
     return message.innerHTML = 'Password length must be greater than five';
   }
   const password = passwordInput.value;
-  console.log(password);
   const userData = {
     password,
   };
@@ -41,12 +40,12 @@ async function resetPassword(e) {
     body: JSON.stringify(userData)
   }
   const res = await fetch(`https://my-1-and-only-diary.herokuapp.com/api/v1/auth/reset_password?token=${token}`, fetchData);
-  console.log(res);
-  if (res.status === 'success') {
+  const data = await res.json();
+  if (data.status === 'success') {
     message.innerHTML = '';
-    return message.innerHTML = res.message;
+    return message.innerHTML = data.message;
   }
-  if (res.status === 'error') return window.location.replace('invalidToken.html');
+  if (data.status === 'error') return window.location.replace('invalidToken.html');
 }
 
 window.onload = validateToken;
