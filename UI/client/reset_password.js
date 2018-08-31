@@ -1,18 +1,47 @@
 const email = document.querySelector('.password__field');
 const message = document.querySelector('.message');
+const passwordInput = document.querySelector('.password__field');
+const passwordInputVerify = document.querySelector('.password__field-verify');
+const restPasswordBtn = document.querySelector('.reset_pass-btn');
 
-
-
-const asyncCatchErrors = fn => fn().catch((error) => console.log(error));
-
-async function validateToken() {
-  const isValid = false;
+const validateToken = () => {
+  // const isValid = false;
   const token = location.search.substring(1).split("=")[1];
-  typeof token === 'undefined' || token === '' && window.location.replace('invalidToken.html');
-  console.log(token);
-
+  if (typeof token === 'undefined' || token === '') return window.location.replace('invalidToken.html');
+  return token;
   // !isValid && window.location.replace('invalidToken.html');
-
 }
 
-document.addEventListener('DOMContentLoaded', asyncCatchErrors(validateToken));
+async function resetPassword(e) {
+  e.preventDefault();
+  const token = validateToken();
+  if (passwordInput.value === '' || passwordInputVerify.value === '') {
+    message.innerHTML = '';
+    return message.innerHTML = 'fields should not be empty'
+  }
+  if (passwordInput.value !== passwordInputVerify.value) {
+    message.innerHTML = '';
+    return message.innerHTML = 'Password does not match';
+  }
+  if ((passwordInput.value.length) < 5 || (passwordInputVerify.value.length) < 5) {
+    message.innerHTML = '';
+    return message.innerHTML = 'Password length must be greater than five';
+  }
+  const password = passwordInput.value;
+  console.log(password);
+  const userData = {
+    password,
+  };
+
+  const fetchData = {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify(userData)
+  }
+  const res = await fetch(`https://my-1-and-only-diary.herokuapp.com/api/v1/auth/reset_password?token=${token}`, fetchData);
+}
+
+window.onload = validateToken;
+document.addEventListener('submit', resetPassword);
