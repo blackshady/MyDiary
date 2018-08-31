@@ -4,11 +4,9 @@ const passwordInputVerify = document.querySelector('.password__field-verify');
 const restPasswordBtn = document.querySelector('.reset_pass-btn');
 
 const validateToken = () => {
-  // const isValid = false;
   const token = location.search.substring(1).split("=")[1];
   if (typeof token === 'undefined' || token === '') return window.location.replace('invalidToken.html');
   return token;
-  // !isValid && window.location.replace('invalidToken.html');
 }
 
 async function resetPassword(e) {
@@ -47,6 +45,5 @@ async function resetPassword(e) {
   if (data.status === 'error') return window.location.replace('invalidToken.html');
 }
 
-//window.onload = validateToken;
-document.addEventListener('DOMContentLoaded', validate);
+window.onload = validateToken;
 document.addEventListener('submit', resetPassword);
