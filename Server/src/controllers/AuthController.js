@@ -185,7 +185,7 @@ class AuthController {
         const passwordHash = bcrypt.hashSync(password, 10);
         database.query(update.userPassword, [passwordHash, email]);
         Mailer.resetPasswordConfirmation(email);
-
+        
         res.status(200).json({
           status: 'success',
           message: 'Password reset successful',
