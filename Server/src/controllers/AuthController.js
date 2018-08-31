@@ -39,13 +39,13 @@ class AuthController {
       } = rows[0];
       // Create token for the user
       const token = jwt.sign({
-          userid,
-          email,
-          username,
-        },
-        config.jwtSecret, {
-          expiresIn: '24h',
-        });
+        userid,
+        email,
+        username,
+      },
+      config.jwtSecret, {
+        expiresIn: '24h',
+      });
       return res.status(200).json({
         status: 'success',
         message: 'Login successfully',
@@ -141,17 +141,16 @@ class AuthController {
       });
     }
     const token = jwt.sign({
-        email,
-      },
-      process.env.JWT_SECRET, {
-        expiresIn: '1h',
-      },
-    );
+      email,
+    },
+    process.env.JWT_SECRET, {
+      expiresIn: '1h',
+    });
     await Mailer.sendResetPasswordEmail(email, token);
     return res.status(200).json({
       status: 'success',
       message: 'please check your mail',
-    })
+    });
   }
 
   /**
@@ -164,7 +163,7 @@ class AuthController {
    */
   static async resetPassword(req, res) {
     const {
-      token
+      token,
     } = req.query;
 
     await jwt.verify(token, config.jwtSecret, (err, authData) => {
@@ -177,24 +176,22 @@ class AuthController {
       if (authData) {
         console.log(authData);
         const {
-          password
+          password,
         } = req.body;
         const {
-          email
+          email,
         } = authData;
         const passwordHash = bcrypt.hashSync(password, 10);
         database.query(update.userPassword, [passwordHash, email]);
         Mailer.resetPasswordConfirmation(email);
-        
+
         res.status(200).json({
           status: 'success',
           message: 'Password reset successful',
         });
-
       }
     });
   }
-
 }
 
 export default AuthController;

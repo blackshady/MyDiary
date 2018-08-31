@@ -42,16 +42,16 @@ class Mailer {
    * @static
    */
   static async sendResetPasswordEmail(email, token) {
-
     return await Mailer.sendMail({
       to: email,
       subject: 'Reset Password',
       text: `To reset password follow this link  
-      https://${url}/reset_password.html?token=${token}`,
+      ${url}/reset_password.html?token=${token}`,
     });
   }
+
   /**
-   * Mail password reset confarmation 
+   * Mail password reset confarmation
    * @method resetPasswordConfirmation
    * @param {string} email
    * @returns {objuct} returns nothing
@@ -60,7 +60,7 @@ class Mailer {
     return await Mailer.sendMail({
       to: email,
       subject: 'Password Reset successful',
-      text: `Your Password has been reset successfully`,
+      text: 'Your Password has been reset successfully',
     });
   }
 }
