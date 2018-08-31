@@ -9,8 +9,9 @@ async function validateToken() {
   const isValid = false;
   const token = location.search.substring(1).split("=")[1];
   typeof token === 'undefined' || token === '' && window.location.replace('invalidToken.html');
+  console.log(token);
 
-  !isValid && window.location.replace('invalidToken.html');
+  // !isValid && window.location.replace('invalidToken.html');
 
 }
 

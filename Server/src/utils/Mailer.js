@@ -45,7 +45,7 @@ class Mailer {
     return await Mailer.sendMail({
       to: email,
       subject: 'Reset Password',
-      text: `To reset password follow this link  
+      text: `To reset password follow this link..   
       ${url}/reset_password.html?token=${token}`,
     });
   }
