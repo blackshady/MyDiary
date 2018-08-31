@@ -41,6 +41,12 @@ async function resetPassword(e) {
     body: JSON.stringify(userData)
   }
   const res = await fetch(`https://my-1-and-only-diary.herokuapp.com/api/v1/auth/reset_password?token=${token}`, fetchData);
+  console.log(res);
+  if (res.status === 'success') {
+    message.innerHTML = '';
+    return message.innerHTML = res.message;
+  }
+  if (res.status === 'error') return window.location.replace('invalidToken.html');
 }
 
 window.onload = validateToken;
