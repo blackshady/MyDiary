@@ -39,13 +39,13 @@ class AuthController {
       } = rows[0];
       // Create token for the user
       const token = jwt.sign({
-          userid,
-          email,
-          username,
-        },
-        config.jwtSecret, {
-          expiresIn: '24h',
-        });
+        userid,
+        email,
+        username,
+      },
+      config.jwtSecret, {
+        expiresIn: '24h',
+      });
       return res.status(200).json({
         status: 'success',
         message: 'Login successfully',
@@ -141,17 +141,56 @@ class AuthController {
       });
     }
     const token = jwt.sign({
-        email,
-      },
-      process.env.JWT_SECRET, {
-        expiresIn: '1h',
-      },
-    );
+      email,
+    },
+    process.env.JWT_SECRET, {
+      expiresIn: '1h',
+    });
     await Mailer.sendResetPasswordEmail(email, token);
     return res.status(200).json({
       status: 'success',
       message: 'please check your mail',
-    })
+    });
+  }
+
+  /**
+   * validate password reset token and rest password
+   * @async
+   * @param  {object} req - Request object
+   * @param {object} res - Response object
+   * @return {json} Returns json object
+   * @static
+   */
+  static async resetPassword(req, res) {
+    const {
+      token,
+    } = req.query;
+
+    await jwt.verify(token, config.jwtSecret, (err, authData) => {
+      if (err) {
+        return res.status(400).json({
+          status: 'error',
+          message: 'Password reset token has expired or is Invalid',
+        });
+      }
+      if (authData) {
+        console.log(authData);
+        const {
+          password,
+        } = req.body;
+        const {
+          email,
+        } = authData;
+        const passwordHash = bcrypt.hashSync(password, 10);
+        database.query(update.userPassword, [passwordHash, email]);
+        Mailer.resetPasswordConfirmation(email);
+
+        res.status(200).json({
+          status: 'success',
+          message: 'Password reset successful',
+        });
+      }
+    });
   }
 }
 

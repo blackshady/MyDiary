@@ -300,6 +300,26 @@ textarea {
   justify-content: center;
 }
 
+.token__wrapper {
+  display: grid;
+  justify-items: center;
+}
+
+.invalid__token {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  width: 50%;
+  height: 15%;
+  padding: 3px;
+  border-radius: 10px;
+  color: red;
+  font-family: inherit;
+  font-size: 1.2rem;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: var(--shadow);
+}
+
 .entries__btn ul {
   position: relative;
   display: grid;
@@ -527,7 +547,7 @@ nav ul {
 .card__body-password {
   display: grid;
   grid-template-rows: repeat(auto, 4);
-  height: 200px;
+  height: 230px;
   grid-gap: 5px;
   font-size: 1.2rem;
   padding: 10px;
