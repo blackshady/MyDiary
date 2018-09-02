@@ -19,8 +19,8 @@
           <ul class "main__menu">
             <li>
               <div class="menu__notifiation .h-icon__size ">
-                <img src="../icons/Bell-WF.png" alt="alert">
-                <label class="number__notified">10</label>
+                <!-- <img src="../icons/Bell-WF.png" alt="alert">
+                <label class="number__notified">1</label> -->
               </div>
             </li>
             <li>
@@ -39,19 +39,14 @@
                             <label for="profile_img">Change Profile Photo</label>
                             <input type="file" name="profile_img" id="profile_img">
                           </button>
-                          <button>
-                            <div class="set__reminder">
-                              <label for="">Set Reminder</label>
-                              <input type="date" name="" id="">
-                              <input type="time">
-                            </div>
-                          </button>
-
                           <div class="total__entries">
                             <p>Total Number of Entries
                             </p>
                             <span></span>
                           </div>
+                          <button class="set__reminder button">
+                            Add Reminder
+                          </button>
                           <button class="btn__logout button">Log Out</button>
                         </div>
                       </div>
@@ -110,10 +105,36 @@
 
         </div>
       </div>
+      <!-- set Reminder Modal -->
+      <div class="reminder__modal">
+        <div class="modal__content">
+          <div class="modal__header">
+            <span class="close__modal">&times;</span>
+            <h2>Reminder settings</h2>
+          </div>
+          <div class="modal__body">
+            <div class="title__area">
+              <input type="text" class="story__title reminder__title" value="" placeholder="TITLE..">
+            </div>
+            <p class="reminder__wrapper-input">
+              <input type="date" name="" class='reminder__date' placeholder="Date">
+              <input type="time" class='reminder__time' placeholder="Time">
+            </p>
+            <div class="message"></div>
+          </div>
+          <div class="modal__footer">
+            <h3>
+              <button class="button reminder__button">Set Reminder</button>
+            </h3>
+          </div>
+        </div>
+      </div>
     </section>
     <!-- End Main Content -->
     <script src="../client/dashbord.js"></script>
+    <script src="../js/index.js"></script>
     <script src="../client/profile.js" async></script>
+
 </body>
 
 </html>

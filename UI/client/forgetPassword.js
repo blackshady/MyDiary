@@ -32,7 +32,6 @@ async function doFetch(fetchData) {
     message.innerHTML = '';
     return message.innerHTML = data.message;
   }
-  console.log(data);
 
 }
 
