@@ -53,6 +53,27 @@ class UsersController {
       image: rows,
     });
   }
+  /**
+   * set reminder
+   * @async
+   * @param  {object} req - Request object
+   * @param {object} res - Response object
+   * @return {json} Returns json object
+   * @static
+   */
+  static async setReminder(req, res) {
+    const {
+      email
+    } = req.authData
+    console.log(email);
+    console.log('hello, it work');
+
+    return res.status(201).json({
+      status: 'success',
+      message: 'nreminder '
+    })
+  }
+
 }
 
 

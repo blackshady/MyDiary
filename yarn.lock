@@ -4648,6 +4648,10 @@ nise@^1.4.2:
     path-to-regexp "^1.7.0"
     text-encoding "^0.6.4"
 
+node-cron@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/node-cron/-/node-cron-1.2.1.tgz#8c90bc5dc723a56289b0786655ab4a1c4cb60368"
+
 node-forge@0.7.5:
   version "0.7.5"
   resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.7.5.tgz#6c152c345ce11c52f465c2abd957e8639cd674df"

@@ -18,4 +18,7 @@ router.get(
   '/users/info', Authorization.verifyToken, asyncCatchErrors(UsersController.getDetails),
 );
 
+router.post(
+  '/users/reminder', Authorization.verifyToken, asyncCatchErrors(UsersController.setReminder),
+);
 export default router;

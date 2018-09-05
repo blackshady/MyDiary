@@ -137,8 +137,10 @@ async function setReminder() {
     body: userData,
   };
 
-  const res await fetch('', fetchData)
-  console.log(userData)
+  const res = await fetch('', fetchData);
+  const data = res.json();
+
+  console.log(data)
 }
 
 setReminderBtn.addEventListener('click', setReminder);
