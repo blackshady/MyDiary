@@ -11,7 +11,7 @@ export default {
       passwordHash  VARCHAR(255) NOT NULL,
       profileImageUrl VARCHAR(255),
       totalCreatedEntries INTEGER,
-      reminder  TIME WITH TIME ZONE
+      reminder  VARCHAR(255)
     );
     `;
     return database.query(usersSchema);

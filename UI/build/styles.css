@@ -617,8 +617,79 @@ nav ul {
   padding: 7px;
 }
 
-.set__reminder>input {
-  background: var(--shadow);
+.set__reminder {
+  padding: 7px;
+  box-shadow: var(--shadow);
+}
+
+.reminder__modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  border-radius: 10px;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal__content {
+  background-color: #aaaaaa;
+  margin: auto;
+  border-radius: 10px;
+  border-radius: 10px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.reminder__date,
+.reminder__time {
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  height: 40px;
+}
+
+.close__modal {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal__header h2 {
+  margin: 0;
+}
+
+.modal__body {
+  padding: 10px 20px;
+}
+
+.modal__footer {
+  background: var(--light);
+  padding: 10px;
+  color: #fff;
+  border-radius: 0 0 10px 10px;
+  text-align: center;
+}
+
+.modal__header {
+  background: var(--light);
+  padding: 16px;
+  border-radius: 10px 10px 0 0;
+  color: #fff;
+}
+
+.close__modal:hover,
+.close__modal:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .total__entries {
